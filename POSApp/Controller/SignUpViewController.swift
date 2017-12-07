@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 17/11/17.
+//  Created by Shruti Gupta on 17/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -131,7 +131,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 //                self.navigationController?.pushViewController(searchSIVC, animated: true)
                 
                 let allVC = self.navigationController?.viewControllers
-                if  let searchSIVC = allVC![allVC!.count - 2] as? BaseViewController {
+                if  let searchSIVC = allVC![allVC!.count - 2] as? SignInViewController {
                     self.navigationController!.popToViewController(searchSIVC, animated: true)
                     }
             })

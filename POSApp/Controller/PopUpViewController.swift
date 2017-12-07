@@ -2,7 +2,7 @@
 //  PopUpViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 28/11/17.
+//  Created by Shruti Gupta on 28/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -39,6 +39,8 @@ class PopUpViewController: UIViewController {
     }
     
     @IBAction func buttonSaveAction(_ sender: Any) {
+        self.view.removeFromSuperview()
+        delegate?.changeBackgroundColor(UIColor.brown)
     }
     @IBAction func textFieldDateAction(_ sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.date

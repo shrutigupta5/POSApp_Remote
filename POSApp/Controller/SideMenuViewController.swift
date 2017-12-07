@@ -2,7 +2,7 @@
 //  SideMenuViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 23/11/17.
+//  Created by Shruti Gupta on 23/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -83,21 +83,21 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             customerVC.title = "Customer"
         }
         else if(nameFetch == "Logout"){
-//            let alertController = UIAlertController(title: "Do you really want to logOut", message: "press ok or cancel!", preferredStyle: .alert)
-//            
-//            let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-//                alert -> Void in
-//            })
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//            let cancelAction = UIAlertAction(title: "cancel", style: .default, handler: {
-//                alert -> Void in
-//                print("cancel")
-//                
-//            })
-//            alertController.addAction(cancelAction)
-//            self.present(alertController, animated: true, completion: nil)
-     }
+
+    let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
+                let signInVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController")
+                self.navigationController?.pushViewController(signInVC!, animated: true)
+                
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
+                refreshAlert .dismiss(animated: true, completion: nil)
+                }))
+            
+            present(refreshAlert, animated: true, completion: nil)
+            }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

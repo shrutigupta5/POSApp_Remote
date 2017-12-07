@@ -2,7 +2,7 @@
 //  ConfigurationViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 29/11/17.
+//  Created by Shruti Gupta  on 29/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -31,7 +31,7 @@ class ConfigurationViewController: UIViewController {
     @IBAction func buttonTableAction(_ sender: Any) {
         
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
-        let orderItemVC = storyBord.instantiateViewController(withIdentifier: "OrderItemViewController") as! OrderItemViewController
+        let orderItemVC = storyBord.instantiateViewController(withIdentifier: "AddFloorTableViewController") as! AddFloorTableViewController
         self.navigationController?.pushViewController(orderItemVC, animated: true)
         
     }

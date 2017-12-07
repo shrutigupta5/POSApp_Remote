@@ -2,7 +2,7 @@
 //  BaseViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 20/11/17.
+//  Created by Shruti Gupta  on 20/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 

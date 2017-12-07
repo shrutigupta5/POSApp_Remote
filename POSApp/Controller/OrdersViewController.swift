@@ -2,7 +2,7 @@
 //  OrdersViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 24/11/17.
+//  Created by Shruti Gupta on 24/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -17,7 +17,7 @@ protocol PopUpViewControllerDelegate: class {
 class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     func changeBackgroundColor(_ color: UIColor?) {
-        buttonReservation.backgroundColor = UIColor.black
+        buttonReservation.backgroundColor = color
     }
     var floorOneImageArray : [String] = [""]
     var floorOneNameArray : [String] = [""]
@@ -98,7 +98,7 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
             popOverVc.view.frame = self.view.frame
             self.view.addSubview(popOverVc.view)
             popOverVc.didMove(toParentViewController: self)
-            self.buttonReservation.backgroundColor = UIColor.brown
+            self.buttonReservation.backgroundColor = UIColor.customGreen
         }
     
     }

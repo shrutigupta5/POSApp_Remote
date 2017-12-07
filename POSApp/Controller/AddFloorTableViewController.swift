@@ -22,6 +22,7 @@ self.collectionViewAddFloor.register(UINib(nibName:"AddFloorCollectionViewCell",
 self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",bundle:nil), forCellWithReuseIdentifier: "AddTableCollectionViewCell")
         // Do any additional setup after loading the view.
         setupView()
+        
       
     }
     func setupView()

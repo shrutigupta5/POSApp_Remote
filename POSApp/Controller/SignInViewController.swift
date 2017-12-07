@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 17/11/17.
+//  Created by Shruti Gupta on 17/11/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -25,8 +25,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         setTextFieldDelegate()
         textFieldPlaceHolder()
         
-        textFieldEmail.text = "priya.gupta@gmail.com"
-        textFieldPassword.text = "priya123"
+        textFieldEmail.text = "shruti.gupta@gmail.com"
+        textFieldPassword.text = "123456"
         // for keybord show and hide
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)

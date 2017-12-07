@@ -2,7 +2,7 @@
 //  MenuListViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by Manisha Roy on 01/12/17.
+//  Created by Shruti Gupta on 01/12/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 

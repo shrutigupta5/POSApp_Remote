@@ -2,7 +2,7 @@
 //  AddFloorTableViewController.swift
 //  RestaurantMannegmentDemo1
 //
-//  Created by webwerks on 06/12/17.
+//  Created by Shruti Gupta on 06/12/17.
 //  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
@@ -11,12 +11,10 @@ import UIKit
 class AddFloorTableViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
 
     @IBOutlet weak var collectionViewAddFloor: UICollectionView!
-    
     @IBOutlet weak var collectionViewAddTable: UICollectionView!
     var floorArray = ["Hall","Balcony"]
     var tableArray = ["table1","table2","table3","table4","table5","table6","table7"]
     var index = 1
-    
     
     override func viewDidLoad() {
     super.viewDidLoad()

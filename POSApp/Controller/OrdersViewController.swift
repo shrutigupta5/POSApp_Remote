@@ -62,6 +62,7 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
     
         self.collectionViewOrder.register(UINib(nibName:"OrderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OrderCollectionViewCell")
         
+        
         floorOneNameArray = ["place1","place2", "place3" , "place4","place5","place6", "place7","place8"]
         floorOneImageArray = ["place1","place2", "place3" , "place4","place5","place6", "place7","place8"]
         hallNameArray =   ["place1","place2", "place3" , "place4","place5","place6", "place7","place8"]
@@ -80,7 +81,7 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tempArray.count
        
-}
+   }
          func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCollectionViewCell", for: indexPath) as! OrderCollectionViewCell
            collectionCell.imageViewFloor.image = UIImage.init(named: tempArray[indexPath.row])

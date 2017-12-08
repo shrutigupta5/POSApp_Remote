@@ -16,6 +16,7 @@ class AddFloorTableViewController: UIViewController,UICollectionViewDelegate,UIC
     var tableArray = ["table1","table2","table3","table4","table5","table6","table7"]
     var index = 1
     
+    
     override func viewDidLoad() {
     super.viewDidLoad()
 self.collectionViewAddFloor.register(UINib(nibName:"AddFloorCollectionViewCell",bundle:nil), forCellWithReuseIdentifier: "AddFloorCollectionViewCell")

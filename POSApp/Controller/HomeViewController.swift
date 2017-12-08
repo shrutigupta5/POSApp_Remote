@@ -23,8 +23,7 @@ class HomeViewController: UIViewController {
         
         designNavigation()
         setCustomColor()
-     //UIApplication.shared.statusBarFrame.backgroundColor = .red
-        // Do any additional setup after loading the view.
+     
     }
     
     func setCustomColor(){
@@ -46,10 +45,10 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 34)!, NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = UIColor.brown
         self.navigationController?.view.tintColor = UIColor.white
-        self.navigationItem.title = "Back"
-      
-        
-    }
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+}
     
     @IBAction func buttonConfigurationAction(_ sender: Any) {
         

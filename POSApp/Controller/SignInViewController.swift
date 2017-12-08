@@ -97,6 +97,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
                 let  homeVC = storyB.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                homeVC.title = "Home"
                 // adding navigation programatically
                 let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
                 navVC.setViewControllers([homeVC], animated: false)

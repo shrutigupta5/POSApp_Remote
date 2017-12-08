@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B6B6D457F026177033657D1 /* Pods_POSAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0E07A07A7E5EF58C7DF76 /* Pods_POSAppTests.framework */; };
+		E919F14A1FDA774D0047F40E /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E919F1481FDA774D0047F40E /* ProfileTableViewCell.swift */; };
+		E919F14B1FDA774D0047F40E /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E919F1491FDA774D0047F40E /* ProfileTableViewCell.xib */; };
 		E92676571FD83E4C0077983F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676561FD83E4C0077983F /* AppDelegate.swift */; };
 		E926765E1FD83E4C0077983F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E926765D1FD83E4C0077983F /* Assets.xcassets */; };
 		E926766C1FD83E4D0077983F /* POSAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926766B1FD83E4D0077983F /* POSAppTests.swift */; };
@@ -89,6 +91,8 @@
 		CFF0E07A07A7E5EF58C7DF76 /* Pods_POSAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54D61D607811C3F2A57A82E /* Pods-POSAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POSAppTests/Pods-POSAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D7337315AE2DC7EF93279C39 /* Pods_POSApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E919F1481FDA774D0047F40E /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		E919F1491FDA774D0047F40E /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		E92676531FD83E4C0077983F /* POSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92676561FD83E4C0077983F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E926765D1FD83E4C0077983F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */,
 				E9C281CA1FD903CF008B8713 /* AddTableCollectionViewCell.swift */,
 				E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */,
+				E919F1481FDA774D0047F40E /* ProfileTableViewCell.swift */,
+				E919F1491FDA774D0047F40E /* ProfileTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 				E96027601FD85C0C0099AA85 /* MenuListTableViewCell.xib in Resources */,
 				E92676C41FD84C2A0077983F /* Main.storyboard in Resources */,
 				E92676C31FD84C2A0077983F /* LaunchScreen.storyboard in Resources */,
+				E919F14B1FDA774D0047F40E /* ProfileTableViewCell.xib in Resources */,
 				E926765E1FD83E4C0077983F /* Assets.xcassets in Resources */,
 				E96027661FD85C0C0099AA85 /* SideMenuTableViewCell.xib in Resources */,
 				E960275E1FD85C0C0099AA85 /* MenuItemTableViewCell.xib in Resources */,
@@ -719,6 +726,7 @@
 				E96027981FD85EF00099AA85 /* RestaurantConstant.swift in Sources */,
 				E960279A1FD85EFE0099AA85 /* UIColor.swift in Sources */,
 				E96027611FD85C0C0099AA85 /* OrderCollectionViewCell.swift in Sources */,
+				E919F14A1FDA774D0047F40E /* ProfileTableViewCell.swift in Sources */,
 				E92676C91FD851FD0077983F /* RegisterViewController.swift in Sources */,
 				E96027751FD85CD90099AA85 /* ConfigurationViewController.swift in Sources */,
 				E960275F1FD85C0C0099AA85 /* MenuListTableViewCell.swift in Sources */,

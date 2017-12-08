@@ -13,10 +13,13 @@ class ConfigurationViewController: UIViewController {
     @IBOutlet weak var buttonPrint: DesignButton!
     @IBOutlet weak var buttonMenu: DesignButton!
     @IBOutlet weak var buttonTable: DesignButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomColor()
-        // Do any additional setup after loading the view.
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     }
 
     // set custom color
@@ -54,16 +57,4 @@ class ConfigurationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

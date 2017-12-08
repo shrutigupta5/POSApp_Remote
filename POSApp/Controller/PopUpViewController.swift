@@ -53,7 +53,7 @@ class PopUpViewController: UIViewController {
         
         let dateFormatter = DateFormatter()
         //dateFormatter.dateStyle = DateFormatter.Style.full
- //       dateFormatter.timeStyle = DateFormatter.Style.none
+       // dateFormatter.timeStyle = DateFormatter.Style.none
         dateFormatter.dateFormat = "dd-MM-yyyy"
         self.textFieldDate.text = dateFormatter.string(from: sender.date)
     }

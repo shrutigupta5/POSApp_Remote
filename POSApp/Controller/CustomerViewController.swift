@@ -10,7 +10,7 @@ import UIKit
 
 class CustomerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
-    var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
+    
     @IBOutlet weak var tableViewDropDown: UITableView!
     @IBOutlet weak var textFieldLastName: UITextField!
     @IBOutlet weak var textFieldFirstName: UITextField!
@@ -21,13 +21,36 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var viewFirstName: DesignableView!
     @IBOutlet weak var viewRoll: DesignableView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setTextFieldDelegate()
         setCustomColor()
         tableViewDropDown.isHidden = true
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+        
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        scrollView.contentInset = contentInset
+        
     }
     
     func setCustomColor(){
@@ -97,14 +120,6 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

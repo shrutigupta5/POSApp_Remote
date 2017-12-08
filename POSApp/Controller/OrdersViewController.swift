@@ -80,10 +80,11 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tempArray.count
        
-    }
+}
          func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OrderCollectionViewCell", for: indexPath) as! OrderCollectionViewCell
            collectionCell.imageViewFloor.image = UIImage.init(named: tempArray[indexPath.row])
+            
             return collectionCell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -108,12 +109,15 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         selectedCell.imageViewFloor.layer.borderColor = UIColor.clear.cgColor
         selectedCell.imageViewFloor.layer.borderWidth = 2.0
         
+        
     }
     @IBAction func segmentControlAction(_ sender: UISegmentedControl) {
-     
-        switch (sender.selectedSegmentIndex) {
+       
+        
+        switch (segmentControlOrder.selectedSegmentIndex) {
         case 0:
                 self.tempArray = self.hallImageArray
+                self.collectionViewOrder.reloadData()
             break;
         case 1:
         self.tempArray = self.balconeyImageArray
@@ -182,14 +186,5 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         buttonReservation.backgroundColor = UIColor.blue
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

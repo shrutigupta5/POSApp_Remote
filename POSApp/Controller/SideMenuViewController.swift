@@ -26,7 +26,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         self.tableViewSideMenu.delegate = self
         self.tableViewSideMenu.dataSource = self
         self.tableViewSideMenu.register(UINib(nibName:"SideMenuTableViewCell", bundle:nil), forCellReuseIdentifier: "SideMenuTableViewCell")
-        self.tableViewSideMenu.register(UINib(nibName:"SideMenuTableViewCell", bundle:nil), forCellReuseIdentifier: "SideMenuTableViewCell")
+        self.tableViewSideMenu.register(UINib(nibName:"ProfileTableViewCell", bundle:nil), forCellReuseIdentifier: "ProfileTableViewCell")
     }
     
     func loadData(){
@@ -40,10 +40,17 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         return menuDictArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let userCell = self.tableViewSideMenu.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell", for: indexPath)as! SideMenuTableViewCell
-        userCell.labelMenuName.text = menuDictArray[indexPath.row]["name"]
-         userCell.imageViewMenuItem.image = UIImage(named: menuDictArray[indexPath.row]["imageName"]!)
-        return userCell
+        if (indexPath.row == 0){
+            let profileCell = self.tableViewSideMenu.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath)as! ProfileTableViewCell
+            return profileCell
+        }
+        else{
+            let userCell = self.tableViewSideMenu.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell", for: indexPath)as! SideMenuTableViewCell
+            userCell.labelMenuName.text = menuDictArray[indexPath.row]["name"]
+            userCell.imageViewMenuItem.image = UIImage(named: menuDictArray[indexPath.row]["imageName"]!)
+            return userCell
+        }
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
@@ -87,8 +94,9 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
-                let signInVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController")
-                self.navigationController?.pushViewController(signInVC!, animated: true)
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseViewController")
+                self.present(viewController, animated: true, completion: nil)
+            
                 
             }))
             
@@ -100,7 +108,14 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if (indexPath.row == 0){
+            return 300
+        }
+        else
+        {
+           return 100
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,14 +123,6 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

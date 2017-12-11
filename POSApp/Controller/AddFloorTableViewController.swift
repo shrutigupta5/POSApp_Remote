@@ -13,8 +13,10 @@ class AddFloorTableViewController: UIViewController,UICollectionViewDelegate,UIC
     @IBOutlet weak var collectionViewAddFloor: UICollectionView!
     @IBOutlet weak var collectionViewAddTable: UICollectionView!
     var floorArray = ["Hall","Balcony"]
-    var tableArray = ["table1","table2","table3","table4","table5","table6","table7"]
+    var tableArray = ["table1","table2","table3","table4","table5","table6","table7","table1_Img","table2_Img","table3_Img","table4_Img"]
+    var addTableArray : [String] = []
     var index = 1
+    var tableIndex = 0
     
     
     override func viewDidLoad() {
@@ -32,6 +34,17 @@ self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",
         self.collectionViewAddFloor.dataSource = self
         self.collectionViewAddTable.delegate = self
         self.collectionViewAddTable.dataSource = self
+        
+//        tableViewAddFloor
+//        collectionViewAddFloor
+//        lblAddFloor
+//        btnAddFloor
+//        viewAddFloor
+//        scrollViewAddFloor
+//
+
+        self.collectionViewAddFloor.setNeedsLayout()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +66,7 @@ self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",
            return floorArray.count
         }
         else{
-            return tableArray.count
+            return addTableArray.count
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,7 +77,7 @@ self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",
         }
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddTableCollectionViewCell", for: indexPath)as! AddTableCollectionViewCell
-            let image = tableArray[indexPath.row]
+            let image = addTableArray[indexPath.row]
             cell.imageViewTable.image = UIImage(named:image)
             return cell
         }
@@ -81,6 +94,7 @@ self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",
     
     @IBAction func actionRemoveFloorButton(_ sender: Any) {
         if(floorArray.count > 2){
+            index = index - 1
             floorArray.removeLast()
             collectionViewAddFloor.reloadData()
         }
@@ -90,9 +104,26 @@ self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",
     }
     
     @IBAction func actionAddTableButton(_ sender: Any) {
-        
+
+       // tableArray.append(tableArray[tableIndex])
+        if (tableIndex == 0 || tableIndex < tableArray.count){
+        addTableArray.append(tableArray[tableIndex])
+        tableIndex = tableIndex + 1
+       collectionViewAddTable.reloadData()
+        }
+        else{
+            showDefaultAlertViewWith(alertTitle: "Not Available", alertMessage: "More table not available", okTitle: "ok", currentViewController: self)
+        }
     }
     
     @IBAction func actionRemoveTableButton(_ sender: Any) {
+        if(addTableArray.count > 0){
+            addTableArray.removeLast()
+            tableIndex = tableIndex - 1
+            collectionViewAddTable.reloadData()
+        }
+        else {
+            showDefaultAlertViewWith(alertTitle: "Never Deleted", alertMessage: "not deleted", okTitle: "ok", currentViewController: self)
+        }
     }
 }

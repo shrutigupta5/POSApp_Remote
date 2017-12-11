@@ -24,13 +24,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantImage" translatesAutoresizingMaskIntoConstraints="NO" id="wsU-Kl-aWM">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2017, POSApp Inc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-fn-FQQ">
+                                <rect key="frame" x="10" y="729" width="1004" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wsU-Kl-aWM" secondAttribute="trailing" id="Bzo-6S-N5D"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wsU-Kl-aWM" secondAttribute="bottom" id="DW4-fW-uKg"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="XAg-fn-FQQ" secondAttribute="bottom" constant="15" id="KAK-jC-IOr"/>
+                            <constraint firstAttribute="trailing" secondItem="XAg-fn-FQQ" secondAttribute="trailing" constant="10" id="KOK-Ni-EGp"/>
                             <constraint firstItem="wsU-Kl-aWM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fak-pf-pBc"/>
                             <constraint firstItem="wsU-Kl-aWM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="quo-It-rjo"/>
+                            <constraint firstItem="XAg-fn-FQQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="10" id="z5h-P7-Nps"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -18,13 +18,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var buttonSignIn: UIButton!
     
+    var appDelegate = AppDelegate()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         setCustomColor()
         setTextFieldDelegate()
         textFieldPlaceHolder()
-        
+         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
+
         textFieldEmail.text = "shruti.gupta@gmail.com"
         textFieldPassword.text = "123456"
         // for keybord show and hide
@@ -96,12 +99,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             if (self.textFieldEmail.text == fetchedUser[0].email) && (self.textFieldPassword.text == fetchedUser[0].password) {
                 
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
-                let  homeVC = storyB.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                homeVC.title = "Home"
-                // adding navigation programatically
                 let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
-                navVC.setViewControllers([homeVC], animated: false)
-                self.navigationController?.present(navVC, animated: false, completion: nil)
+                self.appDelegate.window?.rootViewController = navVC
                 
             }
             

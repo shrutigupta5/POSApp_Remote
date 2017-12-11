@@ -12,92 +12,110 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuListTableViewCell" rowHeight="68" id="KGk-i7-Jjw" customClass="MenuListTableViewCell" customModule="POSApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="668" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="668" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="668" height="59.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="668" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Px9-UY-Pxl">
-                        <rect key="frame" x="0.0" y="0.0" width="668" height="60"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-MF-bfI" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="133.5" height="60"/>
-                                <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Sh-zxG" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="133.5" y="0.0" width="133.5" height="60"/>
-                                <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-Zy-Yfu" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="267" y="0.0" width="134" height="60"/>
-                                <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4r-Mn-ZF5" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="401" y="0.0" width="133.5" height="60"/>
-                                <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-xm-zXA" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="534.5" y="0.0" width="133.5" height="60"/>
-                                <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  No." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-MF-bfI" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="73" height="49.5"/>
                         <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="60" id="g48-d4-HCa"/>
+                            <constraint firstAttribute="width" constant="73" id="h3x-bs-Xmf"/>
                         </constraints>
-                    </stackView>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Sh-zxG" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                        <rect key="frame" x="73" y="0.0" width="298" height="49.5"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4r-Mn-ZF5" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                        <rect key="frame" x="490" y="0.0" width="96" height="49.5"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="Nhz-XS-ROV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-xm-zXA" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                        <rect key="frame" x="586" y="0.0" width="82" height="49.5"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="82" id="4LX-yW-ACq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-Zy-Yfu" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                        <rect key="frame" x="369" y="0.0" width="121" height="49.5"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.67000001669999998" blue="0.67000001669999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="121" id="9rq-O9-HiT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Px9-UY-Pxl" secondAttribute="trailing" id="EN1-Ew-Wrf"/>
-                    <constraint firstItem="Px9-UY-Pxl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SKZ-Z9-OeD"/>
-                    <constraint firstItem="Px9-UY-Pxl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eFq-vg-FSu"/>
+                    <constraint firstAttribute="bottom" secondItem="z4r-Mn-ZF5" secondAttribute="bottom" id="5ra-uC-WGM"/>
+                    <constraint firstItem="z4r-Mn-ZF5" firstAttribute="leading" secondItem="tOT-Zy-Yfu" secondAttribute="trailing" id="JHs-8F-RSn"/>
+                    <constraint firstItem="O6B-Sh-zxG" firstAttribute="leading" secondItem="R7t-MF-bfI" secondAttribute="trailing" id="NOv-2F-aVJ"/>
+                    <constraint firstItem="kjj-xm-zXA" firstAttribute="leading" secondItem="z4r-Mn-ZF5" secondAttribute="trailing" id="Owk-jZ-oWH"/>
+                    <constraint firstItem="kjj-xm-zXA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PF9-lV-jSO"/>
+                    <constraint firstAttribute="trailing" secondItem="kjj-xm-zXA" secondAttribute="trailing" id="R0D-XB-Xke"/>
+                    <constraint firstAttribute="bottom" secondItem="O6B-Sh-zxG" secondAttribute="bottom" id="dlY-Yr-p9v"/>
+                    <constraint firstItem="z4r-Mn-ZF5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eYY-bE-CyO"/>
+                    <constraint firstItem="R7t-MF-bfI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fH3-4C-ua4"/>
+                    <constraint firstAttribute="bottom" secondItem="R7t-MF-bfI" secondAttribute="bottom" id="gZ1-w5-KDC"/>
+                    <constraint firstItem="z4r-Mn-ZF5" firstAttribute="leading" secondItem="tOT-Zy-Yfu" secondAttribute="trailing" id="gjc-Lw-KfP"/>
+                    <constraint firstAttribute="bottom" secondItem="kjj-xm-zXA" secondAttribute="bottom" id="hVN-Nb-zCu"/>
+                    <constraint firstItem="tOT-Zy-Yfu" firstAttribute="leading" secondItem="O6B-Sh-zxG" secondAttribute="trailing" constant="-2" id="kFP-AV-pTJ"/>
+                    <constraint firstItem="kjj-xm-zXA" firstAttribute="leading" secondItem="z4r-Mn-ZF5" secondAttribute="trailing" id="qT3-La-ivj"/>
+                    <constraint firstItem="R7t-MF-bfI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ula-6b-9aR"/>
+                    <constraint firstItem="tOT-Zy-Yfu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wU1-4o-tdi"/>
+                    <constraint firstItem="O6B-Sh-zxG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wxf-Ie-qpx"/>
+                    <constraint firstAttribute="bottom" secondItem="tOT-Zy-Yfu" secondAttribute="bottom" id="yOP-dX-5pp"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -107,7 +125,7 @@
                 <outlet property="labelPrice" destination="tOT-Zy-Yfu" id="D1C-ZC-DCT"/>
                 <outlet property="labelSpecial" destination="z4r-Mn-ZF5" id="OJA-M1-gSv"/>
             </connections>
-            <point key="canvasLocation" x="58" y="105"/>
+            <point key="canvasLocation" x="58" y="110"/>
         </tableViewCell>
     </objects>
 </document>

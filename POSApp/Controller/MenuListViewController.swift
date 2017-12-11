@@ -54,10 +54,10 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == tableViewCategory {
-            return 5
+            return 10
         }
         else if (tableView == tableViewMenuItems) {
-            return 6
+            return 10
         }
         return 0
         
@@ -78,8 +78,15 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(tableView == tableViewCategory)
+        {
+           return 90
+        }
+        else{
+            
+            return 70
+        }
         
-        return 90
         
     }
     override func didReceiveMemoryWarning() {

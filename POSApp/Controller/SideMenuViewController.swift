@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SideMenu
 
 class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
+    var appDelegate = AppDelegate()
+    
     @IBOutlet weak var tableViewSideMenu: UITableView!
     var menuDictArray : [[String : String]] = [[:]]
    
@@ -17,6 +20,8 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
            self.navigationController?.navigationBar.barTintColor = UIColor(red:(31/255.0), green:(31/255.0), blue:(31/255.0), alpha:1.0)
+        self.appDelegate = UIApplication.shared.delegate as! AppDelegate
+
         setupView()
         loadData()
         // Do any additional setup after loading the view.
@@ -92,12 +97,16 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         else if(nameFetch == "Logout"){
 
     let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
-            
+           
             refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseViewController")
-                self.present(viewController, animated: true, completion: nil)
-            
-                
+               
+                self.dismiss(animated: true, completion: {
+                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseViewController")
+                    let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
+                    navVC.setViewControllers([viewController], animated: false)
+                    self.appDelegate.window?.rootViewController = navVC
+                    self.dismissModalStack()
+                })
             }))
             
             refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
@@ -106,6 +115,22 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             
             present(refreshAlert, animated: true, completion: nil)
             }
+    }
+    
+    func dismissModalStack() {
+        
+        var vc: UIViewController? = self.presentedViewController
+        while ((vc?.presentedViewController) != nil) {
+            vc = vc?.presentingViewController
+        }
+        vc?.dismiss(animated: true, completion: { _ in })
+        
+        var svc: UIViewController? = SideMenuManager.menuLeftNavigationController?.presentingViewController
+        
+        while ((svc?.presentedViewController) != nil) {
+            svc = svc?.presentingViewController
+        }
+        svc?.dismiss(animated: true, completion: { _ in })
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.row == 0){

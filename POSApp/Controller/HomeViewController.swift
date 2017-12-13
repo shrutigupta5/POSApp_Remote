@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonOrders: DesignButton!
     @IBOutlet weak var buttonSideMenu: UIButton!
     
-    
+    var fetchEmail = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,9 +97,9 @@ class HomeViewController: UIViewController {
     }
     
     func addTapped (sender:UIButton) {
-        
         print("add pressed")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+        
         self.present(vc, animated: true, completion: nil)
         
     }

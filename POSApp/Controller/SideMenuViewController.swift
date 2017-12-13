@@ -15,13 +15,17 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var tableViewSideMenu: UITableView!
     var menuDictArray : [[String : String]] = [[:]]
-   
-//    var menuArray: [String] = []
+    var userDefaultsDictionary  : [String:String] = [:]
+    var userFirstName = ""
+    var userLastName = ""
+    var userEmail = ""
     override func viewDidLoad() {
         super.viewDidLoad()
            self.navigationController?.navigationBar.barTintColor = UIColor(red:(31/255.0), green:(31/255.0), blue:(31/255.0), alpha:1.0)
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+        let userDefaults = UserDefaults.standard
+        self.userDefaultsDictionary = userDefaults.value(forKey: "userInfoDict") as! [String:String]
+        
         setupView()
         loadData()
         // Do any additional setup after loading the view.
@@ -36,7 +40,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     func loadData(){
         
-           menuDictArray = [["name" : "","imageName" : "", "category" : "-1"], ["name" : "Home", "imageName" : "homeImage","category" : "-1"], ["name" : "Orders", "imageName" : "order1Image", "category" : "1"], ["name" : "End Of Day", "imageName" : "eod1", "category" : "3"],["name" : "Management", "imageName" : "managementImage", "category" : "2"], ["name" : "Configuration", "imageName" : "configuration", "category" : "-1"], ["name" : "Customer", "imageName" : "customerImg1", "category" : "-1"], ["name" : "Logout", "imageName" : "logoutImage", "category" : "-1"]]
+           menuDictArray = [["name" : "profile","imageName" : "", "category" : "-1"], ["name" : "Home", "imageName" : "homeImage","category" : "-1"], ["name" : "Orders", "imageName" : "order1Image", "category" : "1"], ["name" : "End Of Day", "imageName" : "eod_iconImg", "category" : "3"],["name" : "Management", "imageName" : "managemnt_icon", "category" : "2"], ["name" : "Configuration", "imageName" : "configure_icon", "category" : "-1"], ["name" : "Customer", "imageName" : "user_icon", "category" : "-1"], ["name" : "Logout", "imageName" : "logoutImage", "category" : "-1"]]
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -47,6 +51,9 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row == 0){
             let profileCell = self.tableViewSideMenu.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath)as! ProfileTableViewCell
+            profileCell.labelFirstName.text = self.userDefaultsDictionary["firstName"]
+            profileCell.labelLastName.text = self.userDefaultsDictionary["lastName"]
+            profileCell.labelEmailAddress.text = self.userDefaultsDictionary["email"]
             return profileCell
         }
         else{
@@ -64,6 +71,14 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             let OrderVC = storyBord.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
                         self.navigationController?.pushViewController(OrderVC, animated: true)
                         OrderVC.title = "order"
+        }
+        else if(nameFetch == "profile"){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            let scene = SceneType.SideMenuScene
+            signUpVC.sceneType = scene
+            self.navigationController?.pushViewController(signUpVC,animated: true)
+            
         }
         else if(nameFetch == "Home"){
             let homeVC = storyBord.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
@@ -97,9 +112,9 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         else if(nameFetch == "Logout"){
 
     let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
-           
+           refreshAlert.view.tintColor=UIColor.red
             refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
-               
+              
                 self.dismiss(animated: true, completion: {
                     let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BaseViewController")
                     let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
@@ -107,13 +122,17 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
                     self.appDelegate.window?.rootViewController = navVC
                     self.dismissModalStack()
                 })
+                
+
             }))
             
             refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
                 refreshAlert .dismiss(animated: true, completion: nil)
+                
                 }))
             
             present(refreshAlert, animated: true, completion: nil)
+            
             }
     }
     

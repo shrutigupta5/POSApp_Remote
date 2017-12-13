@@ -15,3 +15,4 @@ struct UserInfo {
     var email: String!
     var password: String!
 }
+

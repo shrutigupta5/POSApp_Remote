@@ -20,6 +20,7 @@
 		E92676C41FD84C2A0077983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C21FD84C2A0077983F /* Main.storyboard */; };
 		E92676C71FD84CC60077983F /* POSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676C61FD84CC60077983F /* POSManager.swift */; };
 		E92676C91FD851FD0077983F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676C81FD851FD0077983F /* RegisterViewController.swift */; };
+		E9485C251FDFCEDC0020D1FF /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */; };
 		E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */; };
 		E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */; };
 		E960275D1FD85C0C0099AA85 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027511FD85C0C0099AA85 /* MenuItemTableViewCell.swift */; };
@@ -51,8 +52,8 @@
 		E96027911FD85D7F0099AA85 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E960278A1FD85D7F0099AA85 /* FMDatabaseQueue.m */; };
 		E96027921FD85D7F0099AA85 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E960278D1FD85D7F0099AA85 /* FMResultSet.m */; };
 		E96027941FD85DCB0099AA85 /* CustomUIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027931FD85DCB0099AA85 /* CustomUIDesign.swift */; };
-		E96027961FD85EE00099AA85 /* DBManneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027951FD85EE00099AA85 /* DBManneger.swift */; };
-		E96027981FD85EF00099AA85 /* RestaurantConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027971FD85EF00099AA85 /* RestaurantConstant.swift */; };
+		E96027961FD85EE00099AA85 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027951FD85EE00099AA85 /* DBManager.swift */; };
+		E96027981FD85EF00099AA85 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027971FD85EF00099AA85 /* Constant.swift */; };
 		E960279A1FD85EFE0099AA85 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027991FD85EFE0099AA85 /* UIColor.swift */; };
 		E960279C1FD861720099AA85 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E960279B1FD861720099AA85 /* libsqlite3.0.tbd */; };
 		E9C281C71FD90366008B8713 /* AddFloorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */; };
@@ -109,6 +110,7 @@
 		E92676C21FD84C2A0077983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E92676C61FD84CC60077983F /* POSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSManager.swift; sourceTree = "<group>"; };
 		E92676C81FD851FD0077983F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		E96027511FD85C0C0099AA85 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,8 +149,8 @@
 		E960278C1FD85D7F0099AA85 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		E960278D1FD85D7F0099AA85 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		E96027931FD85DCB0099AA85 /* CustomUIDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIDesign.swift; sourceTree = "<group>"; };
-		E96027951FD85EE00099AA85 /* DBManneger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManneger.swift; sourceTree = "<group>"; };
-		E96027971FD85EF00099AA85 /* RestaurantConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantConstant.swift; sourceTree = "<group>"; };
+		E96027951FD85EE00099AA85 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		E96027971FD85EF00099AA85 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E96027991FD85EFE0099AA85 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E960279B1FD861720099AA85 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFloorTableViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				E96027711FD85CD90099AA85 /* SideMenuViewController.swift */,
 				E96027721FD85CD90099AA85 /* SignInViewController.swift */,
 				E96027731FD85CD90099AA85 /* SignUpViewController.swift */,
+				E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */,
 				E92676B31FD84A5D0077983F /* InitialViewController.swift */,
 				E92676C81FD851FD0077983F /* RegisterViewController.swift */,
 				E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */,
@@ -313,8 +316,8 @@
 		E92676BB1FD84B2A0077983F /* Comman */ = {
 			isa = PBXGroup;
 			children = (
-				E96027971FD85EF00099AA85 /* RestaurantConstant.swift */,
-				E96027951FD85EE00099AA85 /* DBManneger.swift */,
+				E96027971FD85EF00099AA85 /* Constant.swift */,
+				E96027951FD85EE00099AA85 /* DBManager.swift */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -723,7 +726,7 @@
 				E96027941FD85DCB0099AA85 /* CustomUIDesign.swift in Sources */,
 				E9C281CF1FD903CF008B8713 /* AddFloorCollectionViewCell.swift in Sources */,
 				E960277E1FD85CD90099AA85 /* SideMenuViewController.swift in Sources */,
-				E96027981FD85EF00099AA85 /* RestaurantConstant.swift in Sources */,
+				E96027981FD85EF00099AA85 /* Constant.swift in Sources */,
 				E960279A1FD85EFE0099AA85 /* UIColor.swift in Sources */,
 				E96027611FD85C0C0099AA85 /* OrderCollectionViewCell.swift in Sources */,
 				E919F14A1FDA774D0047F40E /* ProfileTableViewCell.swift in Sources */,
@@ -735,6 +738,7 @@
 				E96027771FD85CD90099AA85 /* EndOfDayViewController.swift in Sources */,
 				E92676B91FD84AA50077983F /* POSUser.swift in Sources */,
 				E96027901FD85D7F0099AA85 /* FMDatabasePool.m in Sources */,
+				E9485C251FDFCEDC0020D1FF /* ForgetPasswordViewController.swift in Sources */,
 				E960278E1FD85D7F0099AA85 /* FMDatabase.m in Sources */,
 				E92676571FD83E4C0077983F /* AppDelegate.swift in Sources */,
 				E96027781FD85CD90099AA85 /* HomeViewController.swift in Sources */,
@@ -749,7 +753,7 @@
 				E960278F1FD85D7F0099AA85 /* FMDatabaseAdditions.m in Sources */,
 				E92676B51FD84A5D0077983F /* InitialViewController.swift in Sources */,
 				E96027651FD85C0C0099AA85 /* SideMenuTableViewCell.swift in Sources */,
-				E96027961FD85EE00099AA85 /* DBManneger.swift in Sources */,
+				E96027961FD85EE00099AA85 /* DBManager.swift in Sources */,
 				E960277F1FD85CD90099AA85 /* SignInViewController.swift in Sources */,
 				E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */,
 			);

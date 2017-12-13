@@ -23,7 +23,9 @@ class InitialViewController: UIViewController {
     
     @IBAction func actionSigninSignupButton(_ sender: Any) {
         let storyB = UIStoryboard.init(name: "Main", bundle: nil)
-        let  baseVC = storyB.instantiateViewController(withIdentifier: "BaseViewController") as! BaseViewController
+        let  baseVC:BaseViewController = storyB.instantiateViewController(withIdentifier: "BaseViewController") as! BaseViewController
+        let scene = SceneType.InitialScene
+        baseVC.sceneType = scene
         self.navigationController?.pushViewController(baseVC, animated: true)
     }
     

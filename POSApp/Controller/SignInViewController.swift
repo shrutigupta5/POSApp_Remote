@@ -91,16 +91,22 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInAction(_ sender: Any) {
         
-        // fetching data base values and checking validation
+    // fetching data base values and checking validation
     let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+        
+        let userInfoDict:[String:String] = ["email":fetchedUser[0].email,"firstName":fetchedUser[0].firstName,"lastName":fetchedUser[0].lastName,"password":fetchedUser[0].password]
+        UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+        let result = UserDefaults.standard.value(forKey: "userInfoDict")
+        print(result!)
+        
         print("Data is = \(fetchedUser)")
+        
         if fetchedUser.count  > 0 {
             
             if (self.textFieldEmail.text == fetchedUser[0].email) && (self.textFieldPassword.text == fetchedUser[0].password) {
-                
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
                 let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
-                self.appDelegate.window?.rootViewController = navVC
+               self.appDelegate.window?.rootViewController = navVC
                 
             }
             
@@ -125,7 +131,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let forgetVC = storyboard.instantiateViewController(withIdentifier: "ForgetPasswordViewController") as! ForgetPasswordViewController
+        self.navigationController?.pushViewController(forgetVC,animated: true)
         
     }
     override func didReceiveMemoryWarning() {

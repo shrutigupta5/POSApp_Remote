@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var signInContainerView: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var signUpContainerView: UIView!
+    var sceneType : SceneType? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

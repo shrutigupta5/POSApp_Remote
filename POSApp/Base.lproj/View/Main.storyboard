@@ -413,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phG-vp-VtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="-771"/>
+            <point key="canvasLocation" x="1209" y="-137"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="JPF-Kl-CZ5">
@@ -717,7 +717,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvd-fJ-gaw" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="268" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                         <state key="normal" title="Table" image="tableImg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -739,7 +739,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="At3-7V-AIR" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="278" y="0.0" width="268" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                         <state key="normal" title="Menu" image="menuBtnImg">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -761,7 +761,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vz2-iq-47K" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="556" y="0.0" width="268" height="150"/>
-                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                         <state key="normal" title="Print" image="print">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1546,12 +1546,103 @@
                     <view key="view" contentMode="scaleToFill" id="m16-wi-4GL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="iQL-bH-gCk">
+                                <rect key="frame" x="30" y="349" width="964" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6Y-bw-cAR" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="219.5" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <state key="normal" title="Shift" image="shift_icon">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR5-pz-2eL" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                        <rect key="frame" x="248.5" y="0.0" width="219" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <state key="normal" title="TimeStamp" image="timeStamp_icon">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-wG-dX6" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                        <rect key="frame" x="496.5" y="0.0" width="219.5" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <state key="normal" title="Employee" image="employee_icon">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4b-Fa-1KA" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                        <rect key="frame" x="745" y="0.0" width="219" height="70"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <state key="normal" title="Cash in/out" image="cash_icon">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="jx7-f2-eBL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.57982981200000006" green="0.089238829909999998" blue="0.31603145599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iQL-bH-gCk" firstAttribute="centerY" secondItem="m16-wi-4GL" secondAttribute="centerY" id="CsM-iD-gTP"/>
+                            <constraint firstAttribute="trailing" secondItem="iQL-bH-gCk" secondAttribute="trailing" constant="30" id="MbU-TB-J8B"/>
+                            <constraint firstItem="iQL-bH-gCk" firstAttribute="leading" secondItem="m16-wi-4GL" secondAttribute="leading" constant="30" id="T9G-cz-iyi"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJz-PO-eKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4084" y="-41"/>
+            <point key="canvasLocation" x="4083.9843749999995" y="-41.40625"/>
         </scene>
         <!--Menu List View Controller-->
         <scene sceneID="IYJ-Ue-UfS">
@@ -1983,7 +2074,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnd-rh-tPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4641.2109375" y="632.8125"/>
+            <point key="canvasLocation" x="4747" y="659"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ndG-ux-Ccs">
@@ -2000,7 +2091,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLp-tK-iyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem title="Home" id="Sda-O9-vvf"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="-1584"/>
+            <point key="canvasLocation" x="1209" y="-988"/>
         </scene>
         <!--Base View Controller-->
         <scene sceneID="EcO-WE-Wyx">
@@ -2204,7 +2295,7 @@
                                                     <constraint firstAttribute="height" constant="54" id="THw-It-cHY"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="35"/>
-                                                <state key="normal" title="Forgot Password?">
+                                                <state key="normal" title="Forget Password?">
                                                     <color key="titleColor" red="0.99607843139999996" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -2472,7 +2563,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="customSize" width="200" height="200"/>
                                     </collectionViewCell>
                                 </cells>
@@ -2616,14 +2707,99 @@
             </objects>
             <point key="canvasLocation" x="5985.3515625" y="-58.59375"/>
         </scene>
+        <!--Forget Password View Controller-->
+        <scene sceneID="Bbb-9Q-E6j">
+            <objects>
+                <viewController storyboardIdentifier="ForgetPasswordViewController" id="IAD-2P-1eq" customClass="ForgetPasswordViewController" customModule="POSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8UY-E2-bsd"/>
+                        <viewControllerLayoutGuide type="bottom" id="8uj-f9-DGc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mXM-ni-R6h">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroungImage" translatesAutoresizingMaskIntoConstraints="NO" id="wsO-8R-DMp">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOf-S0-CBN" customClass="DesignableView" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="157" y="320" width="710" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="d3M-3T-NVq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f1-hm-cge" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                <rect key="frame" x="225" y="488" width="575" height="85"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="8qM-Dx-anY"/>
+                                    <constraint firstAttribute="width" constant="575" id="kaQ-d2-K4p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                                <state key="normal" title="SEND">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="3aA-cY-udW">
+                                <rect key="frame" x="167" y="351" width="67" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEL-xs-Kfe">
+                                <rect key="frame" x="248" y="334" width="607" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wsO-8R-DMp" firstAttribute="top" secondItem="mXM-ni-R6h" secondAttribute="top" id="Bep-3c-vFI"/>
+                            <constraint firstItem="1f1-hm-cge" firstAttribute="top" secondItem="lOf-S0-CBN" secondAttribute="bottom" constant="40" id="TlX-XT-bNh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lOf-S0-CBN" secondAttribute="trailing" constant="137" id="b29-Td-Qro"/>
+                            <constraint firstItem="1f1-hm-cge" firstAttribute="centerX" secondItem="mXM-ni-R6h" secondAttribute="centerX" id="bWE-0k-4eY"/>
+                            <constraint firstAttribute="trailing" secondItem="wsO-8R-DMp" secondAttribute="trailing" id="gvd-hU-LZl"/>
+                            <constraint firstItem="8uj-f9-DGc" firstAttribute="top" secondItem="wsO-8R-DMp" secondAttribute="bottom" id="kEz-Wd-7BO"/>
+                            <constraint firstItem="lOf-S0-CBN" firstAttribute="centerY" secondItem="mXM-ni-R6h" secondAttribute="centerY" id="lcG-oo-HWr"/>
+                            <constraint firstItem="wsO-8R-DMp" firstAttribute="leading" secondItem="mXM-ni-R6h" secondAttribute="leading" id="lsT-9A-aVj"/>
+                            <constraint firstItem="lOf-S0-CBN" firstAttribute="leading" secondItem="mXM-ni-R6h" secondAttribute="leadingMargin" constant="137" id="mgU-A7-Fay"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvr-L9-AcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6736.5234375" y="-52.34375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backgroungImage" width="476" height="267"/>
+        <image name="cash_icon" width="50" height="50"/>
         <image name="configBackImg1" width="280" height="236"/>
         <image name="configuration" width="64" height="64"/>
         <image name="customer1" width="192" height="117"/>
         <image name="customerImg1" width="50" height="50"/>
         <image name="email" width="64" height="64"/>
+        <image name="employee_icon" width="64" height="64"/>
         <image name="eod1" width="50" height="50"/>
         <image name="eodReport" width="64" height="64"/>
         <image name="homeBackgroungImg" width="270" height="160"/>
@@ -2635,7 +2811,9 @@
         <image name="password" width="64" height="64"/>
         <image name="print" width="90" height="90"/>
         <image name="reserveEod" width="64" height="63"/>
+        <image name="shift_icon" width="64" height="64"/>
         <image name="tableImg" width="90" height="90"/>
+        <image name="timeStamp_icon" width="50" height="50"/>
         <image name="userName" width="64" height="64"/>
         <image name="welcome" width="313" height="313"/>
     </resources>

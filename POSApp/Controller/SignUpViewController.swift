@@ -26,7 +26,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     var users: [UserInfo]!
     var dataBase : FMDatabase = FMDatabase()
     var dataArray: [AnyObject] = []
-    
+    var firstName = ""
+    var lastName  = ""
+    var email     = ""
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -39,10 +41,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.buttonSignUp.setTitle("Sign Up", for: .normal)
             break
         case .SideMenuScene?:
-//            let fetchedUser = DBManager.shared.fetchUsers(email: fetchEmailAddressMain)
-//            self.textFieldEmail.text = fetchedUser[0].email
-//            self.textFieldFirstName.text = fetchedUser[0].firstName
-//            self.textFieldLastName.text = fetchedUser[0].lastName
+
+            self.textFieldEmail.text = email
+            self.textFieldFirstName.text = firstName
+            self.textFieldLastName.text = lastName
+            textFieldEmail.isUserInteractionEnabled = false
             self.buttonSignUp.setTitle("Update", for: .normal)
             self.viewPassword.isHidden = true
             break
@@ -55,6 +58,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         // Do any additional setup after loading the view.
+        
+        
     }
     
     func setCustomColor(){
@@ -126,15 +131,32 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         var status : Bool = true
         
-        if value.characters.count < 6 {
+        if value.count < 6 {
             status = false
         }
         return status
     }
     
+    
     @IBAction func signUpButtonAction(_ sender: Any) {
+     
+     switch sceneType {
+        case .InitialScene?:
+           checkFieldsValidation()
+            break
+        case .SideMenuScene?:
+            DBManager.shared.updateUserInfo(firstName: self.textFieldFirstName.text!, lastName: self.textFieldLastName.text!, email:self.textFieldEmail.text!)
+            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+            let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
+            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+            let result = UserDefaults.standard.value(forKey: "userInfoDict")
+            print(result!)
+            break
+        default : break
+        }
+       
         
-        checkFieldsValidation()
+        
         
     }
     

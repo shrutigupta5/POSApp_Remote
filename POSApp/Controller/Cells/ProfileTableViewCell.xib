@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,56 +20,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_profile" translatesAutoresizingMaskIntoConstraints="NO" id="pFw-DY-nma">
-                        <rect key="frame" x="85" y="21" width="150" height="150"/>
+                        <rect key="frame" x="85" y="10" width="150" height="150"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="150" id="GFm-x0-wR7"/>
-                            <constraint firstAttribute="height" constant="150" id="UFt-rc-dG9"/>
+                            <constraint firstAttribute="width" constant="150" id="KVF-bB-rLi"/>
+                            <constraint firstAttribute="height" constant="150" id="p40-Pe-VgR"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="13w-xc-AE6">
-                        <rect key="frame" x="85" y="179" width="150" height="30"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shruti" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-9v-fD9">
-                                <rect key="frame" x="0.0" y="0.0" width="73" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gupta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWW-Tu-jVO">
-                                <rect key="frame" x="77" y="0.0" width="73" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="ELp-tb-FeF"/>
-                            <constraint firstAttribute="height" constant="30" id="ZuH-XX-HvA"/>
-                        </constraints>
-                    </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="sHW-1i-gXf">
-                        <rect key="frame" x="51" y="224" width="219" height="24"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-EF-MAp">
-                                <rect key="frame" x="0.0" y="0.0" width="219" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="219" id="0oR-A2-ISJ"/>
-                            <constraint firstAttribute="height" constant="24" id="geJ-1K-pWA"/>
-                        </constraints>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shruti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqG-9v-fD9">
+                        <rect key="frame" x="0.0" y="176" width="320" height="30"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-EF-MAp">
+                        <rect key="frame" x="0.0" y="229" width="320" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="sHW-1i-gXf" firstAttribute="top" secondItem="13w-xc-AE6" secondAttribute="bottom" constant="15" id="Epb-va-ITR"/>
-                    <constraint firstItem="sHW-1i-gXf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="L9k-KM-STv"/>
-                    <constraint firstItem="13w-xc-AE6" firstAttribute="top" secondItem="pFw-DY-nma" secondAttribute="bottom" constant="8" id="aqq-xX-3in"/>
-                    <constraint firstItem="pFw-DY-nma" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="e0x-d6-1Gt"/>
-                    <constraint firstItem="13w-xc-AE6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="kvc-pF-oid"/>
-                    <constraint firstItem="pFw-DY-nma" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="xO4-0Y-sff"/>
+                    <constraint firstItem="pFw-DY-nma" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="PMN-8d-VvZ"/>
+                    <constraint firstItem="TqG-9v-fD9" firstAttribute="top" secondItem="pFw-DY-nma" secondAttribute="bottom" constant="16" id="RsO-HT-doz"/>
+                    <constraint firstItem="pFw-DY-nma" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="WNN-ot-QGe"/>
+                    <constraint firstItem="rlC-EF-MAp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Xlj-fI-wbo"/>
+                    <constraint firstAttribute="trailing" secondItem="TqG-9v-fD9" secondAttribute="trailing" id="gT4-be-jCs"/>
+                    <constraint firstAttribute="trailing" secondItem="rlC-EF-MAp" secondAttribute="trailing" id="gpz-Sd-kS3"/>
+                    <constraint firstItem="TqG-9v-fD9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="p6D-NG-vPy"/>
+                    <constraint firstItem="rlC-EF-MAp" firstAttribute="top" secondItem="TqG-9v-fD9" secondAttribute="bottom" constant="23" id="use-7W-FKI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -78,7 +55,6 @@
                 <outlet property="imageViewProfile" destination="pFw-DY-nma" id="WrO-zq-h6q"/>
                 <outlet property="labelEmailAddress" destination="rlC-EF-MAp" id="vVG-GB-KPX"/>
                 <outlet property="labelFirstName" destination="TqG-9v-fD9" id="g5Z-pg-Ao1"/>
-                <outlet property="labelLastName" destination="OWW-Tu-jVO" id="tP6-B9-zLz"/>
             </connections>
         </tableViewCell>
     </objects>

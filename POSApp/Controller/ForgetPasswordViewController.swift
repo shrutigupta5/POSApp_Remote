@@ -10,26 +10,41 @@ import UIKit
 
 class ForgetPasswordViewController: UIViewController {
 
+    @IBOutlet weak var viewEmail: DesignableView!
+    @IBOutlet weak var textFieldEmail: DesignableTextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setCustomColor()
+        self.navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.barTintColor = UIColor.customLightBlue
+         navigationController?.navigationBar.tintColor = UIColor.white
+        
+        
     }
-
+    
+    func setCustomColor() {
+        
+        viewEmail.backgroundColor = UIColor.customLightBlue
+         createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: " Enter Email Address")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func actionSendButton(_ sender: Any) {
+        let fetusers = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+        if (self.textFieldEmail.text != ""){
+            showDefaultAlertViewWith(alertTitle: "New Password", alertMessage: fetusers[0].password, okTitle: "ok", currentViewController: self)
+        }
+        else{
+            showDefaultAlertViewWith(alertTitle:"something went wrong", alertMessage: "Please check your email", okTitle: "ok", currentViewController: self)
+        }
+        
     }
-    */
+    
+    
 
 }

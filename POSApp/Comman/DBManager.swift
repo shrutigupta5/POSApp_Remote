@@ -13,7 +13,7 @@ class DBManager: NSObject {
     var fieldEmail = "email"
     var fieldPassword = "password"
     var autoIncrementId = "Id"
-    static let shared: DBManager = DBManager()
+    static let shared = DBManager()
     
     let databaseFileName = "POSDB.sqlite"
     
@@ -23,6 +23,7 @@ class DBManager: NSObject {
   
     func fetchTextFieldValue(withFirstName firstName: String, withLastName lastName: String, withEmail email: String, withPassword password: String){
     }
+   
     override init() {
         super.init()
         
@@ -125,6 +126,19 @@ class DBManager: NSObject {
       
     return users
     }
-    
+    func updateUserInfo(firstName: String, lastName: String,email :String) {
+        if openDatabase() {
+            let query = "update POSUSER set \(fieldFirstName)=?, \(fieldLastName)=? where \(fieldEmail)=?"
+            
+            do {
+                try database.executeUpdate(query, values: [firstName, lastName,email])
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+            database.close()
+        }
+    }
 }
 

@@ -1,35 +1,29 @@
 //
 //  RegisterViewController.swift
-//  POSApp
+//  RestaurantMannegmentDemo1
 //
-//  Created by webwerks on 06/12/17.
-//  Copyright © 2017 webwerks. All rights reserved.
+//  Created by Shruti Gupta  on 20/11/17.
+//  Copyright © 2017 Neosofttech Technologies. All rights reserved.
 //
 
 import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var signUpContainerView: UIView!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var signInContainerView: UIView!
-   
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var signUpContainerView: UIView!
+    var sceneType : SceneType? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //  set segment control font size
-        let attribute = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 25.0)!, forKey: NSFontAttributeName as NSCopying)
-        segmentControl.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
-
+    //  set segment control font size
+   let attribute = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 25.0)!, forKey: NSFontAttributeName as NSCopying)
+    segmentControl.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func segmentControlChanged(_ sender: Any) {
+    @IBAction func segmentControlAction(_ sender: Any) {
         
         switch segmentControl.selectedSegmentIndex {
             
@@ -46,15 +40,15 @@ class RegisterViewController: UIViewController {
             
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.isNavigationBarHidden = true
+        
     }
-    */
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }

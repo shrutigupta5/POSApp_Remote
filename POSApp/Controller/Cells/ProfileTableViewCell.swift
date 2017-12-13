@@ -12,7 +12,7 @@ class ProfileTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageViewProfile: UIImageView!
     @IBOutlet weak var labelFirstName: UILabel!
-    @IBOutlet weak var labelLastName: UILabel!
+   
     @IBOutlet weak var labelEmailAddress: UILabel!
     
     override func awakeFromNib() {

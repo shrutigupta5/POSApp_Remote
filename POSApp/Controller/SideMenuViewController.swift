@@ -114,28 +114,26 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         }
         else if(nameFetch == "Logout"){
 
-    let refreshAlert = UIAlertController(title: "LogOut", message: "Are You Sure to Log Out ? ", preferredStyle: UIAlertControllerStyle.alert)
-            refreshAlert.view.tintColor=UIColor.red
-            refreshAlert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { (action: UIAlertAction!) in
-
+          //mark:custom alert
+            let alert = UIAlertController(title: "LogOut",
+                                          message: "Are You Sure to Log Out ?",
+                                          preferredStyle: .alert)
+            let submitAction = UIAlertAction(title: "LogOut", style: .default, handler: { (action) -> Void in
                 self.dismiss(animated: true, completion: {
                     let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
-                    let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
-                     UserDefaults.standard.removeObject(forKey: "userInfoDict")
-                    navVC.setViewControllers([viewController], animated: false)
-                    self.appDelegate.window?.rootViewController = navVC
-                    self.dismissModalStack()
-                })
+                        let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
+                    UserDefaults.standard.removeObject(forKey: "userInfoDict")
+                navVC.setViewControllers([viewController], animated: false)
+                self.appDelegate.window?.rootViewController = navVC
+                self.dismissModalStack()
+        })
+    })
+            let cancel = UIAlertAction(title: "Nevermind", style: .destructive, handler: { (action) -> Void in })
+            alert.view.tintColor = UIColor.blue
+            alert.addAction(submitAction)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
 
-
-            }))
-
-            refreshAlert.addAction(UIAlertAction(title: "Nevermind", style: .default, handler: { (action: UIAlertAction!) in
-                refreshAlert .dismiss(animated: true, completion: nil)
-
-                }))
-
-            present(refreshAlert, animated: true, completion: nil)
             
         }
     }

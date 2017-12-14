@@ -24,7 +24,8 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var scrollView: UIScrollView!
     
     var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
-    
+    var activeField: UITextField?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,22 +35,29 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     func keyboardWillShow(notification:NSNotification){
         
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
+        var info = notification.userInfo!
+        let kbSize: CGSize = ((info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size)
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize.height
+//        if !aRect.contains(activeField!.frame.origin) {
+//            self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+//        }
         
     }
     
     func keyboardWillHide(notification:NSNotification){
         
-        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        scrollView.contentInset = contentInset
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
         
     }
     
@@ -105,7 +113,13 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         return true
         
     }
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
+    }
     func setTextFieldDelegate(){
         
     textFieldFirstName.delegate = self

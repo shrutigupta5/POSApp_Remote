@@ -19,6 +19,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonSignIn: UIButton!
     
     var appDelegate = AppDelegate()
+    var activeField: UITextField!
     
     override func viewDidLoad() {
         
@@ -26,10 +27,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         setCustomColor()
         setTextFieldDelegate()
         textFieldPlaceHolder()
-         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-        textFieldEmail.text = "shruti.gupta@gmail.com"
-        textFieldPassword.text = "123456"
         // for keybord show and hide
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -71,38 +70,48 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification:NSNotification){
-        
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-        
+        var info = notification.userInfo!
+        let kbSize: CGSize = ((info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size)
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize.height
     }
     
     func keyboardWillHide(notification:NSNotification){
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
         
-        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        scrollView.contentInset = contentInset
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
+    }
     @IBAction func signInAction(_ sender: Any) {
         
     // fetching data base values and checking validation
     let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
         
-        let userInfoDict:[String:String] = ["email":fetchedUser[0].email,"firstName":fetchedUser[0].firstName,"lastName":fetchedUser[0].lastName,"password":fetchedUser[0].password]
-        UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
-        let result = UserDefaults.standard.value(forKey: "userInfoDict")
-        print(result!)
         
-        print("Data is = \(fetchedUser)")
         
         if fetchedUser.count  > 0 {
+            let userInfoDict:[String:String] = ["email":fetchedUser[0].email,"firstName":fetchedUser[0].firstName,"lastName":fetchedUser[0].lastName,"password":fetchedUser[0].password]
+            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+            let result = UserDefaults.standard.value(forKey: "userInfoDict")
+            print(result!)
             
+            print("Data is = \(fetchedUser)")
             if (self.textFieldEmail.text == fetchedUser[0].email) && (self.textFieldPassword.text == fetchedUser[0].password) {
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
                 let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController

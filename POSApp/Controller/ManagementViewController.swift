@@ -12,7 +12,9 @@ class ManagementViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +23,18 @@ class ManagementViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-   
+    @IBAction func actionShiftButton(_ sender: Any) {
+        
+    }
+    
+    @IBAction func actionTimeStampButton(_ sender: Any) {
+    }
+    
+    @IBAction func actionEmployeeButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let forgetVC = storyboard.instantiateViewController(withIdentifier: "AddEmployeeViewController") as! AddEmployeeViewController
+        self.navigationController?.pushViewController(forgetVC,animated: true)
+    }
+    @IBAction func actionCashInOutButton(_ sender: Any) {
+    }
 }

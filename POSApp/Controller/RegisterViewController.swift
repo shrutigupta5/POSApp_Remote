@@ -47,6 +47,14 @@ class RegisterViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "signUpSegue") {
+            let signUpVC = segue.destination  as! SignUpViewController
+            print("\(signUpVC)")
+            signUpVC.sceneType = SceneType.InitialScene
+    
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

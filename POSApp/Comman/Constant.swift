@@ -12,6 +12,8 @@ import UIKit
 public enum SceneType{
     case InitialScene
     case SideMenuScene
+    case CustomerScene
+    case ManagementScene
 }
 
 func  showDefaultAlertViewWith(alertTitle:String, alertMessage:String, okTitle:String, currentViewController :UIViewController) {

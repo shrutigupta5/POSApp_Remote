@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     var firstName = ""
     var lastName  = ""
     var email     = ""
+    var activeField: UITextField!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -100,25 +101,39 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     func keyboardWillShow(notification:NSNotification){
         
-        var userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-        
-    }
+        var info = notification.userInfo!
+        let kbSize: CGSize = ((info[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size)
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= kbSize.height
+//        if !aRect.contains(activeField.frame.origin) {
+//            self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+//        }
+}
     
     func keyboardWillHide(notification:NSNotification){
         
-        let contentInset:UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        scrollView.contentInset = contentInset
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+       
+}
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
         
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
+    }
     func isValidEmail(testStr:String) -> Bool {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -142,6 +157,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
      
      switch sceneType {
         case .InitialScene?:
+            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+            let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
+            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+            let result = UserDefaults.standard.value(forKey: "userInfoDict")
+            print(result!)
            checkFieldsValidation()
             break
         case .SideMenuScene?:
@@ -151,6 +171,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
             let result = UserDefaults.standard.value(forKey: "userInfoDict")
             print(result!)
+            showDefaultAlertViewWith(alertTitle: "Success", alertMessage: "update successfully", okTitle: "ok", currentViewController: self)
             break
         default : break
         }

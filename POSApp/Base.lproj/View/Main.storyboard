@@ -600,6 +600,7 @@
                                 <constraints>
                                     <constraint firstItem="MfJ-Ff-A2n" firstAttribute="height" secondItem="fte-NA-ffi" secondAttribute="height" priority="250" id="6d3-MR-2oX"/>
                                     <constraint firstAttribute="trailing" secondItem="MfJ-Ff-A2n" secondAttribute="trailing" id="FZe-x8-xOU"/>
+                                    <constraint firstItem="MfJ-Ff-A2n" firstAttribute="centerX" secondItem="fte-NA-ffi" secondAttribute="centerX" id="Foe-Ti-Xah"/>
                                     <constraint firstItem="MfJ-Ff-A2n" firstAttribute="top" secondItem="fte-NA-ffi" secondAttribute="top" id="PVI-uW-ahU"/>
                                     <constraint firstItem="MfJ-Ff-A2n" firstAttribute="leading" secondItem="fte-NA-ffi" secondAttribute="leading" id="SgC-at-8wk"/>
                                     <constraint firstAttribute="bottom" secondItem="MfJ-Ff-A2n" secondAttribute="bottom" id="ju4-jZ-bug"/>
@@ -1133,6 +1134,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-W4-gP8" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="268" height="150"/>
                                                 <color key="backgroundColor" red="0.36078431370000003" green="0.5450980392" blue="0.61176470589999998" alpha="0.74940271410000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                 <state key="normal" title="EOD" image="eod1">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -1151,6 +1153,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldl-GB-BHV" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                                 <rect key="frame" x="278" y="0.0" width="268" height="150"/>
                                                 <color key="backgroundColor" red="0.36078431370000003" green="0.5450980392" blue="0.61176470589999998" alpha="0.74940271410000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                 <state key="normal" title="Reserve EOD" image="reserveEod">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -1169,6 +1172,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4v-Rs-L9t" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
                                                 <rect key="frame" x="556" y="0.0" width="268" height="150"/>
                                                 <color key="backgroundColor" red="0.36078431370000003" green="0.5450980392" blue="0.61176470589999998" alpha="0.74940271410000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                 <state key="normal" title="EOD Report" image="eodReport">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -1548,10 +1552,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="iQL-bH-gCk">
-                                <rect key="frame" x="30" y="349" width="964" height="70"/>
+                                <rect key="frame" x="30" y="319" width="964" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6Y-bw-cAR" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="219.5" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="219.5" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                         <state key="normal" title="Shift" image="shift_icon">
@@ -1568,9 +1572,12 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionShiftButton:" destination="ecV-V8-CfU" eventType="touchUpInside" id="uw9-HI-dan"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR5-pz-2eL" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                        <rect key="frame" x="248.5" y="0.0" width="219" height="70"/>
+                                        <rect key="frame" x="248.5" y="0.0" width="219" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                         <state key="normal" title="TimeStamp" image="timeStamp_icon">
@@ -1587,9 +1594,12 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionTimeStampButton:" destination="ecV-V8-CfU" eventType="touchUpInside" id="pIC-T9-dm9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-wG-dX6" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                        <rect key="frame" x="496.5" y="0.0" width="219.5" height="70"/>
+                                        <rect key="frame" x="496.5" y="0.0" width="219.5" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                         <state key="normal" title="Employee" image="employee_icon">
@@ -1606,9 +1616,12 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionEmployeeButton:" destination="ecV-V8-CfU" eventType="touchUpInside" id="HoJ-dh-JjW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4b-Fa-1KA" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                        <rect key="frame" x="745" y="0.0" width="219" height="70"/>
+                                        <rect key="frame" x="745" y="0.0" width="219" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                         <state key="normal" title="Cash in/out" image="cash_icon">
@@ -1625,10 +1638,13 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionCashInOutButton:" destination="ecV-V8-CfU" eventType="touchUpInside" id="DpB-Ng-gYa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="jx7-f2-eBL"/>
+                                    <constraint firstAttribute="height" constant="130" id="jx7-f2-eBL"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -2111,7 +2127,7 @@
                             <containerView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fta-jW-T1j">
                                 <rect key="frame" x="0.0" y="172" width="1024" height="596"/>
                                 <connections>
-                                    <segue destination="I00-0u-pwT" kind="embed" id="fAa-Aq-KKu"/>
+                                    <segue destination="I00-0u-pwT" kind="embed" identifier="signUpSegue" id="fAa-Aq-KKu"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="11h-jI-rSr">
@@ -2197,7 +2213,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="eZ4-hy-TUG">
                                                         <rect key="frame" x="22" y="25" width="57" height="60"/>
@@ -2243,7 +2259,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -2805,6 +2821,209 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvr-L9-AcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6736.5234375" y="-52.34375"/>
+        </scene>
+        <!--Add Employee View Controller-->
+        <scene sceneID="Yvu-b7-bS4">
+            <objects>
+                <viewController storyboardIdentifier="AddEmployeeViewController" id="B59-R0-dEk" customClass="AddEmployeeViewController" customModule="POSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qIY-8b-sm1"/>
+                        <viewControllerLayoutGuide type="bottom" id="tZi-Y5-Waw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q04-Z8-avy">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJa-mh-t0i">
+                                <rect key="frame" x="0.0" y="658" width="1024" height="110"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="laA-70-7jz">
+                                        <rect key="frame" x="20" y="30" width="984" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQJ-AA-nCP" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="226.5" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <state key="normal" title="Add New employee">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-E0-4Ck" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                <rect key="frame" x="252.5" y="0.0" width="226.5" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <state key="normal" title="Edit">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hy-I2-8TY" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                <rect key="frame" x="505" y="0.0" width="226.5" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <state key="normal" title="Delete">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I79-CR-Afc" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
+                                                <rect key="frame" x="757.5" y="0.0" width="226.5" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <state key="normal" title="Close">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerBorder">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="dem-CV-0RI"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.57982981200000006" green="0.089238829909999998" blue="0.31603145599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="laA-70-7jz" firstAttribute="top" secondItem="zJa-mh-t0i" secondAttribute="top" constant="30" id="4C7-wH-81m"/>
+                                    <constraint firstItem="laA-70-7jz" firstAttribute="leading" secondItem="zJa-mh-t0i" secondAttribute="leading" constant="20" id="60B-QP-PRc"/>
+                                    <constraint firstAttribute="trailing" secondItem="laA-70-7jz" secondAttribute="trailing" constant="20" id="hlN-cv-vSi"/>
+                                    <constraint firstAttribute="height" constant="110" id="srm-q1-vP9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aH-1X-FhK">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="140"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="Wug-cW-ZSB">
+                                        <rect key="frame" x="0.0" y="80" width="1024" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-cc-yJ2">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9j-Zy-AAT">
+                                                <rect key="frame" x="128" y="0.0" width="129.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bal-hr-nVi">
+                                                <rect key="frame" x="255.5" y="0.0" width="130" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iju-09-Etb">
+                                                <rect key="frame" x="383.5" y="0.0" width="129.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Addess" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxF-c7-w3c">
+                                                <rect key="frame" x="511" y="0.0" width="130" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzt-3s-uW5">
+                                                <rect key="frame" x="639" y="0.0" width="129.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hourly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGa-d5-Pj6">
+                                                <rect key="frame" x="766.5" y="0.0" width="130" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-C6-7wz">
+                                                <rect key="frame" x="894.5" y="0.0" width="129.5" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="nFG-K0-Mju"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.57982981200000006" green="0.089238829909999998" blue="0.31603145599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Wug-cW-ZSB" firstAttribute="top" secondItem="5aH-1X-FhK" secondAttribute="top" constant="80" id="84O-Lu-fGb"/>
+                                    <constraint firstAttribute="height" constant="140" id="8Jk-hC-Z0d"/>
+                                    <constraint firstItem="Wug-cW-ZSB" firstAttribute="leading" secondItem="5aH-1X-FhK" secondAttribute="leading" id="qkZ-8t-kHN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wug-cW-ZSB" secondAttribute="trailing" id="sak-X2-vea"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vHl-H6-UPf">
+                                <rect key="frame" x="0.0" y="148" width="1024" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zJa-mh-t0i" firstAttribute="leading" secondItem="q04-Z8-avy" secondAttribute="leading" id="8zc-fT-GvI"/>
+                            <constraint firstItem="zJa-mh-t0i" firstAttribute="top" secondItem="vHl-H6-UPf" secondAttribute="bottom" constant="8" id="Mmh-0T-mgK"/>
+                            <constraint firstItem="5aH-1X-FhK" firstAttribute="leading" secondItem="q04-Z8-avy" secondAttribute="leading" id="MxL-2E-LOT"/>
+                            <constraint firstAttribute="trailing" secondItem="5aH-1X-FhK" secondAttribute="trailing" id="POB-sk-cKl"/>
+                            <constraint firstAttribute="trailing" secondItem="zJa-mh-t0i" secondAttribute="trailing" id="Prc-al-xke"/>
+                            <constraint firstAttribute="trailing" secondItem="vHl-H6-UPf" secondAttribute="trailing" id="Qme-Ch-k6m"/>
+                            <constraint firstItem="vHl-H6-UPf" firstAttribute="top" secondItem="5aH-1X-FhK" secondAttribute="bottom" constant="8" id="aF0-NA-OOb"/>
+                            <constraint firstItem="vHl-H6-UPf" firstAttribute="leading" secondItem="q04-Z8-avy" secondAttribute="leading" id="d38-82-X5G"/>
+                            <constraint firstItem="tZi-Y5-Waw" firstAttribute="top" secondItem="zJa-mh-t0i" secondAttribute="bottom" id="dMR-LC-gzI"/>
+                            <constraint firstItem="5aH-1X-FhK" firstAttribute="top" secondItem="q04-Z8-avy" secondAttribute="top" id="ycl-wp-P2t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableViewCustomerList" destination="vHl-H6-UPf" id="0Po-ti-55t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXu-02-eVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7408.5937499999991" y="-59.375"/>
         </scene>
     </scenes>
     <resources>

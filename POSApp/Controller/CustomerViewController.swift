@@ -20,15 +20,16 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var viewContactNo: DesignableView!
     @IBOutlet weak var viewFirstName: DesignableView!
     @IBOutlet weak var viewRoll: DesignableView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var labelFirstName: UILabel!
+    @IBOutlet weak var labelLastName: UILabel!
     
     var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
     var activeField: UITextField?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.labelFirstName.text = Localizator.instance.localize(string: "key_user")
         setTextFieldDelegate()
         setCustomColor()
         tableViewDropDown.isHidden = true

@@ -17,9 +17,12 @@
 		E92676771FD83E4D0077983F /* POSAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676761FD83E4D0077983F /* POSAppUITests.swift */; };
 		E92676B51FD84A5D0077983F /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676B31FD84A5D0077983F /* InitialViewController.swift */; };
 		E92676B91FD84AA50077983F /* POSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676B81FD84AA50077983F /* POSUser.swift */; };
-		E92676C31FD84C2A0077983F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */; };
-		E92676C41FD84C2A0077983F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92676C21FD84C2A0077983F /* Main.storyboard */; };
 		E92676C71FD84CC60077983F /* POSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92676C61FD84CC60077983F /* POSManager.swift */; };
+		E93FC40B1FE3C78B00C7167B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93FC40A1FE3C78B00C7167B /* Reachability.swift */; };
+		E93FC42C1FE3DDB800C7167B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93FC42E1FE3DDB800C7167B /* Main.storyboard */; };
+		E93FC4311FE3DF0400C7167B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93FC4331FE3DF0400C7167B /* LaunchScreen.storyboard */; };
+		E93FC4381FE3F37E00C7167B /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = E93FC43A1FE3F37E00C7167B /* Localizable.plist */; };
+		E93FC43E1FE4035900C7167B /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93FC43D1FE4035800C7167B /* Localizator.swift */; };
 		E9485C251FDFCEDC0020D1FF /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */; };
 		E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */; };
 		E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */; };
@@ -109,9 +112,18 @@
 		E92676781FD83E4D0077983F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E92676B31FD84A5D0077983F /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		E92676B81FD84AA50077983F /* POSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSUser.swift; sourceTree = "<group>"; };
-		E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E92676C21FD84C2A0077983F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E92676C61FD84CC60077983F /* POSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSManager.swift; sourceTree = "<group>"; };
+		E93FC40A1FE3C78B00C7167B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		E93FC42D1FE3DDB800C7167B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E93FC42F1FE3DDCB00C7167B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		E93FC4301FE3DED300C7167B /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		E93FC4321FE3DF0400C7167B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E93FC4351FE3DF0800C7167B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E93FC4371FE3DF0B00C7167B /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E93FC4391FE3F37E00C7167B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Localizable.plist; sourceTree = "<group>"; };
+		E93FC43B1FE3F38000C7167B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ar; path = ar.lproj/Localizable.plist; sourceTree = "<group>"; };
+		E93FC43C1FE3F38200C7167B /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "hi-IN"; path = "hi-IN.lproj/Localizable.plist"; sourceTree = "<group>"; };
+		E93FC43D1FE4035800C7167B /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -321,7 +333,10 @@
 			isa = PBXGroup;
 			children = (
 				E96027971FD85EF00099AA85 /* Constant.swift */,
+				E93FC40A1FE3C78B00C7167B /* Reachability.swift */,
+				E93FC43D1FE4035800C7167B /* Localizator.swift */,
 				E96027951FD85EE00099AA85 /* DBManager.swift */,
+				E93FC43A1FE3F37E00C7167B /* Localizable.plist */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -380,8 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				E92676C51FD84C760077983F /* Xib */,
-				E92676C11FD84C2A0077983F /* LaunchScreen.storyboard */,
-				E92676C21FD84C2A0077983F /* Main.storyboard */,
+				E93FC4331FE3DF0400C7167B /* LaunchScreen.storyboard */,
+				E93FC42E1FE3DDB800C7167B /* Main.storyboard */,
 			);
 			name = View;
 			path = Base.lproj/View;
@@ -520,6 +535,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				"hi-IN",
 			);
 			mainGroup = E926764A1FD83E4C0077983F;
 			productRefGroup = E92676541FD83E4C0077983F /* Products */;
@@ -539,11 +556,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96027621FD85C0C0099AA85 /* OrderCollectionViewCell.xib in Resources */,
+				E93FC4381FE3F37E00C7167B /* Localizable.plist in Resources */,
 				E96027641FD85C0C0099AA85 /* OrderItemTableViewCell.xib in Resources */,
 				E96027601FD85C0C0099AA85 /* MenuListTableViewCell.xib in Resources */,
-				E92676C41FD84C2A0077983F /* Main.storyboard in Resources */,
+				E93FC42C1FE3DDB800C7167B /* Main.storyboard in Resources */,
 				E9666DF71FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib in Resources */,
-				E92676C31FD84C2A0077983F /* LaunchScreen.storyboard in Resources */,
+				E93FC4311FE3DF0400C7167B /* LaunchScreen.storyboard in Resources */,
 				E919F14B1FDA774D0047F40E /* ProfileTableViewCell.xib in Resources */,
 				E926765E1FD83E4C0077983F /* Assets.xcassets in Resources */,
 				E96027661FD85C0C0099AA85 /* SideMenuTableViewCell.xib in Resources */,
@@ -758,11 +776,13 @@
 				E960277D1FD85CD90099AA85 /* PopUpViewController.swift in Sources */,
 				E96027801FD85CD90099AA85 /* SignUpViewController.swift in Sources */,
 				E960277B1FD85CD90099AA85 /* OrderItemViewController.swift in Sources */,
+				E93FC43E1FE4035900C7167B /* Localizator.swift in Sources */,
 				E960278F1FD85D7F0099AA85 /* FMDatabaseAdditions.m in Sources */,
 				E92676B51FD84A5D0077983F /* InitialViewController.swift in Sources */,
 				E96027651FD85C0C0099AA85 /* SideMenuTableViewCell.swift in Sources */,
 				E96027961FD85EE00099AA85 /* DBManager.swift in Sources */,
 				E960277F1FD85CD90099AA85 /* SignInViewController.swift in Sources */,
+				E93FC40B1FE3C78B00C7167B /* Reachability.swift in Sources */,
 				E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,11 +818,45 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		E93FC42E1FE3DDB800C7167B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E93FC42D1FE3DDB800C7167B /* Base */,
+				E93FC42F1FE3DDCB00C7167B /* ar */,
+				E93FC4301FE3DED300C7167B /* hi-IN */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E93FC4331FE3DF0400C7167B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E93FC4321FE3DF0400C7167B /* Base */,
+				E93FC4351FE3DF0800C7167B /* ar */,
+				E93FC4371FE3DF0B00C7167B /* hi-IN */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E93FC43A1FE3F37E00C7167B /* Localizable.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E93FC4391FE3F37E00C7167B /* Base */,
+				E93FC43B1FE3F38000C7167B /* ar */,
+				E93FC43C1FE3F38200C7167B /* hi-IN */,
+			);
+			name = Localizable.plist;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		E92676791FD83E4D0077983F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -854,6 +908,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -899,6 +954,7 @@
 			baseConfigurationReference = 519838D646A3ED8AB7B5B56F /* Pods-POSApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = POSApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -916,6 +972,7 @@
 			baseConfigurationReference = 2DFF51E18217DAC905DA866F /* Pods-POSApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = POSApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

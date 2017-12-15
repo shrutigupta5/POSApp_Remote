@@ -12,7 +12,7 @@ class InitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +27,7 @@ class InitialViewController: UIViewController {
         let scene = SceneType.InitialScene
         baseVC.sceneType = scene
         self.navigationController?.pushViewController(baseVC, animated: true)
+        
     }
     
     

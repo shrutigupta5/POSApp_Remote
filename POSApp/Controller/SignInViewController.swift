@@ -20,7 +20,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     var appDelegate = AppDelegate()
     var activeField: UITextField!
-    
+    let reachability = Reachability()!
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -98,7 +98,44 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
+    func internetChanged(note: Notification){
+        let reachability = note.object as! Reachability
+        if reachability.connection != .none{
+            if reachability.connection == .wifi{
+                DispatchQueue.main.async {
+                    //self.callToGetWebServices()
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "please turn on intternet connection", okTitle: "ok", currentViewController: self)
+                }
+            }
+        }
+        else{
+            DispatchQueue.main.async {
+                showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "something went wrong", okTitle: "ok", currentViewController: self)
+            }
+        }
+    }
     @IBAction func signInAction(_ sender: Any) {
+        reachability.whenReachable = { _ in
+            DispatchQueue.main.async {
+               // self.callToGetWebServices()
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            DispatchQueue.main.async {
+                showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "please turn on intternet connection", okTitle: "ok", currentViewController: self)
+            }
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
+        do{
+            try reachability.startNotifier()
+        }
+        catch{
+            print("could not start notifire")
+        }
         
     // fetching data base values and checking validation
     let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)

@@ -12,6 +12,7 @@ class AddFloorTableViewController: UIViewController,UICollectionViewDelegate,UIC
 
     @IBOutlet weak var collectionViewAddFloor: UICollectionView!
     @IBOutlet weak var collectionViewAddTable: UICollectionView!
+    
     var floorArray = ["Hall","Balcony"]
     var tableArray = ["table1","table2","table3","table4","table5","table6","table7","table1_Img","table2_Img","table3_Img","table4_Img"]
     var addTableArray : [String] = []
@@ -34,15 +35,6 @@ self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",
         self.collectionViewAddFloor.dataSource = self
         self.collectionViewAddTable.delegate = self
         self.collectionViewAddTable.dataSource = self
-        
-//        tableViewAddFloor
-//        collectionViewAddFloor
-//        lblAddFloor
-//        btnAddFloor
-//        viewAddFloor
-//        scrollViewAddFloor
-//
-
         self.collectionViewAddFloor.setNeedsLayout()
         
     }

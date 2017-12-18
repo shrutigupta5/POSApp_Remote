@@ -17,6 +17,7 @@ class ConfigurationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomColor()
+        localization()
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
@@ -30,7 +31,12 @@ class ConfigurationViewController: UIViewController {
     buttonPrint.backgroundColor = UIColor.customLightBlue
         
     }
-    
+    func localization()
+    {
+        self.buttonTable.setTitle(Localizator.instance.localize(string: "Key_buttonTable"), for: .normal)
+        self.buttonMenu.setTitle(Localizator.instance.localize(string: "Key_buttonMenu"), for: .normal)
+        self.buttonPrint.setTitle(Localizator.instance.localize(string: "Key_buttonPrint"), for: .normal)
+    }
     @IBAction func buttonTableAction(_ sender: Any) {
         
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)

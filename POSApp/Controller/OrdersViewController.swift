@@ -42,7 +42,7 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         // set segment font size
         let attribute = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 25.0)!, forKey: NSFontAttributeName as NSCopying)
         segmentControlOrder.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
-     
+        localization()
         setCustomColor()
         setupView()
         // Do any additional setup after loading the view.
@@ -52,6 +52,9 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         
         buttonReservation.backgroundColor = UIColor.customRed
         
+    }
+    func localization(){
+        self.buttonReservation.setTitle(Localizator.instance.localize(string: "Key_reservationButton"), for: .normal)
     }
     
     // set nib register for collection view
@@ -140,44 +143,7 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         // Dispose of any resources that can be recreated.
     }
     
-//    @IBAction func buttonAddFoorAction(_ sender: Any) {
-//        let alertController = UIAlertController(title: "Add New Name", message: "Enter Floor Which you want!!", preferredStyle: .alert)
-//        
-//        let saveAction = UIAlertAction(title: "Save", style: .default, handler: {
-//            alert -> Void in
-//            
-//            self.textFieldAddFloor = alertController.textFields![0] as UITextField
-//            if (self.textFieldAddFloor.text == ""){
-//                let alertController = UIAlertController(title: "Error Message:(", message: "you are creating blank floor :(", preferredStyle: .alert)
-//                
-//                let okAction = UIAlertAction(title: "OK", style: .default, handler: {
-//                    alert -> Void in
-//                })
-//                alertController.addAction(okAction)
-//                self.present(alertController, animated: true, completion: nil)
-//                
-//            }
-//            else {
-//               
-//                print("listName \(self.textFieldAddFloor.text)")
-//            
-//            }
-//            
-//            
-//        })
-//        
-//        let cancelAction = UIAlertAction(title: "cancel", style: .default, handler: {
-//            alert -> Void in
-//            print("cancel")
-//            
-//        })
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "Enter First Name"
-//        }
-//        alertController.addAction(saveAction)
-//        alertController.addAction(cancelAction)
-//        self.present(alertController, animated: true, completion: nil)
-//    }
+
 
     @IBAction func buttonReservationAction(_ sender: Any) {
         if buttonReservation.isSelected{

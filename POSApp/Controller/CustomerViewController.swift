@@ -23,19 +23,40 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var labelFirstName: UILabel!
     @IBOutlet weak var labelLastName: UILabel!
+    @IBOutlet weak var labelContactNo: UILabel!
+    @IBOutlet weak var labelRole: UILabel!
     
+    @IBOutlet weak var buttonSubmit: DesignButton!
     var rollArray = ["val1", "val2", "val3", "val4", "val5", "val6", "val7"]
     var activeField: UITextField?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.labelFirstName.text = Localizator.instance.localize(string: "key_user")
+        localization()
+         textFieldPlaceHolder()
         setTextFieldDelegate()
         setCustomColor()
         tableViewDropDown.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    func localization()
+    {
+        self.labelFirstName.text = Localizator.instance.localize(string: "key_user")
+        self.labelLastName.text = Localizator.instance.localize(string: "Key_LastName")
+        self.labelContactNo.text = Localizator.instance.localize(string: "Key_contactNo")
+        self.labelRole.text = Localizator.instance.localize(string: "Key_role")
+        self.buttonRoll.setTitle(Localizator.instance.localize(string: "Key_selectRoleButton"), for: .normal)
+        self.buttonSubmit.setTitle(Localizator.instance.localize(string: "Key_submitButton"), for: .normal)
+    }
+    func textFieldPlaceHolder(){
+        
+        createAttributedPlacedholderToTextField(currentTextField: textFieldFirstName, currentPlaceholderText: Localizator.instance.localize(string: "Key_firstName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldLastName, currentPlaceholderText:Localizator.instance.localize(string: "Key_enterLastName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldCustmorContact, currentPlaceholderText:Localizator.instance.localize(string: "Key_contactNumber"))
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -129,6 +150,8 @@ class CustomerViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    @IBAction func actionSubmitButton(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

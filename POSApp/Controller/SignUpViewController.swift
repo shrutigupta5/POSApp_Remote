@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         switch sceneType {
         case .InitialScene?:
-            self.buttonSignUp.setTitle("Sign Up", for: .normal)
+             self.buttonSignUp.setTitle( Localizator.instance.localize(string: "key_signup"), for: .normal)
             break
         case .SideMenuScene?:
 
@@ -75,10 +75,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldPlaceHolder(){
         
-        createAttributedPlacedholderToTextField(currentTextField: textFieldFirstName, currentPlaceholderText: "Enter First Name")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldLastName, currentPlaceholderText: "Enter Last Name")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: "Enter Email Address")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: "Enter Password")
+        createAttributedPlacedholderToTextField(currentTextField: textFieldFirstName, currentPlaceholderText: Localizator.instance.localize(string: "Key_firstName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldLastName, currentPlaceholderText:Localizator.instance.localize(string: "Key_enterLastName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText:Localizator.instance.localize(string: "Key_email"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText:Localizator.instance.localize(string: "Key_password"))
         
     }
     
@@ -157,11 +157,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
      
      switch sceneType {
         case .InitialScene?:
-            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
-            let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
-            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
-            let result = UserDefaults.standard.value(forKey: "userInfoDict")
-            print(result!)
+//            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+//            let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
+//            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+//            let result = UserDefaults.standard.value(forKey: "userInfoDict")
+//            print(result!)
            checkFieldsValidation()
             break
         case .SideMenuScene?:
@@ -183,6 +183,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func checkFieldsValidation(){
         let emailResult = isValidEmail(testStr: textFieldEmail.text!)
+            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+                let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
+                    UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+                    let result = UserDefaults.standard.value(forKey: "userInfoDict")
+                    print(result!)
         let passwordResult = isValidPincode(value:textFieldPassword.text!)
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){
             DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)

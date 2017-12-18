@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 {
 
                     let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
-                    let loginVC = storyBord.instantiateViewController(withIdentifier: "RegisterViewController")as! RegisterViewController
+                    let loginVC = storyBord.instantiateViewController(withIdentifier: "InitialViewController")as! InitialViewController
                     let navigationController = self.window?.rootViewController as! UINavigationController
                     navigationController.pushViewController(loginVC, animated: false)
                 }

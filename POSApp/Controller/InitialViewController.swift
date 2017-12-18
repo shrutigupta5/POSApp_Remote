@@ -10,6 +10,7 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
+    @IBOutlet weak var labelAlreadyAMember: DesignButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,4 @@ class InitialViewController: UIViewController {
         self.navigationController?.pushViewController(baseVC, animated: true)
         
     }
-    
-    
-
 }

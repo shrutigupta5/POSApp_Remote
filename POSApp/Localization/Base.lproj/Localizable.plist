@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Key_buttonPrint</key>
+	<dict>
+		<key>value</key>
+		<string>Print</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonMenu</key>
+	<dict>
+		<key>value</key>
+		<string>Menus</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonTable</key>
+	<dict>
+		<key>value</key>
+		<string>Table</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_contactNumber</key>
+	<dict>
+		<key>value</key>
+		<string>Enter contact number</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_submitButton</key>
+	<dict>
+		<key>value</key>
+		<string>Submit</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_selectRoleButton</key>
+	<dict>
+		<key>value</key>
+		<string>Select Role</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_role</key>
+	<dict>
+		<key>value</key>
+		<string>Role</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_signup</key>
+	<dict>
+		<key>value</key>
+		<string>Sign Up</string>
+		<key>comment</key>
+		<string>test</string>
+	</dict>
+	<key>Key_cashInOut</key>
+	<dict>
+		<key>value</key>
+		<string>Cash In/Out</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_addEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>Employee</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_timeStamp</key>
+	<dict>
+		<key>value</key>
+		<string>TimeStamp</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_shift</key>
+	<dict>
+		<key>value</key>
+		<string>Shift</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_eodReport</key>
+	<dict>
+		<key>value</key>
+		<string>EOD Report</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_reserveEod</key>
+	<dict>
+		<key>value</key>
+		<string>ReserveEod</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_reservationButton</key>
+	<dict>
+		<key>value</key>
+		<string>Reservation</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_home</key>
+	<dict>
+		<key>value</key>
+		<string>Home</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Configuration</key>
+	<dict>
+		<key>value</key>
+		<string>Configuration</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Customer</key>
+	<dict>
+		<key>value</key>
+		<string>Customer</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Order</key>
+	<dict>
+		<key>value</key>
+		<string>Order</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_eod</key>
+	<dict>
+		<key>value</key>
+		<string>End Of Day</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_managementButton</key>
+	<dict>
+		<key>value</key>
+		<string>Management</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_signUp</key>
+	<dict>
+		<key>value</key>
+		<string>Sign Up</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_enterLastName</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Last Name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_firstName</key>
+	<dict>
+		<key>value</key>
+		<string>Enter First Name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_forgetPassword</key>
+	<dict>
+		<key>value</key>
+		<string>Forget Password</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_signIn</key>
+	<dict>
+		<key>value</key>
+		<string>Sign In</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_password</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Password</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_email</key>
+	<dict>
+		<key>value</key>
+		<string>Enter Email Address</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_contactNo</key>
+	<dict>
+		<key>value</key>
+		<string>Contact No</string>
+		<key>comment</key>
+		<string>Contact No</string>
+	</dict>
+	<key>Key_LastName</key>
+	<dict>
+		<key>value</key>
+		<string>Last Name</string>
+		<key>comment</key>
+		<string>Last Name</string>
+	</dict>
+	<key>key_user</key>
+	<dict>
+		<key>value</key>
+		<string> First Name</string>
+		<key>comment</key>
+		<string> First Name</string>
+	</dict>
+</dict>
+</plist>

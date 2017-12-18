@@ -10,12 +10,26 @@ import UIKit
 
 class ManagementViewController: UIViewController {
 
+    @IBOutlet weak var buttonShift: DesignButton!
+    @IBOutlet weak var buttontimeStamp: DesignButton!
+    @IBOutlet weak var buttonEmployee: DesignButton!
+    @IBOutlet weak var buttonCashInOut: DesignButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
+        localization()
         // Do any additional setup after loading the view.
+    }
+    func localization()
+    {
+      self.buttonShift.setTitle(Localizator.instance.localize(string: "Key_shift"), for: .normal)
+        self.buttontimeStamp.setTitle(Localizator.instance.localize(string: "Key_timeStamp"), for: .normal)
+         self.buttonEmployee.setTitle(Localizator.instance.localize(string: "Key_addEmployee"), for: .normal)
+         self.buttonCashInOut.setTitle(Localizator.instance.localize(string: "Key_cashInOut"), for: .normal)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,12 +9,35 @@
 import UIKit
 
 class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
     @IBOutlet weak var tableViewCustomerList: UITableView!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelPassword: UILabel!
+    @IBOutlet weak var labelRole: UILabel!
+    @IBOutlet weak var labelContact: UILabel!
+    @IBOutlet weak var labelAddress: UILabel!
+    @IBOutlet weak var labelRate: UILabel!
+    @IBOutlet weak var labelHours: UILabel!
+    @IBOutlet weak var buttonAddEmployee: DesignButton!
+    @IBOutlet weak var buttonEdit: DesignButton!
+    @IBOutlet weak var buttonDelete: DesignButton!
+    @IBOutlet weak var buttonClose: DesignButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        localization()
         tableViewCustomerList.register(UINib(nibName: "AddEmployeeListTableViewCell", bundle: nil), forCellReuseIdentifier: "AddEmployeeListTableViewCell");
+    }
+    func localization()
+    {
+       self.labelName.text = Localizator.instance.localize(string: "Key_customerName")
+        self.labelPassword.text = Localizator.instance.localize(string: "Key_customerPassword")
+        self.labelRole.text = Localizator.instance.localize(string: "Key_customerRole")
+        self.labelContact.text = Localizator.instance.localize(string: "Key_customerContact")
+         self.labelAddress.text = Localizator.instance.localize(string: "Key_customerAddress")
+         self.labelRate.text = Localizator.instance.localize(string: "Key_customerRate")
+         self.labelHours.text = Localizator.instance.localize(string: "Key_customerHourly")
     }
     func setupView(){
         self.tableViewCustomerList.delegate = self
@@ -34,6 +57,15 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
         return 100
     }
 
+    @IBAction func actionAddEmployeeButton(_ sender: Any) {
+    }
+    @IBAction func actionEditButton(_ sender: Any) {
+    }
+    @IBAction func actionDeleteButton(_ sender: Any) {
+    }
+    @IBAction func actionCloseButton(_ sender: Any) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

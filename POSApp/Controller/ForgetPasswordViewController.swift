@@ -13,6 +13,7 @@ class ForgetPasswordViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var viewEmail: DesignableView!
     @IBOutlet weak var textFieldEmail: DesignableTextField!
     
+    @IBOutlet weak var buttonSend: DesignButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -254,6 +254,7 @@
 		E92676551FD83E4C0077983F /* POSApp */ = {
 			isa = PBXGroup;
 			children = (
+				E95ECB361FE7877200FA0123 /* Localization */,
 				E960274E1FD858F60099AA85 /* Libraries */,
 				E92676BD1FD84B4A0077983F /* Frameworks */,
 				E92676BC1FD84B380077983F /* Custom */,
@@ -336,7 +337,6 @@
 				E93FC40A1FE3C78B00C7167B /* Reachability.swift */,
 				E93FC43D1FE4035800C7167B /* Localizator.swift */,
 				E96027951FD85EE00099AA85 /* DBManager.swift */,
-				E93FC43A1FE3F37E00C7167B /* Localizable.plist */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -407,6 +407,14 @@
 			children = (
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		E95ECB361FE7877200FA0123 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E93FC43A1FE3F37E00C7167B /* Localizable.plist */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		E960274E1FD858F60099AA85 /* Libraries */ = {

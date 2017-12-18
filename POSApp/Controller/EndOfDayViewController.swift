@@ -18,8 +18,15 @@ class EndOfDayViewController: UIViewController {
         super.viewDidLoad()
         
         setCustomColor()
+        localization()
         // Do any additional setup after loading the view.
         
+    }
+    func localization()
+    {
+        self.buttonEod.setTitle(Localizator.instance.localize(string: "Key_eod"), for: .normal)
+        self.buttonReserveEod.setTitle(Localizator.instance.localize(string: "Key_reserveEod"), for: .normal)
+        self.buttonEodReport.setTitle(Localizator.instance.localize(string: "Key_eodReport"), for: .normal)
     }
     
     func setCustomColor(){

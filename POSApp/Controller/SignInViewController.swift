@@ -11,12 +11,12 @@ import UIKit
 class SignInViewController: UIViewController, UITextFieldDelegate {
    
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var forgotPasswordAction: UIButton!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var viewPassword: UIView!
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var buttonSignIn: UIButton!
+    @IBOutlet weak var buttonForgetPassword: UIButton!
     
     var appDelegate = AppDelegate()
     var activeField: UITextField!
@@ -28,13 +28,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         setTextFieldDelegate()
         textFieldPlaceHolder()
         self.appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+        localization()
         // for keybord show and hide
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    func localization()
+    {
+      
+        self.buttonSignIn.setTitle(Localizator.instance.localize(string: "Key_signIn"), for: .normal)
+        self.buttonForgetPassword.setTitle(Localizator.instance.localize(string: "Key_forgetPassword"), for: .normal)
     }
     
     // set custom color
@@ -48,8 +54,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     // set textField place holder
     func textFieldPlaceHolder(){
         
-        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: " Enter Email Address")
-        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: "Enter Password")
+        createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: Localizator.instance.localize(string: "Key_email"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldPassword, currentPlaceholderText: Localizator.instance.localize(string: "Key_password"))
         
     }
     

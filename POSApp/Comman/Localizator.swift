@@ -24,7 +24,7 @@ class Localizator {
     func localize(string: String) -> String {
         
         guard let localizedString = (localizableDictionary.value(forKey: string) as! NSDictionary).value(forKey: "value") as? String else {
-            assertionFailure("Missing translation for: \(string)")
+//            assertionFailure("Missing translation for: \(string)")
             return ""
         }
         return localizedString

@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        localization()
         designNavigation()
         setCustomColor()
     }
@@ -36,13 +36,21 @@ class HomeViewController: UIViewController {
         buttonConfigration.backgroundColor = UIColor.customLightBlue
         
     }
+    func localization()
+    {
+      self.buttonManagement.setTitle(Localizator.instance.localize(string: "Key_managementButton"), for: .normal)
+        self.buttonEndOfDay.setTitle(Localizator.instance.localize(string: "Key_eod"), for: .normal)
+        self.buttonOrders.setTitle(Localizator.instance.localize(string: "Key_Order"), for: .normal)
+        self.buttonCustomer.setTitle(Localizator.instance.localize(string: "Key_Customer"), for: .normal)
+        self.buttonConfigration.setTitle(Localizator.instance.localize(string: "Key_Configuration"), for: .normal)
+    }
     
     func designNavigation(){
         
         let menuButton = UIBarButtonItem(image: UIImage(named: "menuIcon"), style: .plain, target: self, action: #selector(addTapped))
         navigationItem.leftBarButtonItem  = menuButton
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
-        applyAttributedNavigationBarTitleWith(currentTitle: "Home", currentNavigationController: self.navigationController!)
+        applyAttributedNavigationBarTitleWith(currentTitle: Localizator.instance.localize(string: "Key_home"), currentNavigationController: self.navigationController!)
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 34)!, NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = UIColor.brown
         self.navigationController?.view.tintColor = UIColor.white
@@ -56,7 +64,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let configVC = storyBoard.instantiateViewController(withIdentifier: "ConfigurationViewController") as! ConfigurationViewController
         self.navigationController?.pushViewController(configVC, animated: true)
-        configVC.title = "Configuration"
+        configVC.title = Localizator.instance.localize(string: "Key_Configuration")
         
     }
     
@@ -65,7 +73,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let customerVC = storyBoard.instantiateViewController(withIdentifier: "CustomerViewController") as! CustomerViewController
         navigationController?.pushViewController(customerVC, animated: true)
-        customerVC.title = "Customer"
+        customerVC.title = Localizator.instance.localize(string: "Key_Customer")
         
     }
     
@@ -74,7 +82,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let mgntVC = storyBoard.instantiateViewController(withIdentifier: "ManagementViewController") as! ManagementViewController
         navigationController?.pushViewController(mgntVC, animated: true)
-        mgntVC.title = "Management"
+        mgntVC.title = Localizator.instance.localize(string: "Key_managementButton")
         
     }
     
@@ -83,8 +91,8 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let eodVC = storyBoard.instantiateViewController(withIdentifier: "EndOfDayViewController") as! EndOfDayViewController
         navigationController?.pushViewController(eodVC, animated: true)
-        eodVC.title = "End Of Day"
-        
+        eodVC.title = Localizator.instance.localize(string: "Key_eod")
+    
     }
   
     @IBAction func buttonOrderAction(_ sender: Any) {
@@ -92,7 +100,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let  orderVC = storyBoard.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
         self.navigationController?.pushViewController(orderVC, animated: true)
-        orderVC.title = "Order"
+        orderVC.title = Localizator.instance.localize(string: "Key_Order")
         
     }
     

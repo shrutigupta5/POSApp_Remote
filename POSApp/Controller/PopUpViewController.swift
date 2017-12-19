@@ -21,16 +21,23 @@ class PopUpViewController: UIViewController {
     let datePickerView:UIDatePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Localization()
         doneButtonAdd()
         setCustomColor()
         // Do any additional setup after loading the view.
     }
-
+    func Localization(){
+        
+        createAttributedPlacedholderToTextField(currentTextField: textFieldName, currentPlaceholderText: Localizator.instance.localize(string: "Key_firstName"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldContact, currentPlaceholderText: Localizator.instance.localize(string: "Key_contactNo"))
+        createAttributedPlacedholderToTextField(currentTextField: textFieldDate, currentPlaceholderText: Localizator.instance.localize(string: "key_date"))
+        self.buttonSave.setTitle(Localizator.instance.localize(string: "Key_save"), for: .normal)
+         self.buttonClose.setTitle(Localizator.instance.localize(string: "Key_buttonClose"), for: .normal)
+    }
     func setCustomColor(){
         buttonSave.backgroundColor = UIColor.customRed
         buttonClose.backgroundColor = UIColor.customRed
-        self.viewPopUp.backgroundColor = UIColor.customWhite
+        self.viewPopUp.backgroundColor = UIColor.customGreen
     }
     
     @IBAction func buttonCloseAction(_ sender: Any) {

@@ -2,6 +2,83 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_date</key>
+	<dict>
+		<key>value</key>
+		<string>Date with time</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_upadteSuccess</key>
+	<dict>
+		<key>value</key>
+		<string>update successfully</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_success</key>
+	<dict>
+		<key>value</key>
+		<string>Success</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_AlertPassword</key>
+	<dict>
+		<key>value</key>
+		<string>Please Enter Password</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_dismiss</key>
+	<dict>
+		<key>value</key>
+		<string>dismiss</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertLastName</key>
+	<dict>
+		<key>value</key>
+		<string>please enter last name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_AlertFirstName</key>
+	<dict>
+		<key>value</key>
+		<string>please enter first name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertAllFieldEnter</key>
+	<dict>
+		<key>value</key>
+		<string>Please enter all field</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_inserted</key>
+	<dict>
+		<key>value</key>
+		<string>Data Inserted Successfully</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_save</key>
+	<dict>
+		<key>value</key>
+		<string>Save</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_update</key>
+	<dict>
+		<key>value</key>
+		<string>Update</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>Key_emailAlert</key>
 	<dict>
 		<key>value</key>

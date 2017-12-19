@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.textFieldFirstName.text = firstName
             self.textFieldLastName.text = lastName
             textFieldEmail.isUserInteractionEnabled = false
-            self.buttonSignUp.setTitle("Update", for: .normal)
+           self.buttonSignUp.setTitle( Localizator.instance.localize(string: "Key_update"), for: .normal)
             self.viewPassword.isHidden = true
             break
         default : break
@@ -114,9 +114,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         scrollView.scrollIndicatorInsets = contentInsets
         var aRect: CGRect = self.view.frame
         aRect.size.height -= kbSize.height
-//        if !aRect.contains(activeField.frame.origin) {
-//            self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
-//        }
+
 }
     
     func keyboardWillHide(notification:NSNotification){
@@ -156,7 +154,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
             let result = UserDefaults.standard.value(forKey: "userInfoDict")
             print(result!)
-            showDefaultAlertViewWith(alertTitle: "Success", alertMessage: "update successfully", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+            
+            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_success"), alertMessage:Localizator.instance.localize(string: "key_upadteSuccess"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
             break
         default : break
         }
@@ -187,7 +186,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let passwordResult = isValidPincode(value:textFieldPassword.text!)
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){
             DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)
-            let alertController = UIAlertController(title: "save", message: "Data Inserted Successfully", preferredStyle: .alert)
+            let alertController = UIAlertController(title: Localizator.instance.localize(string: "Key_save"), message: Localizator.instance.localize(string: "Key_inserted"), preferredStyle: .alert)
             let okAction = UIAlertAction(title: Localizator.instance.localize(string: "Key_ok"), style: .default, handler: {
                 alert -> Void in
                 let storyB = UIStoryboard.init(name: "Main", bundle: nil)
@@ -198,28 +197,29 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
         else if ((self.textFieldEmail.text == "") && (self.textFieldPassword.text == "") && (textFieldFirstName.text  == "") && (textFieldLastName.text == "")) {
-            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "Please enter all field", okTitle: "discard", currentViewController: self)
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_AlertAllFieldEnter"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
         }
         else if ((self.textFieldPassword.text == "") && (self.textFieldFirstName.text != "") && (self.textFieldLastName.text != "") && (self.textFieldEmail.text != "")) {
             
-            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "Please Enter Password", okTitle: "discard", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "key_AlertPassword"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
         }
         else if (textFieldFirstName.text  == "")  {
             
-            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "please enter first name", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "key_AlertFirstName"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
         else if (textFieldLastName.text  == "") {
             
-            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "please enter last name", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_AlertLastName"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
             
         else if(self.textFieldEmail.text == "") {
             
-            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_emailAlert"), okTitle: "dismiss", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_emailAlert"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
         }
         else {
             
-            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertMsg"), okTitle: "discard", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertMsg"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
         }
     }
     override func didReceiveMemoryWarning() {

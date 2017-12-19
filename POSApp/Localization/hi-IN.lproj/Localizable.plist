@@ -2,6 +2,83 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>key_date</key>
+	<dict>
+		<key>value</key>
+		<string>समय के साथ दिनांक</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_upadteSuccess</key>
+	<dict>
+		<key>value</key>
+		<string>सफलतापूर्वक अपडेट करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_success</key>
+	<dict>
+		<key>value</key>
+		<string>सफलता</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_AlertPassword</key>
+	<dict>
+		<key>value</key>
+		<string>कृप्या पास्वर्ड भरो</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_dismiss</key>
+	<dict>
+		<key>value</key>
+		<string>खारिज</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertLastName</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया अंतिम नाम दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>key_AlertFirstName</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया पहले नाम दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertAllFieldEnter</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया सभी क्षेत्र दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_inserted</key>
+	<dict>
+		<key>value</key>
+		<string>डेटा को सफलतापूर्वक सम्मिलित किया गया</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_save</key>
+	<dict>
+		<key>value</key>
+		<string>सम्मिलित</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_update</key>
+	<dict>
+		<key>value</key>
+		<string>अद्यतन करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>Key_emailAlert</key>
 	<dict>
 		<key>value</key>

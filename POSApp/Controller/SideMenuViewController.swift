@@ -121,7 +121,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             let alert = UIAlertController(title: Localizator.instance.localize(string: "Key_logout"),
                                           message: Localizator.instance.localize(string: "Key_LogoutMsg"),
                                           preferredStyle: .alert)
-            let submitAction = UIAlertAction(title: Localizator.instance.localize(string: "Key_logout"), style: .default, handler: { (action) -> Void in
+            let submitAction = UIAlertAction(title: Localizator.instance.localize(string: "Key_logout"), style: .destructive, handler: { (action) -> Void in
                 self.dismiss(animated: true, completion: {
                     let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
                         let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
@@ -132,7 +132,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         })
     })
             
-            let cancel = UIAlertAction(title: Localizator.instance.localize(string: "Key_Nevermind"), style: .destructive, handler: { (action) -> Void in })
+            let cancel = UIAlertAction(title: Localizator.instance.localize(string: "Key_Nevermind"), style: .default, handler: { (action) -> Void in })
             alert.view.tintColor = UIColor.blue
             alert.addAction(submitAction)
             alert.addAction(cancel)

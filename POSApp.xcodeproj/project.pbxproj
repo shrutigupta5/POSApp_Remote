@@ -24,6 +24,7 @@
 		E93FC4381FE3F37E00C7167B /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = E93FC43A1FE3F37E00C7167B /* Localizable.plist */; };
 		E93FC43E1FE4035900C7167B /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93FC43D1FE4035800C7167B /* Localizator.swift */; };
 		E9485C251FDFCEDC0020D1FF /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */; };
+		E95ECB561FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95ECB551FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift */; };
 		E960275B1FD85C0C0099AA85 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */; };
 		E960275C1FD85C0C0099AA85 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */; };
 		E960275D1FD85C0C0099AA85 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96027511FD85C0C0099AA85 /* MenuItemTableViewCell.swift */; };
@@ -125,6 +126,7 @@
 		E93FC43C1FE3F38200C7167B /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "hi-IN"; path = "hi-IN.lproj/Localizable.plist"; sourceTree = "<group>"; };
 		E93FC43D1FE4035800C7167B /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
 		E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		E95ECB551FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewEmployeePopUpViewController.swift; sourceTree = "<group>"; };
 		E960274F1FD85C0C0099AA85 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E96027501FD85C0C0099AA85 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		E96027511FD85C0C0099AA85 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				E9485C241FDFCEDB0020D1FF /* ForgetPasswordViewController.swift */,
 				E92676B31FD84A5D0077983F /* InitialViewController.swift */,
 				E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */,
+				E95ECB551FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -787,6 +790,7 @@
 				E93FC43E1FE4035900C7167B /* Localizator.swift in Sources */,
 				E960278F1FD85D7F0099AA85 /* FMDatabaseAdditions.m in Sources */,
 				E92676B51FD84A5D0077983F /* InitialViewController.swift in Sources */,
+				E95ECB561FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift in Sources */,
 				E96027651FD85C0C0099AA85 /* SideMenuTableViewCell.swift in Sources */,
 				E96027961FD85EE00099AA85 /* DBManager.swift in Sources */,
 				E960277F1FD85CD90099AA85 /* SignInViewController.swift in Sources */,

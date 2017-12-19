@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = Localizator.instance.localize(string: "Key_Back")
         navigationItem.backBarButtonItem = backItem
-        
+        self.title =  Localizator.instance.localize(string: "Key_home")
 }
     
     @IBAction func buttonConfigurationAction(_ sender: Any) {
@@ -106,16 +106,14 @@ class HomeViewController: UIViewController {
     
     func addTapped (sender:UIButton) {
 
-        if POSManger.shared.localizeString == "ar" {
+        if POSManger.shared.localizeString == "ar-US" {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
-            //vc.leftSide = true
-            let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: SideMenuViewController())
-            menuLeftNavigationController.leftSide = true
-             SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+            vc.leftSide = false
+        
        self.present(vc, animated: true, completion: nil)
         } else {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
-        
+            vc.leftSide = true
             self.present(vc, animated: true, completion: nil)
             
     }

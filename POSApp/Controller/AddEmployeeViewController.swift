@@ -62,6 +62,12 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
     }
 
     @IBAction func actionAddEmployeeButton(_ sender: Any) {
+        let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNewEmployeePopUpViewController") as! AddNewEmployeePopUpViewController
+       // popOverVc.delegate = self
+        self.addChildViewController(popOverVc)
+        popOverVc.view.frame = self.view.frame
+        self.view.addSubview(popOverVc.view)
+        popOverVc.didMove(toParentViewController: self)
     }
     @IBAction func actionEditButton(_ sender: Any) {
     }

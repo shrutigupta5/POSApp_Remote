@@ -173,11 +173,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
             
         else if(self.textFieldPassword.text == ""){
-            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "please Enter Password ", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "key_AlertPassword"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
             
       else{
-        showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "Please Enter Email and Password", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+        showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_emailAlert"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
         
     }

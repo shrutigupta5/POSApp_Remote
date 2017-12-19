@@ -161,10 +161,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         default : break
         }
        
+    }
+    func isValidEmail(testStr:String) -> Bool {
         
-        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
         
     }
+    
+    func isValidPincode(value: String) -> Bool {
+        
+        var status : Bool = true
+        
+        if value.count < 3 {
+            status = false
+        }
+        return status
+    }
+    
     
     func checkFieldsValidation(){
         let emailResult = isValidEmail(testStr: textFieldEmail.text!)

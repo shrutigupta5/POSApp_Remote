@@ -135,7 +135,7 @@
 		<key>comment</key>
 		<string></string>
 	</dict>
-	<key>New item</key>
+	<key>Key_customerAddress</key>
 	<dict>
 		<key>value</key>
 		<string>عنوان</string>

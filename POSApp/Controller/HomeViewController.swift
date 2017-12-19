@@ -50,13 +50,13 @@ class HomeViewController: UIViewController {
         let menuButton = UIBarButtonItem(image: UIImage(named: "menuIcon"), style: .plain, target: self, action: #selector(addTapped))
         navigationItem.leftBarButtonItem  = menuButton
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
-        applyAttributedNavigationBarTitleWith(currentTitle: Localizator.instance.localize(string: "Key_home"), currentNavigationController: self.navigationController!)
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: 34)!, NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = UIColor.brown
         self.navigationController?.view.tintColor = UIColor.white
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = Localizator.instance.localize(string: "Key_Back")
         navigationItem.backBarButtonItem = backItem
+        
 }
     
     @IBAction func buttonConfigurationAction(_ sender: Any) {
@@ -105,10 +105,21 @@ class HomeViewController: UIViewController {
     }
     
     func addTapped (sender:UIButton) {
-        print("add pressed")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+
+        if POSManger.shared.localizeString == "ar" {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
+            //vc.leftSide = true
+            let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: SideMenuViewController())
+            menuLeftNavigationController.leftSide = true
+             SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+       self.present(vc, animated: true, completion: nil)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
         
-        self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true, completion: nil)
+            
+    }
+        
         
     }
    

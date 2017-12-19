@@ -18,7 +18,7 @@ class ManagementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = Localizator.instance.localize(string: "Key_Back")
         navigationItem.backBarButtonItem = backItem
         localization()
         // Do any additional setup after loading the view.

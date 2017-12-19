@@ -114,13 +114,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             else{
                 DispatchQueue.main.async {
-                    showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "please turn on intternet connection", okTitle: "ok", currentViewController: self)
+                    showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "please turn on intternet connection", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
                 }
             }
         }
         else{
             DispatchQueue.main.async {
-                showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "something went wrong", okTitle: "ok", currentViewController: self)
+                showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "something went wrong", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
             }
         }
     }
@@ -132,7 +132,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
         reachability.whenUnreachable = { _ in
             DispatchQueue.main.async {
-                showDefaultAlertViewWith(alertTitle: "error msg", alertMessage: "please turn on intternet connection", okTitle: "ok", currentViewController: self)
+                showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "please turn on intternet connection", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
             }
         }
         NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
@@ -163,21 +163,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             
         }
-            
+         
         else if(self.textFieldEmail.text == "") && (self.textFieldPassword.text == "") {
-        showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "please Enter Email and Password", okTitle: "ok", currentViewController: self)
+        showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_AlertMsg"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
             
         else if(self.textFieldEmail.text == "") {
-            showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "please Enter Email ", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_emailAlert"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
             
         else if(self.textFieldPassword.text == ""){
-            showDefaultAlertViewWith(alertTitle: "Error Msg", alertMessage: "please Enter Password ", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "please Enter Password ", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
             
       else{
-        showDefaultAlertViewWith(alertTitle: "Error", alertMessage: "Please Enter Email and Password", okTitle: "ok", currentViewController: self)
+        showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: "Please Enter Email and Password", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
         
     }

@@ -19,6 +19,8 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         imageViewProfile.layer.cornerRadius = imageViewProfile.layer.frame.height/2
         imageViewProfile.clipsToBounds = true
+        self.labelFirstName.text = Localizator.instance.localize(string: "key_user")
+        self.labelEmailAddress.text = Localizator.instance.localize(string: "Key_email")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

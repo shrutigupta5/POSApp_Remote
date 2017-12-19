@@ -2,6 +2,69 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Key_emailAlert</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया ईमेल पता दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertMsg</key>
+	<dict>
+		<key>value</key>
+		<string>कृपया ईमेल और पासवर्ड दर्ज करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_ErrorMsg</key>
+	<dict>
+		<key>value</key>
+		<string>त्रुटि संदेश</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_ok</key>
+	<dict>
+		<key>value</key>
+		<string>ठीक</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Nevermind</key>
+	<dict>
+		<key>value</key>
+		<string>कोई बात नहीं</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_LogoutMsg</key>
+	<dict>
+		<key>value</key>
+		<string>क्या आप लॉग आउट करने के लिए सुनिश्चित हैं?</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_profile</key>
+	<dict>
+		<key>value</key>
+		<string>प्रोफ़ाइल अपडेट करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_logout</key>
+	<dict>
+		<key>value</key>
+		<string>लोग आउट</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Back</key>
+	<dict>
+		<key>value</key>
+		<string>वापस</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>Key_AlreadyMember</key>
 	<dict>
 		<key>value</key>

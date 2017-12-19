@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var userDefaultsDictionary  : [String:AnyObject]? = [:]
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let userDefaults = UserDefaults.standard
+        let language = NSLocale.preferredLanguages.first
+        let Dict : Dictionary = NSLocale.components(fromLocaleIdentifier: language!)
+        let currentLanguageCode = Dict["kCFLocaleLanguageCodeKey"]
+        print("language : \(String(describing: currentLanguageCode) )")
+        POSManger.shared.localizeString = (language )!
+        
+        
         self.userDefaultsDictionary = userDefaults.value(forKey: "userInfoDict") as? [String : AnyObject]
 
                 if(userDefaultsDictionary == nil)

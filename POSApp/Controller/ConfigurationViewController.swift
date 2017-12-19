@@ -19,7 +19,7 @@ class ConfigurationViewController: UIViewController {
         setCustomColor()
         localization()
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = Localizator.instance.localize(string: "Key_Back")
         navigationItem.backBarButtonItem = backItem
     }
 

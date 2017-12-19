@@ -675,9 +675,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="7II-25-SHG" kind="relationship" relationship="rootViewController" id="e81-HB-jNY"/>
                     </connections>
@@ -2166,7 +2163,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLp-tK-iyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationItem title="Home" id="Sda-O9-vvf"/>
+                <navigationItem id="Sda-O9-vvf"/>
             </objects>
             <point key="canvasLocation" x="1209" y="-988"/>
         </scene>

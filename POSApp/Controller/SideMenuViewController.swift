@@ -40,7 +40,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     func loadData(){
         
-           menuDictArray = [["name" : "profile","imageName" : "", "category" : "-1"], ["name" : "Home", "imageName" : "homeImage","category" : "-1"], ["name" : "Orders", "imageName" : "order1Image", "category" : "1"], ["name" : "End Of Day", "imageName" : "eod_iconImg", "category" : "3"],["name" : "Management", "imageName" : "managemnt_icon", "category" : "2"], ["name" : "Configuration", "imageName" : "configure_icon", "category" : "-1"], ["name" : "Customer", "imageName" : "user_icon", "category" : "-1"], ["name" : "Logout", "imageName" : "logoutImage", "category" : "-1"]]
+           menuDictArray = [["name" : Localizator.instance.localize(string: "Key_profile"),"imageName" : "", "category" : "-1"], ["name" : Localizator.instance.localize(string: "Key_home"), "imageName" : "homeImage","category" : "-1"], ["name" : Localizator.instance.localize(string: "Key_Order"), "imageName" : "order1Image", "category" : "1"], ["name" : Localizator.instance.localize(string: "Key_eod"), "imageName" : "eod_iconImg", "category" : "3"],["name" : Localizator.instance.localize(string: "Key_managementButton"), "imageName" : "managemnt_icon", "category" : "2"], ["name" : Localizator.instance.localize(string: "Key_Configuration"), "imageName" : "configure_icon", "category" : "-1"], ["name" : Localizator.instance.localize(string: "Key_Customer"), "imageName" : "user_icon", "category" : "-1"], ["name" : Localizator.instance.localize(string: "Key_logout"), "imageName" : "logoutImage", "category" : "-1"]]
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -54,6 +54,8 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             profileCell.labelFirstName.text = self.userDefaultsDictionary["firstName"]!+"  "+self.userDefaultsDictionary["lastName"]!
            
             profileCell.labelEmailAddress.text = self.userDefaultsDictionary["email"]
+//            self.labelFirstName.text = Localizator.instance.localize(string: "key_user")
+//            self.labelEmailAddress.text = Localizator.instance.localize(string: "Key_email")
             return profileCell
         }
         else{
@@ -67,12 +69,13 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
         let nameFetch = menuDictArray[indexPath.row]["name"]
-        if(nameFetch == "Orders"){
+        if(nameFetch == Localizator.instance.localize(string: "Key_Order")){
             let OrderVC = storyBord.instantiateViewController(withIdentifier: "OrdersViewController") as! OrdersViewController
                         self.navigationController?.pushViewController(OrderVC, animated: true)
-                        OrderVC.title = "order"
+                        OrderVC.title = Localizator.instance.localize(string: "Key_Order")
         }
-        else if(nameFetch == "profile"){
+            
+        else if(nameFetch == Localizator.instance.localize(string: "Key_profile")){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let signUpVC = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
             let scene = SceneType.SideMenuScene
@@ -83,42 +86,42 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
             self.navigationController?.pushViewController(signUpVC,animated: true)
             
         }
-        else if(nameFetch == "Home"){
+        else if(nameFetch == Localizator.instance.localize(string: "Key_home")){
             let homeVC = storyBord.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             self.navigationController?.pushViewController(homeVC, animated: true)
-           
+         homeVC.title  = Localizator.instance.localize(string: "Key_home")
         }
-        else if(nameFetch == "End Of Day"){
+        else if(nameFetch == Localizator.instance.localize(string: "Key_eod")){
             let eodVC = storyBord.instantiateViewController(withIdentifier: "EndOfDayViewController") as! EndOfDayViewController
             self.navigationController?.pushViewController(eodVC, animated: true)
-            eodVC.title = "End Of Day"
+            eodVC.title = Localizator.instance.localize(string: "Key_eod")
             
         }
-        else if(nameFetch == "Management"){
+        else if(nameFetch == Localizator.instance.localize(string: "Key_managementButton")){
             
             let mgntVC = storyBord.instantiateViewController(withIdentifier: "ManagementViewController") as! ManagementViewController
             self.navigationController?.pushViewController(mgntVC, animated: true)
-            mgntVC.title = "Management"
+            mgntVC.title = Localizator.instance.localize(string: "Key_managementButton")
         }
-        else if(nameFetch == "Configuration"){
+        else if(nameFetch == Localizator.instance.localize(string: "Key_Configuration")){
             
             let configVC = storyBord.instantiateViewController(withIdentifier: "ConfigurationViewController") as! ConfigurationViewController
             self.navigationController?.pushViewController(configVC, animated: true)
-            configVC.title = "Configuration"
+            configVC.title = Localizator.instance.localize(string: "Key_Configuration")
         }
-        else if(nameFetch == "Customer"){
+        else if(nameFetch == Localizator.instance.localize(string: "Key_Customer")){
             
             let customerVC = storyBord.instantiateViewController(withIdentifier: "CustomerViewController") as! CustomerViewController
             self.navigationController?.pushViewController(customerVC, animated: true)
-            customerVC.title = "Customer"
+            customerVC.title = Localizator.instance.localize(string: "Key_Customer")
         }
-        else if(nameFetch == "Logout"){
+        else if(nameFetch == Localizator.instance.localize(string: "Key_logout")){
 
           //mark:custom alert
-            let alert = UIAlertController(title: "LogOut",
-                                          message: "Are You Sure to Log Out ?",
+            let alert = UIAlertController(title: Localizator.instance.localize(string: "Key_logout"),
+                                          message: Localizator.instance.localize(string: "Key_LogoutMsg"),
                                           preferredStyle: .alert)
-            let submitAction = UIAlertAction(title: "LogOut", style: .default, handler: { (action) -> Void in
+            let submitAction = UIAlertAction(title: Localizator.instance.localize(string: "Key_logout"), style: .default, handler: { (action) -> Void in
                 self.dismiss(animated: true, completion: {
                     let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController")
                         let  navVC = self.storyboard?.instantiateViewController(withIdentifier: "InitialNavVC") as! UINavigationController
@@ -128,7 +131,8 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
                 self.dismissModalStack()
         })
     })
-            let cancel = UIAlertAction(title: "Nevermind", style: .destructive, handler: { (action) -> Void in })
+            
+            let cancel = UIAlertAction(title: Localizator.instance.localize(string: "Key_Nevermind"), style: .destructive, handler: { (action) -> Void in })
             alert.view.tintColor = UIColor.blue
             alert.addAction(submitAction)
             alert.addAction(cancel)

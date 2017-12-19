@@ -44,16 +44,16 @@ class ForgetPasswordViewController: UIViewController,UITextFieldDelegate {
         let fetusers = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
         
     if (self.textFieldEmail.text == ""){
-                showDefaultAlertViewWith(alertTitle:"something went wrong", alertMessage: "Please Enter your email", okTitle: "ok", currentViewController: self)
+                showDefaultAlertViewWith(alertTitle:"something went wrong", alertMessage: "Please Enter your email", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
         else if (fetusers[0].email != textFieldEmail.text ){
-                showDefaultAlertViewWith(alertTitle: "New Password", alertMessage: "Please Enter your correct email", okTitle: "ok", currentViewController: self)
+                showDefaultAlertViewWith(alertTitle: "New Password", alertMessage: "Please Enter your correct email", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
        else if (self.textFieldEmail.text == fetusers[0].email){
-        showDefaultAlertViewWith(alertTitle: "New Password", alertMessage: fetusers[0].password, okTitle: "ok", currentViewController: self)
+        showDefaultAlertViewWith(alertTitle: "New Password", alertMessage: fetusers[0].password, okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
     }
             else{
-            showDefaultAlertViewWith(alertTitle:"something went wrong", alertMessage: "Please check your email", okTitle: "ok", currentViewController: self)
+            showDefaultAlertViewWith(alertTitle:"something went wrong", alertMessage: "Please check your email", okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         }
     }
     

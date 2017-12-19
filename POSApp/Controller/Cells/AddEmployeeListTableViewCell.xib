@@ -166,6 +166,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelAddress" destination="FTk-bL-7Fl" id="VBO-IO-6Cl"/>
+                <outlet property="labelContact" destination="Mkm-yl-z4m" id="Bz5-3a-ODE"/>
+                <outlet property="labelHourly" destination="hM8-zX-fiG" id="1Jf-gl-cHI"/>
+                <outlet property="labelName" destination="3p8-fV-218" id="QGE-PC-HW1"/>
+                <outlet property="labelPassword" destination="4Cc-af-mpp" id="y2b-px-6ZK"/>
+                <outlet property="labelRate" destination="D2O-Fc-Lv9" id="HzB-jJ-O0Y"/>
+                <outlet property="labelRole" destination="Fx0-Hf-bki" id="nXJ-ms-yBJ"/>
+                <outlet property="viewAddress" destination="DIE-Cz-iUG" id="Mrq-hI-Lpm"/>
+                <outlet property="viewContact" destination="p2x-wK-eBy" id="EZR-ZA-wls"/>
+                <outlet property="viewHourly" destination="InX-wf-Ulj" id="Mbr-Ve-AYt"/>
+                <outlet property="viewName" destination="auO-IX-NOF" id="pAL-zD-le6"/>
+                <outlet property="viewPassword" destination="E1W-QS-v6a" id="iq9-Oe-nZM"/>
+                <outlet property="viewRate" destination="QfG-ts-llh" id="N0c-Us-zJN"/>
+                <outlet property="viewRole" destination="1by-NI-XUU" id="V3D-7w-rMt"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="90"/>
         </tableViewCell>
     </objects>

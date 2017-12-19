@@ -31,7 +31,8 @@ class ForgetPasswordViewController: UIViewController,UITextFieldDelegate {
     func setCustomColor() {
         
         viewEmail.backgroundColor = UIColor.customLightBlue
-         createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: " Enter Email Address")
+         createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: Localizator.instance.localize(string: "Key_email"))
+        self.buttonSend.setTitle(Localizator.instance.localize(string: "Key_send"), for: .normal)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

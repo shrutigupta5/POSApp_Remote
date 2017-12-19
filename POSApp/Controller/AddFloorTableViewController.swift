@@ -12,6 +12,11 @@ class AddFloorTableViewController: UIViewController,UICollectionViewDelegate,UIC
 
     @IBOutlet weak var collectionViewAddFloor: UICollectionView!
     @IBOutlet weak var collectionViewAddTable: UICollectionView!
+    @IBOutlet weak var buttonAddFloor: DesignButton!
+    @IBOutlet weak var buttonRemoveFloor: DesignButton!
+    @IBOutlet weak var buttonAddTable: DesignButton!
+    @IBOutlet weak var buttonRemoveTable: DesignButton!
+    
     
     var floorArray = ["Hall","Balcony"]
     var tableArray = ["table1","table2","table3","table4","table5","table6","table7","table1_Img","table2_Img","table3_Img","table4_Img"]
@@ -26,8 +31,15 @@ self.collectionViewAddFloor.register(UINib(nibName:"AddFloorCollectionViewCell",
 self.collectionViewAddTable.register(UINib(nibName:"AddTableCollectionViewCell",bundle:nil), forCellWithReuseIdentifier: "AddTableCollectionViewCell")
         // Do any additional setup after loading the view.
         setupView()
-        
+        localization()
       
+    }
+    func localization()
+    {
+        self.buttonAddFloor.setTitle(Localizator.instance.localize(string: "Key_addFloor"), for: .normal)
+        self.buttonRemoveFloor.setTitle(Localizator.instance.localize(string: "Key_removeFloor"), for: .normal)
+        self.buttonAddTable.setTitle(Localizator.instance.localize(string: "Key_addTable"), for: .normal)
+        self.buttonRemoveTable.setTitle(Localizator.instance.localize(string: "Key_removeTable"), for: .normal)
     }
     func setupView()
     {

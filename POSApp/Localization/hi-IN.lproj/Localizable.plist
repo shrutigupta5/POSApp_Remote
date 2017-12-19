@@ -2,6 +2,167 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Key_AlreadyMember</key>
+	<dict>
+		<key>value</key>
+		<string>पहले से सदस्य हैं?</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_removeTable</key>
+	<dict>
+		<key>value</key>
+		<string>टेबल निकालें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_addTable</key>
+	<dict>
+		<key>value</key>
+		<string>तालिका जोड़ें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_removeFloor</key>
+	<dict>
+		<key>value</key>
+		<string>तल निकालें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_addFloor</key>
+	<dict>
+		<key>value</key>
+		<string>मंजिल जोड़ें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_send</key>
+	<dict>
+		<key>value</key>
+		<string>भेजें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelMenu</key>
+	<dict>
+		<key>value</key>
+		<string>मेन्यू</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelGst</key>
+	<dict>
+		<key>value</key>
+		<string>जीएसटी</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelSpecial</key>
+	<dict>
+		<key>value</key>
+		<string>विशेष</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelPrize</key>
+	<dict>
+		<key>value</key>
+		<string>कीमत</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelNo</key>
+	<dict>
+		<key>value</key>
+		<string>संख्या</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_menuItem</key>
+	<dict>
+		<key>value</key>
+		<string>विकल्प सूची की चीज़ें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Category</key>
+	<dict>
+		<key>value</key>
+		<string>वर्ग</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonClose</key>
+	<dict>
+		<key>value</key>
+		<string>बंद करे</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonDelete</key>
+	<dict>
+		<key>value</key>
+		<string>हटाना</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonEdit</key>
+	<dict>
+		<key>value</key>
+		<string>संपादित करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AddEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>नया कर्मचारी जोड़ें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerHourly</key>
+	<dict>
+		<key>value</key>
+		<string>प्रति घंटा</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerRate</key>
+	<dict>
+		<key>value</key>
+		<string>मूल्यांकन करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerAddress</key>
+	<dict>
+		<key>value</key>
+		<string>पता</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerContact</key>
+	<dict>
+		<key>value</key>
+		<string>संपर्क करें</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerPassword</key>
+	<dict>
+		<key>value</key>
+		<string>पारण शब्द</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerName</key>
+	<dict>
+		<key>value</key>
+		<string>नाम</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>Key_buttonPrint</key>
 	<dict>
 		<key>value</key>

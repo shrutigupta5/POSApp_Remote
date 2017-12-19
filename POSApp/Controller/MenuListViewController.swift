@@ -14,16 +14,51 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var viewCategory: UIView!
     @IBOutlet weak var tableViewMenuItems: UITableView!
     @IBOutlet weak var tableViewCategory: UITableView!
+    @IBOutlet weak var labelCategory: UILabel!
+    @IBOutlet weak var labelMenuItem: UILabel!
+    @IBOutlet weak var labelHashCategory: UILabel!
+    @IBOutlet weak var labelNo: DesignableLabel!
+    @IBOutlet weak var labelName: DesignableLabel!
+    @IBOutlet weak var labelPrize: DesignableLabel!
+    @IBOutlet weak var labelGst: DesignableLabel!
+    @IBOutlet weak var labelSpecial: DesignableLabel!
+    @IBOutlet weak var labelLowerCaregory: UILabel!
+    @IBOutlet weak var labelLowerName: UILabel!
+    @IBOutlet weak var textFieldName: UITextField!
+    @IBOutlet weak var labelMenu: UILabel!
+    @IBOutlet weak var labelMenuName: UILabel!
+    @IBOutlet weak var textFieldMenuName: UITextField!
+    @IBOutlet weak var labelMenuPrice: UILabel!
+    @IBOutlet weak var textFieldPriceMenu: UITextField!
+    @IBOutlet weak var labelMenuSpecial: UILabel!
+    @IBOutlet weak var labelMenuGst: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        localization()
         setCustomColor()
         setUpView()
         
         // Do any additional setup after loading the view.
     }
-   
+    func localization()
+    {
+        self.labelCategory.text = Localizator.instance.localize(string: "Key_Category")
+        self.labelMenuItem.text = Localizator.instance.localize(string: "Key_menuItem")
+        self.labelHashCategory.text = Localizator.instance.localize(string: "Key_Category")
+        self.labelNo.text = Localizator.instance.localize(string: "Key_labelNo")
+        self.labelName.text = Localizator.instance.localize(string: "Key_customerName")
+        self.labelPrize.text = Localizator.instance.localize(string: "Key_labelPrize")
+        self.labelGst.text = Localizator.instance.localize(string: "Key_labelGst")
+        self.labelSpecial.text = Localizator.instance.localize(string: "Key_labelSpecial")
+        self.labelLowerCaregory.text = Localizator.instance.localize(string: "Key_Category")
+        self.labelLowerName.text = Localizator.instance.localize(string: "Key_customerName")
+        self.labelMenu.text = Localizator.instance.localize(string: "Key_labelMenu")
+        self.labelMenuName.text = Localizator.instance.localize(string: "Key_customerName")
+        self.labelMenuPrice.text = Localizator.instance.localize(string: "Key_labelPrize")
+        self.labelMenuSpecial.text = Localizator.instance.localize(string: "Key_labelSpecial")
+         self.labelMenuGst.text = Localizator.instance.localize(string: "Key_labelGst")
+    }
     // nib register for menu and category cell
     func setUpView(){
         
@@ -94,15 +129,11 @@ class MenuListViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func actionSpecialButton(_ sender: Any) {
     }
-    */
+    
+    @IBAction func actionGstButton(_ sender: Any) {
+    }
+    
 
 }

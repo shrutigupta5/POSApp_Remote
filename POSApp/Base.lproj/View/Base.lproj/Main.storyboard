@@ -1763,7 +1763,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcA-Ko-xAM" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcA-Ko-xAM" customClass="DesignableLabel" customModule="POSApp" customModuleProvider="target">
                                                 <rect key="frame" x="67" y="0.0" width="327" height="68"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -1908,7 +1908,7 @@
                                         <rect key="frame" x="336" y="651" width="688" height="117"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDr-Jb-tDA" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                                <rect key="frame" x="473" y="50" width="35" height="31"/>
+                                                <rect key="frame" x="504.5" y="50" width="35" height="31"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="WGO-a6-e92"/>
@@ -1924,9 +1924,12 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionSpecialButton:" destination="YR8-Pg-tTt" eventType="touchUpInside" id="HqX-0D-hCG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNN-gN-dMY" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                                <rect key="frame" x="580" y="48" width="35" height="31"/>
+                                                <rect key="frame" x="611.5" y="48" width="35" height="31"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="3hb-Fj-boo"/>
@@ -1942,24 +1945,24 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionGstButton:" destination="YR8-Pg-tTt" eventType="touchUpInside" id="9cI-Xn-xFw"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyC-sP-hqO">
-                                                <rect key="frame" x="516" y="42" width="56" height="39"/>
+                                                <rect key="frame" x="547.5" y="42" width="56" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sae-jF-qpT">
-                                                <rect key="frame" x="623" y="44" width="43" height="39"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="43" id="9Xp-fM-sye"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GST" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sae-jF-qpT">
+                                                <rect key="frame" x="654.5" y="44" width="33.5" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKW-v3-R6E">
-                                                <rect key="frame" x="378" y="48" width="87" height="34"/>
+                                                <rect key="frame" x="409.5" y="48" width="87" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="87" id="ivu-4a-hWd"/>
@@ -1969,7 +1972,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaq-mx-Q8Y">
-                                                <rect key="frame" x="72" y="48" width="236" height="34"/>
+                                                <rect key="frame" x="72" y="48" width="267.5" height="34"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1994,7 +1997,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRICE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfO-52-Tz8">
-                                                <rect key="frame" x="315" y="44" width="56" height="39"/>
+                                                <rect key="frame" x="346.5" y="44" width="56" height="39"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2029,7 +2032,7 @@
                                             <constraint firstItem="lKW-v3-R6E" firstAttribute="top" secondItem="XNN-gN-dMY" secondAttribute="top" id="qQc-at-3FZ"/>
                                             <constraint firstItem="sae-jF-qpT" firstAttribute="leading" secondItem="XNN-gN-dMY" secondAttribute="trailing" constant="8" symbolic="YES" id="qhY-ND-laR"/>
                                             <constraint firstItem="pfO-52-Tz8" firstAttribute="top" secondItem="6WI-Kh-bOu" secondAttribute="top" constant="44" id="twt-zq-Xgh"/>
-                                            <constraint firstAttribute="trailing" secondItem="sae-jF-qpT" secondAttribute="trailing" constant="22" id="vnU-MC-fuW"/>
+                                            <constraint firstAttribute="trailing" secondItem="sae-jF-qpT" secondAttribute="trailing" id="vnU-MC-fuW"/>
                                             <constraint firstAttribute="bottom" secondItem="pfO-52-Tz8" secondAttribute="bottom" constant="34" id="zLv-20-M9C"/>
                                         </constraints>
                                     </view>
@@ -2122,8 +2125,26 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="labelCategory" destination="tfz-G0-dUg" id="iKM-NX-cFp"/>
+                        <outlet property="labelGst" destination="oyO-a0-Qjn" id="LVo-jj-D3Q"/>
+                        <outlet property="labelHashCategory" destination="JzA-8h-7a7" id="P7e-yd-WqF"/>
+                        <outlet property="labelLowerCaregory" destination="ICi-m7-7z0" id="zhC-Iu-yQP"/>
+                        <outlet property="labelLowerName" destination="3Ol-xE-Bl2" id="JSj-Bp-Rb9"/>
+                        <outlet property="labelMenu" destination="j0v-iD-6E6" id="DNY-hi-rj0"/>
+                        <outlet property="labelMenuGst" destination="sae-jF-qpT" id="xry-Qq-iYv"/>
+                        <outlet property="labelMenuItem" destination="Uny-5i-542" id="O7t-TX-e0e"/>
+                        <outlet property="labelMenuName" destination="MRq-Hp-9Ob" id="NZr-Hh-G44"/>
+                        <outlet property="labelMenuPrice" destination="pfO-52-Tz8" id="YS3-3q-4kf"/>
+                        <outlet property="labelMenuSpecial" destination="LyC-sP-hqO" id="hkn-Da-3od"/>
+                        <outlet property="labelName" destination="UcA-Ko-xAM" id="V9w-gn-XS5"/>
+                        <outlet property="labelNo" destination="xBn-3t-G8C" id="yef-CH-A9S"/>
+                        <outlet property="labelPrize" destination="rhD-10-btB" id="kZt-MG-JEH"/>
+                        <outlet property="labelSpecial" destination="vpF-Lx-kPA" id="FXh-aR-xgr"/>
                         <outlet property="tableViewCategory" destination="Og9-jw-l68" id="hpl-FS-oC1"/>
                         <outlet property="tableViewMenuItems" destination="7H1-tE-lVM" id="OJk-bg-Cdd"/>
+                        <outlet property="textFieldMenuName" destination="xaq-mx-Q8Y" id="P52-Lb-GID"/>
+                        <outlet property="textFieldName" destination="cQi-rp-Pgn" id="JIH-Cd-wJJ"/>
+                        <outlet property="textFieldPriceMenu" destination="lKW-v3-R6E" id="t6O-Y3-Urr"/>
                         <outlet property="viewCategory" destination="qXM-dM-O7X" id="gmI-N7-Br7"/>
                         <outlet property="viewMenuItem" destination="0eX-fj-9uW" id="fZk-8z-uml"/>
                     </connections>
@@ -2755,6 +2776,10 @@
                     </view>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="buttonAddFloor" destination="PYf-fc-8lC" id="EMD-gP-xgi"/>
+                        <outlet property="buttonAddTable" destination="nat-9V-hag" id="LQd-4N-spd"/>
+                        <outlet property="buttonRemoveFloor" destination="jjr-Ax-myv" id="J0W-hT-cuL"/>
+                        <outlet property="buttonRemoveTable" destination="6o3-Di-FYH" id="us6-fq-7wA"/>
                         <outlet property="collectionViewAddFloor" destination="OsP-hw-dsS" id="gcb-vB-iGM"/>
                         <outlet property="collectionViewAddTable" destination="8pd-gf-0Oi" id="gun-Vy-Y1q"/>
                     </connections>

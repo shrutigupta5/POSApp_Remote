@@ -52,7 +52,7 @@ class SideMenuViewController: UIViewController, UITableViewDelegate,UITableViewD
         if (indexPath.row == 0){
             let profileCell = self.tableViewSideMenu.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath)as! ProfileTableViewCell
             profileCell.labelFirstName.text = self.userDefaultsDictionary["firstName"]!+"  "+self.userDefaultsDictionary["lastName"]!
-            
+           
             profileCell.labelEmailAddress.text = self.userDefaultsDictionary["email"]
             return profileCell
         }

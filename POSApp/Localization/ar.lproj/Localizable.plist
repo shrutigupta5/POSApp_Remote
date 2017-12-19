@@ -2,6 +2,167 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Key_AlreadyMember</key>
+	<dict>
+		<key>value</key>
+		<string>عضوا فعلا؟</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_removeTable</key>
+	<dict>
+		<key>value</key>
+		<string>إزالة الجدول</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_addTable</key>
+	<dict>
+		<key>value</key>
+		<string>إضافة جدول</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_removeFloor</key>
+	<dict>
+		<key>value</key>
+		<string>إزالة الكلمة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_addFloor</key>
+	<dict>
+		<key>value</key>
+		<string>إضافة أرضية</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_send</key>
+	<dict>
+		<key>value</key>
+		<string>إرسال</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelMenu</key>
+	<dict>
+		<key>value</key>
+		<string>قائمة طعام</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelGst</key>
+	<dict>
+		<key>value</key>
+		<string>ضريبة الخدمة العامة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelSpecial</key>
+	<dict>
+		<key>value</key>
+		<string>خاص</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelPrize</key>
+	<dict>
+		<key>value</key>
+		<string>السعر</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_labelNo</key>
+	<dict>
+		<key>value</key>
+		<string>رقم</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_menuItem</key>
+	<dict>
+		<key>value</key>
+		<string>عناصر القائمة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_Category</key>
+	<dict>
+		<key>value</key>
+		<string>الفئة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonClose</key>
+	<dict>
+		<key>value</key>
+		<string>قريب</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonDelete</key>
+	<dict>
+		<key>value</key>
+		<string>حذف</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_buttonEdit</key>
+	<dict>
+		<key>value</key>
+		<string>تصحيح</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AddEmployee</key>
+	<dict>
+		<key>value</key>
+		<string>إضافة موظف جديد</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerHourly</key>
+	<dict>
+		<key>value</key>
+		<string>باستمرار</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerRate</key>
+	<dict>
+		<key>value</key>
+		<string>معدل</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>New item</key>
+	<dict>
+		<key>value</key>
+		<string>عنوان</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerContact</key>
+	<dict>
+		<key>value</key>
+		<string>اتصل</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerPassword</key>
+	<dict>
+		<key>value</key>
+		<string>كلمه السر</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_customerName</key>
+	<dict>
+		<key>value</key>
+		<string>اسم</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>Key_buttonPrint</key>
 	<dict>
 		<key>value</key>

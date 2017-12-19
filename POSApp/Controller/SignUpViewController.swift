@@ -134,34 +134,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeField = nil
     }
-    func isValidEmail(testStr:String) -> Bool {
-        
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: testStr)
-        
-    }
     
-    func isValidPincode(value: String) -> Bool {
-        
-        var status : Bool = true
-        
-        if value.count < 6 {
-            status = false
-        }
-        return status
-    }
     
     
     @IBAction func signUpButtonAction(_ sender: Any) {
      
      switch sceneType {
         case .InitialScene?:
-//            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
-//            let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
-//            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
-//            let result = UserDefaults.standard.value(forKey: "userInfoDict")
-//            print(result!)
+            DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)
+            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
+            let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
+            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+            let result = UserDefaults.standard.value(forKey: "userInfoDict")
+            print(result!)
            checkFieldsValidation()
             break
         case .SideMenuScene?:
@@ -183,11 +168,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func checkFieldsValidation(){
         let emailResult = isValidEmail(testStr: textFieldEmail.text!)
-            let fetchUserUpdaetInfo = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
-                let userInfoDict:[String:String] = ["email":fetchUserUpdaetInfo[0].email,"firstName":fetchUserUpdaetInfo[0].firstName,"lastName":fetchUserUpdaetInfo[0].lastName]
-                    UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
-                    let result = UserDefaults.standard.value(forKey: "userInfoDict")
-                    print(result!)
+        
         let passwordResult = isValidPincode(value:textFieldPassword.text!)
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){
             DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)

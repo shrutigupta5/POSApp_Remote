@@ -42,7 +42,7 @@ class ConfigurationViewController: UIViewController {
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
         let orderItemVC = storyBord.instantiateViewController(withIdentifier: "AddFloorTableViewController") as! AddFloorTableViewController
         self.navigationController?.pushViewController(orderItemVC, animated: true)
-        
+        orderItemVC.title = Localizator.instance.localize(string: "Key_buttonTable")
     }
     
   
@@ -51,7 +51,7 @@ class ConfigurationViewController: UIViewController {
         let storyBord = UIStoryboard.init(name: "Main", bundle: nil)
         let MenuListVC = storyBord.instantiateViewController(withIdentifier: "MenuListViewController") as! MenuListViewController
         self.navigationController?.pushViewController(MenuListVC, animated: true)
-        MenuListVC.title = "Menus"
+        MenuListVC.title = Localizator.instance.localize(string: "Key_labelMenu")
         
     }
     

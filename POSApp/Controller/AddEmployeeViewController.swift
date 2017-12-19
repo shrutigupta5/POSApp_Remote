@@ -33,11 +33,15 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
     {
        self.labelName.text = Localizator.instance.localize(string: "Key_customerName")
         self.labelPassword.text = Localizator.instance.localize(string: "Key_customerPassword")
-        self.labelRole.text = Localizator.instance.localize(string: "Key_customerRole")
+        self.labelRole.text = Localizator.instance.localize(string: "Key_role")
         self.labelContact.text = Localizator.instance.localize(string: "Key_customerContact")
          self.labelAddress.text = Localizator.instance.localize(string: "Key_customerAddress")
          self.labelRate.text = Localizator.instance.localize(string: "Key_customerRate")
          self.labelHours.text = Localizator.instance.localize(string: "Key_customerHourly")
+        self.buttonAddEmployee.setTitle(Localizator.instance.localize(string: "Key_AddEmployee"), for: .normal)
+        self.buttonEdit.setTitle(Localizator.instance.localize(string: "Key_buttonEdit"), for: .normal)
+        self.buttonDelete.setTitle(Localizator.instance.localize(string: "Key_buttonDelete"), for: .normal)
+        self.buttonClose.setTitle(Localizator.instance.localize(string: "Key_buttonClose"), for: .normal)
     }
     func setupView(){
         self.tableViewCustomerList.delegate = self

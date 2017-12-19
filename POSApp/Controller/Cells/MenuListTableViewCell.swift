@@ -18,7 +18,11 @@ class MenuListTableViewCell: UITableViewCell {
     @IBOutlet weak var labelNo: DesignableLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.labelNo.text = Localizator.instance.localize(string: "Key_labelNo")
+        self.labelName.text = Localizator.instance.localize(string: "Key_customerName")
+        self.labelPrice.text = Localizator.instance.localize(string: "Key_labelPrize")
+        self.labelGst.text = Localizator.instance.localize(string: "Key_labelGst")
+        self.labelSpecial.text = Localizator.instance.localize(string: "Key_labelSpecial")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

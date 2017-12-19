@@ -14,7 +14,7 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+      self.labelAlreadyAMember.setTitle(Localizator.instance.localize(string: "Key_AlreadyMember"), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,6 +9,7 @@
 import UIKit
 
 class PopUpViewController: UIViewController {
+    
     @IBOutlet weak var buttonClose: DesignButton!
     
     @IBOutlet weak var viewPopUp: UIView!

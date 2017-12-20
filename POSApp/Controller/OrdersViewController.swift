@@ -45,7 +45,8 @@ class OrdersViewController: UIViewController,PopUpViewControllerDelegate, UIColl
         localization()
         setCustomColor()
         setupView()
-        // Do any additional setup after loading the view.
+
+        self.tempArray = self.hallNameArray
     }
     
     func setCustomColor(){

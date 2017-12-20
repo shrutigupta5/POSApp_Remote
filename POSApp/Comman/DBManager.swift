@@ -13,6 +13,13 @@ class DBManager: NSObject {
     var fieldEmail = "email"
     var fieldPassword = "password"
     var autoIncrementId = "Id"
+    var field_Name = "name"
+    var field_Password = "password"
+    var field_Role = "role"
+    var field_Contact = "contact"
+    var field_Address = "address"
+    var field_Rate = "rate"
+    var field_Hourly = "hourly"
     static let shared = DBManager()
     
     let databaseFileName = "POSDB.sqlite"
@@ -51,12 +58,14 @@ class DBManager: NSObject {
                         print(error.localizedDescription)
                     }
                     
+                    self.createTable()
                     database.close()
                 }
                 else {
                     print("Could not open the database.")
                 }
             }
+            
         }
         
         return created
@@ -139,6 +148,85 @@ class DBManager: NSObject {
             
             database.close()
         }
+    }
+    func createTable() -> Bool {
+        var created = false
+        
+        if FileManager.default.fileExists(atPath: pathToDatabase) {
+            database = FMDatabase(path: pathToDatabase!)
+        
+            if database != nil {
+                
+                if database.open() {
+                    let createUserTableQuery = "create table POSEmployee (\(autoIncrementId) integer primary key autoincrement not null, \(field_Name) text not null, \(field_Password) text not null, \(field_Role) text not null, \(field_Contact) text not null,\(field_Address) text not null, \(field_Rate) text not null, \(field_Hourly) text not null)"
+                    
+                    do {
+                        try database.executeUpdate(createUserTableQuery, values: nil)
+                        created = true
+                        print("table created")
+                    }
+                    catch {
+                        print("Could not create table.")
+                        print(error.localizedDescription)
+                    }
+                    
+                    database.close()
+                }
+                else {
+                    print("Could not open the database.")
+                }
+            }
+        }
+        
+        return created
+    }
+    func insertIntoPOSEmployee(name : String, pwd : String, contact : String, address : String,role : String,rate : String,hourly : String) {
+        
+        if openDatabase() {
+            do {
+                var query = ""
+                query = "insert into POSEmployee (\(autoIncrementId),\(field_Name), \(field_Password),\(field_Role), \(field_Contact), \(field_Address),\(field_Rate), \(field_Hourly)) values (null, '\(name)', '\(pwd)','\(contact)', '\(address)', '\(role)', '\(rate)', '\(hourly)');"
+                
+                if !database.executeStatements(query) {
+                    print("Failed to insert initial data into the database.")
+                    print(database.lastError(), database.lastErrorMessage())
+                }
+                print("data inserted")
+                
+            }
+            
+            database.close()
+        }
+    }
+    
+    
+    func fetchEmployeeInfo() -> [EmployeeInfo] {
+        var users: [EmployeeInfo] = []
+        
+        if  openDatabase()  {
+            
+            let queryStr = "select * from POSEmployee"
+            
+            do {
+                print(database)
+                let results = try database.executeQuery(queryStr, values:nil)
+                while results.next() {
+                    let user = EmployeeInfo (employeeId: Int(results.int(forColumn: self.autoIncrementId)), EmployeeName: results.string(forColumn: self.field_Name), password: results.string(forColumn: self.field_Password), role : results.string(forColumn: self.field_Role), contact : results.string(forColumn: self.field_Contact), address : results.string(forColumn: self.field_Address), rate : results.string(forColumn: self.field_Rate), hourly : results.string(forColumn: self.field_Hourly))
+                    
+                    
+                    print(" data printed: \(user)")
+                    users.append(user)
+                }
+                
+            }
+                
+            catch {
+                print(error.localizedDescription)
+            }
+            database.close()
+        }
+        
+        return users
     }
 }
 

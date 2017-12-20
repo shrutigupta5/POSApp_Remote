@@ -7,8 +7,12 @@
 //
 
 import UIKit
-
-class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+protocol AddNewEmployeePopUpViewControllerDelegate: class {
+    
+    func loadEmployeeDetail()
+    
+}
+class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,AddNewEmployeePopUpViewControllerDelegate {
     
     @IBOutlet weak var tableViewCustomerList: UITableView!
     @IBOutlet weak var labelName: UILabel!
@@ -22,12 +26,24 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
     @IBOutlet weak var buttonEdit: DesignButton!
     @IBOutlet weak var buttonDelete: DesignButton!
     @IBOutlet weak var buttonClose: DesignButton!
+    var userDefaultsDictionary  : [String:String] = [:]
+    var empolyeeListArray :[EmployeeInfo] = []
+    
+    func loadEmployeeDetail() {
+       
+        self.empolyeeListArray = DBManager.shared.fetchEmployeeInfo()
+        self.tableViewCustomerList.reloadData()
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         localization()
         tableViewCustomerList.register(UINib(nibName: "AddEmployeeListTableViewCell", bundle: nil), forCellReuseIdentifier: "AddEmployeeListTableViewCell");
+        
+        
     }
     func localization()
     {
@@ -51,19 +67,36 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return empolyeeListArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddEmployeeListTableViewCell", for: indexPath)as! AddEmployeeListTableViewCell
+    
+
+        let objEmployee = empolyeeListArray[indexPath.row]
+    
+        cell.labelName.text = objEmployee.EmployeeName
+        cell.labelPassword.text = objEmployee.password
+        cell.labelRole.text = objEmployee.role
+        cell.labelContact.text = objEmployee.contact
+        cell.labelAddress.text = objEmployee.address
+        cell.labelRate.text = objEmployee.rate
+        cell.labelHourly.text = objEmployee.hourly
+       
+       
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.empolyeeListArray = DBManager.shared.fetchEmployeeInfo()
+        self.tableViewCustomerList.reloadData()
+    }
 
     @IBAction func actionAddEmployeeButton(_ sender: Any) {
         let popOverVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNewEmployeePopUpViewController") as! AddNewEmployeePopUpViewController
-       // popOverVc.delegate = self
+        popOverVc.delegate = self
         self.addChildViewController(popOverVc)
         popOverVc.view.frame = self.view.frame
         self.view.addSubview(popOverVc.view)

@@ -156,8 +156,10 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.57982981200000006" green="0.089238829909999998" blue="0.31603145599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" red="0.57982981200000006" green="0.089238829909999998" blue="0.31603145599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="SjX-U2-6ee" secondAttribute="bottom" id="C6P-Wn-NaT"/>
                     <constraint firstAttribute="trailing" secondItem="SjX-U2-6ee" secondAttribute="trailing" id="IxI-pz-uSv"/>
@@ -182,7 +184,7 @@
                 <outlet property="viewRate" destination="QfG-ts-llh" id="N0c-Us-zJN"/>
                 <outlet property="viewRole" destination="1by-NI-XUU" id="V3D-7w-rMt"/>
             </connections>
-            <point key="canvasLocation" x="32.5" y="90"/>
+            <point key="canvasLocation" x="32" y="90"/>
         </tableViewCell>
     </objects>
 </document>

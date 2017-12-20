@@ -109,8 +109,7 @@ class HomeViewController: UIViewController {
         if POSManger.shared.localizeString == "ar-US" {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
             vc.leftSide = false
-        
-       self.present(vc, animated: true, completion: nil)
+         self.present(vc, animated: true, completion: nil)
         } else {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
             vc.leftSide = true

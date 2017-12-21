@@ -2,6 +2,48 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Key_AlertHourly</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل كل ساعة</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertRate</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل معدل</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertRole</key>
+	<dict>
+		<key>value</key>
+		<string>أدخل دورك.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertAddress</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال عنوانك.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertContact</key>
+	<dict>
+		<key>value</key>
+		<string>الرجاء إدخال رقم الاتصال.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertName</key>
+	<dict>
+		<key>value</key>
+		<string>من فضلك أدخل إسمك</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_date</key>
 	<dict>
 		<key>value</key>

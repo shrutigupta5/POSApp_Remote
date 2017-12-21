@@ -228,5 +228,39 @@ class DBManager: NSObject {
         
         return users
     }
+    func updateEmployeeInfo(name : String, pwd : String, contact : String, address : String,role : String,rate : String,hourly : String) {
+        if openDatabase() {
+            let query = "update POSEmployee set \(field_Name)=?, \(field_Password)=?, \(field_Role)=?, \(field_Contact)=?, \(field_Address)=?, \(field_Rate)=?, \(field_Hourly)=? where \(field_Name)=?"
+            
+            do {
+                try database.executeUpdate(query, values: [name, pwd,contact,address,role,rate,hourly,name])
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+            
+            database.close()
+        }
+    }
+//    func deleteEmployeeInfo(withID ID: Int) -> Bool {
+//        var deleted = false
+//
+//        if openDatabase() {
+//            let query = "delete from movies where \(field_MovieID)=?"
+//
+//            do {
+//                try database.executeUpdate(query, values: [ID])
+//                deleted = true
+//            }
+//            catch {
+//                print(error.localizedDescription)
+//            }
+//
+//            database.close()
+//        }
+//
+//        return deleted
+//    }
+    
 }
 

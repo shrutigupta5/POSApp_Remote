@@ -14,6 +14,8 @@ public enum SceneType{
     case SideMenuScene
     case CustomerScene
     case ManagementScene
+    case addEmployeeScene
+    case addEmployeeListScene
 }
 
 func  showDefaultAlertViewWith(alertTitle:String, alertMessage:String, okTitle:String, currentViewController :UIViewController) {

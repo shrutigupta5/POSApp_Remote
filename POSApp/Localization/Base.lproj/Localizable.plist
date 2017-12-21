@@ -2,6 +2,50 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Key_AlertHourly</key>
+	<dict>
+		<key>value</key>
+		<string>enter hourly.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertRate</key>
+	<dict>
+		<key>value</key>
+		<string>enter rate.</string>
+		<key>comment</key>
+		<string></string>
+		<key>New item</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertRole</key>
+	<dict>
+		<key>value</key>
+		<string>enter your role.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertAddress</key>
+	<dict>
+		<key>value</key>
+		<string>Please enter your address.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertContact</key>
+	<dict>
+		<key>value</key>
+		<string>Please enter Contact Number.</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
+	<key>Key_AlertName</key>
+	<dict>
+		<key>value</key>
+		<string>Please enter your name</string>
+		<key>comment</key>
+		<string></string>
+	</dict>
 	<key>key_date</key>
 	<dict>
 		<key>value</key>

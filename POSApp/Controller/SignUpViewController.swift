@@ -182,7 +182,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func checkFieldsValidation(){
         let emailResult = isValidEmail(testStr: textFieldEmail.text!)
-        
         let passwordResult = isValidPincode(value:textFieldPassword.text!)
         if ((emailResult&&passwordResult == true) && ((textFieldFirstName.text != "") && (textFieldLastName.text != ""))){
             DBManager.shared.insertIntoPosUser(fname: self.textFieldFirstName.text!, lname: self.textFieldLastName.text!, email: self.textFieldEmail.text!, pwd: self.textFieldPassword.text!)

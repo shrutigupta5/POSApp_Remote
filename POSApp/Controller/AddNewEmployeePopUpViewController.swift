@@ -27,15 +27,40 @@ class AddNewEmployeePopUpViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var textFieldHourly: UITextField!
     @IBOutlet weak var buttonSave: DesignButton!
     @IBOutlet weak var buttonClose: DesignButton!
-    
     @IBOutlet weak var scrollView: UIScrollView!
+    
     weak var delegate: AddNewEmployeePopUpViewControllerDelegate?
+    var sceneType : SceneType? = nil
     var activeField: UITextField!
+    var employeeInfoArray :[String] = []
+    var userDefaultsDictionary  : [String:String] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userDefaults = UserDefaults.standard
+        self.userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as! [String:String]
         textFieldDelegate()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        switch sceneType {
+        case .addEmployeeListScene?:
+            self.buttonSave.setTitle( Localizator.instance.localize(string: "Key_save"), for: .normal)
+            self.buttonClose.setTitle( Localizator.instance.localize(string: "Key_buttonClose"), for: .normal)
+            break
+        case .addEmployeeScene?:
+            self.textFieldName.text = userDefaultsDictionary["name"]
+             self.textFieldPassword.text = userDefaultsDictionary["password"]
+             self.textFieldRole.text = userDefaultsDictionary["role"]
+             self.textFieldContact.text = userDefaultsDictionary["contact"]
+             self.textFieldAddress.text = userDefaultsDictionary["address"]
+             self.textFieldRate.text = userDefaultsDictionary["rate"]
+             self.textFieldHourly.text = userDefaultsDictionary["hourly"]
+            textFieldName.isUserInteractionEnabled = false
+    self.buttonSave.setTitle( Localizator.instance.localize(string: "Key_update"), for: .normal)
+           self.buttonClose.setTitle( Localizator.instance.localize(string: "Key_buttonClose"), for: .normal)
+            break
+        default : break
+        }
+        
     }
      func textFieldDelegate()
      {
@@ -92,16 +117,100 @@ class AddNewEmployeePopUpViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func actionSaveButton(_ sender: Any) {
+        switch sceneType {
+        case .addEmployeeListScene?:
+            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
+            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
+            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
+            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
+            print(result!)
+            checkFieldsValidation()
+           delegate?.loadEmployeeDetail()
+            
+            break
+        case .addEmployeeScene?:
+            DBManager.shared.updateEmployeeInfo(name: self.textFieldName.text!, pwd: textFieldPassword.text!, contact: textFieldRole.text!, address: textFieldContact.text!, role: textFieldAddress.text!, rate: textFieldRate.text!, hourly: textFieldHourly.text!)
+            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
+            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
+            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
+            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
+            print(result!)
+            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_success"), alertMessage:Localizator.instance.localize(string: "key_upadteSuccess"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+            delegate?.loadEmployeeUpdateDetail()
+            break
+        default : break
+        }
         
-        DBManager.shared.insertIntoPOSEmployee(name: self.textFieldName.text!, pwd: textFieldPassword.text!, contact: textFieldRole.text!, address: textFieldContact.text!, role: textFieldAddress.text!, rate: textFieldRate.text!, hourly: textFieldHourly.text!)
-        showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_success"), alertMessage:Localizator.instance.localize(string: "Key_inserted"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
         
 }
     
     @IBAction func actionCloseButton(_ sender: Any) {
-        self.view.removeFromSuperview()
-        delegate?.loadEmployeeDetail()
         
+        switch sceneType {
+        case .addEmployeeListScene?:
+            self.view.removeFromSuperview()
+            
+            break
+        case .addEmployeeScene?:
+            self.view.removeFromSuperview()
+            
+            
+            break
+        default : break
+        }
+        
+    }
+    func checkFieldsValidation(){
+        if ((textFieldName.text != "") && (textFieldPassword.text != "")&&(textFieldContact.text != "")&&(textFieldAddress.text != "")&&(textFieldRole.text != "")&&(textFieldRate.text != "")&&(textFieldHourly.text != "")){
+            DBManager.shared.insertIntoPOSEmployee(name: self.textFieldName.text!, pwd: textFieldPassword.text!, contact: textFieldRole.text!, address: textFieldContact.text!, role: textFieldAddress.text!, rate: textFieldRate.text!, hourly: textFieldHourly.text!)
+            let alertController = UIAlertController(title: Localizator.instance.localize(string: "Key_save"), message: Localizator.instance.localize(string: "Key_inserted"), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: Localizator.instance.localize(string: "Key_ok"), style: .default, handler: {
+                alert -> Void in
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if ((textFieldName.text == "") && (textFieldPassword.text == "")&&(textFieldContact.text == "")&&(textFieldAddress.text == "")&&(textFieldRole.text == "")&&(textFieldRate.text == "")&&(textFieldHourly.text == "")) {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_AlertAllFieldEnter"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else if ((self.textFieldPassword.text == "") && (self.textFieldName.text != "") && (self.textFieldRole.text != "") && (self.textFieldContact.text != "")) {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "key_AlertPassword"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else if (textFieldName.text  == "")  {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "Key_AlertName"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+        }
+        else if (textFieldPassword.text  == "") {
+            
+            showDefaultAlertViewWith(alertTitle:Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage: Localizator.instance.localize(string: "key_AlertPassword"), okTitle: Localizator.instance.localize(string: "Key_ok"), currentViewController: self)
+        }
+            
+        else if(self.textFieldContact.text == "") {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertContact"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else if(self.textFieldAddress.text == "") {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertAddress"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else if(self.textFieldRole.text == "") {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertRole"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else if(self.textFieldRate.text == "") {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertRate"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else if(self.textFieldHourly.text == "") {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertHourly"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
+        else {
+            
+            showDefaultAlertViewWith(alertTitle: Localizator.instance.localize(string: "Key_ErrorMsg"), alertMessage:Localizator.instance.localize(string: "Key_AlertMsg"), okTitle: Localizator.instance.localize(string: "Key_dismiss"), currentViewController: self)
+        }
     }
     
 }

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
    
@@ -32,8 +35,46 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         // for keybord show and hide
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+        facebookLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    func facebookLoad() {
+//        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+//        loginButton.center = view.center
+//        view.addSubview(loginButton)
+        
+    let myLoginButton = UIButton(type: .custom)
+        myLoginButton.backgroundColor = UIColor.blue
+        myLoginButton.frame = CGRect(x: 100, y: 100, width: 180, height: 80)
+        myLoginButton.center = view.center
+        myLoginButton.setTitle("Facebook Login ", for: .normal)
+
+        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+
+        // Add the button to the view
+        view.addSubview(myLoginButton)
+    }
+//    // Once the button is clicked, show the login dialog
+    @objc func loginButtonClicked() {
+        let loginManager = LoginManager()
+
+//        loginManager.logIn(publishPermissions: [PublishPermission.publishActions], viewController: self) { (loginResult) in
+//            print("login result is:-\(loginResult)")
+//
+//        }
+        
+        loginManager.logIn(readPermissions: [ReadPermission.publicProfile,ReadPermission.email], viewController: self) { (loginResult) in
+            
+//            switch loginResult {
+//            case .failed(let error):
+//                print(error)
+//            case .cancelled:
+//                print("User cancelled login.")
+//            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
+//                print("Logged in!")
+//            }
+        }
         
     }
     func localization()

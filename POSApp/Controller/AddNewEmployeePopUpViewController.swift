@@ -34,6 +34,7 @@ class AddNewEmployeePopUpViewController: UIViewController,UITextFieldDelegate {
     var activeField: UITextField!
     var employeeInfoArray :[String] = []
     var userDefaultsDictionary  : [String:String] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let userDefaults = UserDefaults.standard

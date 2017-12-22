@@ -133,6 +133,15 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
            self.navigationController!.popToViewController(ManagementVC, animated: true)
         }
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+         let objEmployee = empolyeeListArray[indexPath.row]
+        if editingStyle == .delete {
+            if DBManager.shared.deleteEmployeeInfo(withId:objEmployee.employeeId ) {
+                empolyeeListArray.remove(at: indexPath.row)
+                tableView.reloadData()
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

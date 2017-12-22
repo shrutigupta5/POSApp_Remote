@@ -242,25 +242,25 @@ class DBManager: NSObject {
             database.close()
         }
     }
-//    func deleteEmployeeInfo(withID ID: Int) -> Bool {
-//        var deleted = false
-//
-//        if openDatabase() {
-//            let query = "delete from movies where \(field_MovieID)=?"
-//
-//            do {
-//                try database.executeUpdate(query, values: [ID])
-//                deleted = true
-//            }
-//            catch {
-//                print(error.localizedDescription)
-//            }
-//
-//            database.close()
-//        }
-//
-//        return deleted
-//    }
+    func deleteEmployeeInfo(withId Id :Int) -> Bool {
+        var deleted = false
+
+        if openDatabase() {
+            let query = "delete from POSEmployee where \(autoIncrementId)=?"
+
+            do {
+                try database.executeUpdate(query, values: [Id])
+                deleted = true
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+
+            database.close()
+        }
+
+        return deleted
+    }
     
 }
 

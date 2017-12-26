@@ -38,7 +38,10 @@ class AddNewEmployeePopUpViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let userDefaults = UserDefaults.standard
-        self.userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as! [String:String]
+        if let userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as? [String:String]{
+            self.userDefaultsDictionary = userDefaults.value(forKey: "employeeInfoDict") as! [String:String]
+        }
+       
         textFieldDelegate()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -120,12 +123,8 @@ class AddNewEmployeePopUpViewController: UIViewController,UITextFieldDelegate {
     @IBAction func actionSaveButton(_ sender: Any) {
         switch sceneType {
         case .addEmployeeListScene?:
-            let fetchEmployeeUpdateInfo = DBManager.shared.fetchEmployeeInfo()
-            let employeeInfoDict:[String:String] = ["name":fetchEmployeeUpdateInfo[0].EmployeeName,"password":fetchEmployeeUpdateInfo[0].password,"role":fetchEmployeeUpdateInfo[0].role,"contact":fetchEmployeeUpdateInfo[0].contact,"address":fetchEmployeeUpdateInfo[0].address,"rate":fetchEmployeeUpdateInfo[0].rate,"hourly":fetchEmployeeUpdateInfo[0].hourly]
-            UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
-            let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
-            print(result!)
-            checkFieldsValidation()
+           DBManager.shared.fetchEmployeeInfo()
+           checkFieldsValidation()
            delegate?.loadEmployeeDetail()
             
             break

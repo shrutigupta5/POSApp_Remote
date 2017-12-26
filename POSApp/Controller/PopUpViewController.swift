@@ -49,6 +49,7 @@ class PopUpViewController: UIViewController {
     @IBAction func buttonSaveAction(_ sender: Any) {
         self.view.removeFromSuperview()
         delegate?.changeBackgroundColor(UIColor.brown)
+        
     }
     @IBAction func textFieldDateAction(_ sender: UITextField) {
         datePickerView.datePickerMode = UIDatePickerMode.date

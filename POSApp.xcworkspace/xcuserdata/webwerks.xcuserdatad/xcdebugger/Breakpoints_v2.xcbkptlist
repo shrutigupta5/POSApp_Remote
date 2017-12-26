@@ -35,53 +35,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "POSApp/Controller/SignInViewController.swift"
-            timestampString = "535641224.244497"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "loginButtonClicked()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "POSApp.SignInViewController.loginButtonClicked() -&gt; ()"
-                  moduleName = "POSApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
-                  timestampString = "535641345.776681"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "58">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (FacebookLogin.LoginResult) -&gt; () in POSApp.SignInViewController.loginButtonClicked() -&gt; ()"
-                  moduleName = "POSApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
-                  timestampString = "535641345.780835"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "118">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import FacebookCore
 import FacebookLogin
+import FBSDKLoginKit
 
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
@@ -24,6 +24,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     var appDelegate = AppDelegate()
     var activeField: UITextField!
     let reachability = Reachability()!
+    var dict : [String : AnyObject]!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -39,34 +41,41 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
     }
+  
+    
+    //function is fetching the user data
+    
+
     func facebookLoad() {
-//        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-//        loginButton.center = view.center
-//        view.addSubview(loginButton)
-        
-    let myLoginButton = UIButton(type: .custom)
-        myLoginButton.backgroundColor = UIColor.blue
-        myLoginButton.frame = CGRect(x: 100, y: 100, width: 180, height: 80)
-        myLoginButton.center = view.center
-        myLoginButton.setTitle("Facebook Login ", for: .normal)
-
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
-
-        // Add the button to the view
-        view.addSubview(myLoginButton)
+        let loginButton = FBSDKLoginButton.init()
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"];
+        let newFrame = CGPoint(x: 700, y:600)
+        loginButton.center = newFrame
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+//
+//       // Mark :- custom
+//    let myLoginButton = UIButton(type: .custom)
+//        myLoginButton.backgroundColor = UIColor.blue
+//        myLoginButton.frame = CGRect(x: 100, y: 100, width: 180, height: 80)
+//        myLoginButton.center = view.center
+//        myLoginButton.setTitle("Facebook Login ", for: .normal)
+//
+//        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+//
+//       //  Add the button to the view
+//        view.addSubview(myLoginButton)
     }
-//    // Once the button is clicked, show the login dialog
+    // Once the button is clicked, show the login dialog
     @objc func loginButtonClicked() {
         let loginManager = LoginManager()
-
-//        loginManager.logIn(publishPermissions: [PublishPermission.publishActions], viewController: self) { (loginResult) in
-//            print("login result is:-\(loginResult)")
-//
-//        }
         
-        loginManager.logIn(readPermissions: [ReadPermission.publicProfile,ReadPermission.email], viewController: self) { (loginResult) in
+        loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { (loginResult) in
+   
             
-//            switch loginResult {
+            let responseResult = loginResult as! NSDictionary
+            let strEmail: String = (responseResult.object(forKey: "email") as? String)!;
+            let strFirstName: String = (responseResult.object(forKey: "first_name") as? String)!//            switch loginResult {
 //            case .failed(let error):
 //                print(error)
 //            case .cancelled:
@@ -75,7 +84,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 //                print("Logged in!")
 //            }
         }
-        
+
     }
     func localization()
     {
@@ -235,5 +244,50 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
 
+}
+extension SignInViewController:FBSDKLoginButtonDelegate
+{
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+
+        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name,email, picture.type(large)"]).start { (connection, result, error) -> Void in
+
+            if let responseResult = result as? NSDictionary {
+                
+                if let strEmail = responseResult.object(forKey: "email") as? String {
+                    let strFirstName = responseResult.object(forKey: "first_name") as! String
+                    let strLastName = responseResult.object(forKey: "last_name") as! String
+                    print(strEmail)
+                    
+                    print(strFirstName)
+                    if responseResult.count  > 0 {
+                        
+                        let userInfoDict:[String:String] = ["email":strEmail,"firstName":strFirstName,"lastName":strLastName]
+                        UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+                        let result = UserDefaults.standard.value(forKey: "userInfoDict")
+                        print(result!)
+                        
+                            let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+                            let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+                            self.appDelegate.window?.rootViewController = navVC
+                            
+                        }
+                        
+                    }
+                    
+                }
+                else{
+                    showDefaultAlertViewWith(alertTitle: "Error", alertMessage: "Please enter email address", okTitle: "ok", currentViewController: self)
+                }
+
+            }
+
+        }
+        
+    
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
 }
 

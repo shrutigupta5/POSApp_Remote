@@ -13,8 +13,11 @@ protocol AddNewEmployeePopUpViewControllerDelegate: class {
     func loadEmployeeUpdateDetail()
     
 }
-class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,AddNewEmployeePopUpViewControllerDelegate {
+class AddEmployeeViewController: UIViewController, AddNewEmployeePopUpViewControllerDelegate {
     
+    
+    //MARK:- Variable declaration
+
     @IBOutlet weak var tableViewCustomerList: UITableView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelPassword: UILabel!
@@ -29,6 +32,28 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
     
     var empolyeeListArray :[EmployeeInfo] = []
     var sceneType : SceneType? = nil
+    
+    
+    //MARK:- View life cycle methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        localization()
+        tableViewCustomerList.register(UINib(nibName: "AddEmployeeListTableViewCell", bundle: nil), forCellReuseIdentifier: "AddEmployeeListTableViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.empolyeeListArray = DBManager.shared.fetchEmployeeInfo()
+        self.tableViewCustomerList.reloadData()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- Helper methods
+
     func loadEmployeeDetail() {
         self.empolyeeListArray = DBManager.shared.fetchEmployeeInfo()
         self.tableViewCustomerList.reloadData()
@@ -39,12 +64,7 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
         self.tableViewCustomerList.reloadData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-        localization()
-        tableViewCustomerList.register(UINib(nibName: "AddEmployeeListTableViewCell", bundle: nil), forCellReuseIdentifier: "AddEmployeeListTableViewCell")
-    }
+   
     func localization()
     {
        self.labelName.text = Localizator.instance.localize(string: "Key_customerName")
@@ -62,46 +82,11 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
     func setupView(){
         self.tableViewCustomerList.delegate = self
         self.tableViewCustomerList.dataSource = self
+        self.tableViewCustomerList.estimatedRowHeight = 100
+        self.tableViewCustomerList.rowHeight = UITableViewAutomaticDimension
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return empolyeeListArray.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddEmployeeListTableViewCell", for: indexPath)as! AddEmployeeListTableViewCell
-    
 
-        let objEmployee = empolyeeListArray[indexPath.row]
-    
-        cell.labelName.text = objEmployee.EmployeeName
-        cell.labelPassword.text = objEmployee.password
-        cell.labelRole.text = objEmployee.role
-        cell.labelContact.text = objEmployee.contact
-        cell.labelAddress.text = objEmployee.address
-        cell.labelRate.text = objEmployee.rate
-        cell.labelHourly.text = objEmployee.hourly
-       
-        return cell
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let objEmployee = empolyeeListArray[indexPath.row]
-        
-        let employeeInfoDict:[String:String] = ["name":objEmployee.EmployeeName,"password":objEmployee.password,"role":objEmployee.role,"contact":objEmployee.contact,"address":objEmployee.address,"rate":objEmployee.rate,"hourly":objEmployee.hourly]
-        UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
-        let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
-        print(result!)
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        self.empolyeeListArray = DBManager.shared.fetchEmployeeInfo()
-        self.tableViewCustomerList.reloadData()
-    }
+    //MARK:- Button events
 
     @IBAction func actionAddEmployeeButton(_ sender: Any) {
         
@@ -133,8 +118,46 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
            self.navigationController!.popToViewController(ManagementVC, animated: true)
         }
     }
+}
+
+//MARK:- Tableview datasource
+
+extension AddEmployeeViewController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return empolyeeListArray.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddEmployeeListTableViewCell", for: indexPath)as! AddEmployeeListTableViewCell
+        
+
+        let objEmployee = empolyeeListArray[indexPath.row]
+        if objEmployee != nil{
+            cell.labelName.text = objEmployee.EmployeeName
+            cell.labelPassword.text = objEmployee.password
+            cell.labelRole.text = objEmployee.role
+            cell.labelContact.text = objEmployee.contact
+            cell.labelAddress.text = objEmployee.address
+            cell.labelRate.text = objEmployee.rate
+            cell.labelHourly.text = objEmployee.hourly
+        }
+        else
+        {
+            showDefaultAlertViewWith(alertTitle: "Error", alertMessage: "something went wrong", okTitle: "ok", currentViewController: self)
+        }
+        
+        
+        return cell
+    }
+    
+}
+
+//MARK:- Tableview delegate
+
+extension AddEmployeeViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-         let objEmployee = empolyeeListArray[indexPath.row]
+        let objEmployee = empolyeeListArray[indexPath.row]
         if editingStyle == .delete {
             if DBManager.shared.deleteEmployeeInfo(withId:objEmployee.employeeId ) {
                 empolyeeListArray.remove(at: indexPath.row)
@@ -142,11 +165,15 @@ class AddEmployeeViewController: UIViewController,UITableViewDataSource,UITableV
             }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let objEmployee = empolyeeListArray[indexPath.row]
+        
+        let employeeInfoDict:[String:String] = ["name":objEmployee.EmployeeName,"password":objEmployee.password,"role":objEmployee.role,"contact":objEmployee.contact,"address":objEmployee.address,"rate":objEmployee.rate,"hourly":objEmployee.hourly]
+        UserDefaults.standard.set(employeeInfoDict, forKey: "employeeInfoDict")
+        let result = UserDefaults.standard.value(forKey: "employeeInfoDict")
+        print(result!)
+        
     }
-    
-
 }
+

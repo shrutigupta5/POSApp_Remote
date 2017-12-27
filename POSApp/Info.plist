@@ -26,13 +26,13 @@
 				<string>fb166498964102214</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-EapWRisei7LRFQltbO0NarpYJ</string>
+			</array>
+		</dict>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>FacebookAppID</key>
-	<string>166498964102214</string>
-	<key>FacebookDisplayName</key>
-	<string>POSApp</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -40,6 +40,12 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>166498964102214</string>
+	<key>FacebookDisplayName</key>
+	<string>POSApp</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

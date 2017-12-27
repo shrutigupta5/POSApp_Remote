@@ -9,10 +9,12 @@
 import UIKit
 import FacebookLogin
 import FBSDKLoginKit
+import TwitterKit
 
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
-   
+   //MARK:- Variable declaration
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var viewPassword: UIView!
@@ -26,6 +28,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     let reachability = Reachability()!
     var dict : [String : AnyObject]!
     
+    //MARK:- View life cycle methods
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -38,51 +41,62 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         facebookLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        twiterLogin()
+//        twitterLoad()
     }
-  
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+       
+    }
     
-    //function is fetching the user data
-    
-
+   //MARK:- Helper methods
     func facebookLoad() {
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"];
-        let newFrame = CGPoint(x: 700, y:600)
+        let newFrame = CGPoint(x: 650, y:550)
         loginButton.center = newFrame
         loginButton.delegate = self
         view.addSubview(loginButton)
-//
-//       // Mark :- custom
-//    let myLoginButton = UIButton(type: .custom)
-//        myLoginButton.backgroundColor = UIColor.blue
-//        myLoginButton.frame = CGRect(x: 100, y: 100, width: 180, height: 80)
-//        myLoginButton.center = view.center
-//        myLoginButton.setTitle("Facebook Login ", for: .normal)
-//
-//        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
-//
-//       //  Add the button to the view
-//        view.addSubview(myLoginButton)
+
     }
-    // Once the button is clicked, show the login dialog
+    func twiterLogin()
+    {
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                print("signed in as \(String(describing: session?.userName))")
+            } else {
+                print("error: \(String(describing: error?.localizedDescription))")
+            }
+        })
+        let newFrame = CGPoint(x: 650, y:600)
+        logInButton.center = newFrame
+        self.view.addSubview(logInButton)
+    }
+    
+//    func twitterLoad()
+//    {
+//        TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
+//            if (session != nil) {
+//                print("signed in as \(String(describing: session?.userName))")
+//            } else {
+//                print("error: \(String(describing: error?.localizedDescription))")
+//            }
+//        })
+//        let client = TWTRAPIClient.withCurrentUser()
+//
+//        client.requestEmail { email, error in
+//            if (email != nil) {
+//                //print("signed in as \(String(describing: URLSession?.userName))")
+//            } else {
+//                print("error: \(String(describing: error?.localizedDescription))")
+//            }
+//        }
+//    }
     @objc func loginButtonClicked() {
         let loginManager = LoginManager()
         
         loginManager.logIn(readPermissions: [.publicProfile], viewController: self) { (loginResult) in
    
-            
-            let responseResult = loginResult as! NSDictionary
-            let strEmail: String = (responseResult.object(forKey: "email") as? String)!;
-            let strFirstName: String = (responseResult.object(forKey: "first_name") as? String)!//            switch loginResult {
-//            case .failed(let error):
-//                print(error)
-//            case .cancelled:
-//                print("User cancelled login.")
-//            case .Success(let grantedPermissions, let declinedPermissions, let accessToken):
-//                print("Logged in!")
-//            }
         }
 
     }
@@ -93,7 +107,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.buttonForgetPassword.setTitle(Localizator.instance.localize(string: "Key_forgetPassword"), for: .normal)
     }
     
-    // set custom color
+    //MARK:- set custom color
     func setCustomColor() {
         
         viewEmail.backgroundColor = UIColor.customLightBlue
@@ -101,7 +115,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         buttonSignIn.backgroundColor = UIColor.customRed
     }
     
-    // set textField place holder
+    //MARK:- set textField place holder
     func textFieldPlaceHolder(){
         
         createAttributedPlacedholderToTextField(currentTextField: textFieldEmail, currentPlaceholderText: Localizator.instance.localize(string: "Key_email"))
@@ -238,10 +252,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(forgetVC,animated: true)
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 
 
 }

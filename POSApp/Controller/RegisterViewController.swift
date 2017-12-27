@@ -9,11 +9,15 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+ 
+    //MARK:- Variable declaration
+    
     @IBOutlet weak var signInContainerView: UIView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var signUpContainerView: UIView!
     var sceneType : SceneType? = nil
+    
+    //MARK:- View life cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +26,19 @@ class RegisterViewController: UIViewController {
     segmentControl.setTitleTextAttributes(attribute as [NSObject : AnyObject] , for: .normal)
         
     }
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+   //MARK:- Button Actions
+    
     @IBAction func segmentControlAction(_ sender: Any) {
         
         switch segmentControl.selectedSegmentIndex {
@@ -40,13 +56,7 @@ class RegisterViewController: UIViewController {
             
         }
     }
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationController?.isNavigationBarHidden = true
-        
-    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "signUpSegue") {
             let signUpVC = segue.destination  as! SignUpViewController
@@ -55,8 +65,5 @@ class RegisterViewController: UIViewController {
     
         }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 }

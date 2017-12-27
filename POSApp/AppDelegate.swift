@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import TwitterKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var userDefaultsDictionary  : [String:AnyObject]? = [:]
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"EapWRisei7LRFQltbO0NarpYJ", consumerSecret:"V3Q0uOp2RlObzNcTQTvgjcdaaotB0pFnIpcz2EvCQNk929EPQE")
+        
         let userDefaults = UserDefaults.standard
         let language = NSLocale.preferredLanguages.first
         let Dict : Dictionary = NSLocale.components(fromLocaleIdentifier: language!)
@@ -43,12 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
          return true
     }
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
        
     }
+   
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }

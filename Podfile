@@ -9,7 +9,7 @@ target 'POSApp' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'TwitterKit'
- 
+  pod 'Google/SignIn'
   
   target 'POSAppTests' do
     inherit! :search_paths

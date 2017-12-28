@@ -62,6 +62,7 @@
 		E960279C1FD861720099AA85 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E960279B1FD861720099AA85 /* libsqlite3.0.tbd */; };
 		E9666DF61FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9666DF41FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift */; };
 		E9666DF71FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9666DF51FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib */; };
+		E9B733AE1FF4D19D00564D40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */; };
 		E9C281C71FD90366008B8713 /* AddFloorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */; };
 		E9C281CC1FD903CF008B8713 /* AddFloorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */; };
 		E9C281CD1FD903CF008B8713 /* AddTableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */; };
@@ -171,6 +172,7 @@
 		E960279B1FD861720099AA85 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		E9666DF41FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		E9666DF51FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmployeeListTableViewCell.xib; sourceTree = "<group>"; };
+		E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFloorTableViewController.swift; sourceTree = "<group>"; };
 		E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFloorCollectionViewCell.xib; sourceTree = "<group>"; };
 		E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				E92676B21FD84A5D0077983F /* Controller */,
 				E92676561FD83E4C0077983F /* AppDelegate.swift */,
 				E926765D1FD83E4C0077983F /* Assets.xcassets */,
+				E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */,
 				E92676621FD83E4D0077983F /* Info.plist */,
 			);
 			path = POSApp;
@@ -570,6 +573,7 @@
 			files = (
 				E96027621FD85C0C0099AA85 /* OrderCollectionViewCell.xib in Resources */,
 				E93FC4381FE3F37E00C7167B /* Localizable.plist in Resources */,
+				E9B733AE1FF4D19D00564D40 /* GoogleService-Info.plist in Resources */,
 				E96027641FD85C0C0099AA85 /* OrderItemTableViewCell.xib in Resources */,
 				E96027601FD85C0C0099AA85 /* MenuListTableViewCell.xib in Resources */,
 				E93FC42C1FE3DDB800C7167B /* Main.storyboard in Resources */,
@@ -627,6 +631,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-POSApp/Pods-POSApp-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
@@ -701,6 +706,9 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
@@ -714,6 +722,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",

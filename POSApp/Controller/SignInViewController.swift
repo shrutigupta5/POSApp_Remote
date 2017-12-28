@@ -10,9 +10,10 @@ import UIKit
 import FacebookLogin
 import FBSDKLoginKit
 import TwitterKit
+import Google
+import GoogleSignIn
 
-
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
    //MARK:- Variable declaration
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -42,14 +43,64 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         facebookLoad()
         twiterLogin()
-//        twitterLoad()
+        gmailLogin()
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
        
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        GIDSignIn.sharedInstance().signOut()
+    }
    //MARK:- Helper methods
+    func gmailLogin()
+    {
+        var error : NSError?
+        
+        //setting the error
+        GGLContext.sharedInstance().configureWithError(&error)
+        
+        //if any error stop execution and print error
+        if error != nil{
+            print(error ?? "google error")
+            return
+        }
+        
+        
+        //adding the delegates
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        
+        //getting the signin button and adding it to view
+        let googleSignInButton = GIDSignInButton()
+        let newFrame = CGPoint(x: 650, y:660)
+        googleSignInButton.center = newFrame
+        view.addSubview(googleSignInButton)
+        
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        //if any error stop and print the error
+        if error != nil{
+            print(error ?? "google error")
+            return
+        }
+        
+        //if success display the email on label
+        let email = user.profile.email
+        let firstname = user.profile.givenName
+        let lastname = user.profile.familyName
+        print("email is \(String(describing: email))")
+        let userInfoDict:[String:String] = ["email":email!,"firstName":firstname!,"lastName":lastname! ]
+        UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+        let result = UserDefaults.standard.value(forKey: "userInfoDict")
+        print(result!)
+        let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+        let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+        self.appDelegate.window?.rootViewController = navVC
+    }
+    
     func facebookLoad() {
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"];
@@ -59,11 +110,44 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(loginButton)
 
     }
+    
     func twiterLogin()
     {
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 print("signed in as \(String(describing: session?.userName))")
+                let client = TWTRAPIClient.withCurrentUser()
+                let request = client.urlRequest(withMethod: "GET",
+                                                urlString: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true",
+                                                parameters: ["include_email": "true", "skip_status": "true"],
+                                                error: nil)
+                client.sendTwitterRequest(request) { response, data, connectionError in
+                    if (connectionError == nil) {
+                        
+                        do{
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                            print("Json response: ", json)
+                            let firstName = json["name"]
+                            let lastName = json["screen_name"]
+                            let email = json["email"]
+                            print("First name: ",firstName ?? "")
+                            print("Last name: ",lastName ?? "")
+                            print("Email: ",email ?? "")
+                            let userInfoDict:[String:String] = ["email":email as! String,"firstName":firstName as! String,"lastName":"" ]
+                            UserDefaults.standard.set(userInfoDict, forKey: "userInfoDict")
+                            let result = UserDefaults.standard.value(forKey: "userInfoDict")
+                            print(result!)
+                            let storyB = UIStoryboard.init(name: "Main", bundle: nil)
+                            let  navVC = storyB.instantiateViewController(withIdentifier: "NavVc") as! UINavigationController
+                            self.appDelegate.window?.rootViewController = navVC
+                        } catch {
+                            
+                        }
+                    }
+                    else {
+                        print("Error: \(String(describing: connectionError))")
+                    }
+                    }
             } else {
                 print("error: \(String(describing: error?.localizedDescription))")
             }
@@ -73,25 +157,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(logInButton)
     }
     
-//    func twitterLoad()
-//    {
-//        TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
-//            if (session != nil) {
-//                print("signed in as \(String(describing: session?.userName))")
-//            } else {
-//                print("error: \(String(describing: error?.localizedDescription))")
-//            }
-//        })
-//        let client = TWTRAPIClient.withCurrentUser()
-//
-//        client.requestEmail { email, error in
-//            if (email != nil) {
-//                //print("signed in as \(String(describing: URLSession?.userName))")
-//            } else {
-//                print("error: \(String(describing: error?.localizedDescription))")
-//            }
-//        }
-//    }
     @objc func loginButtonClicked() {
         let loginManager = LoginManager()
         
@@ -207,7 +272,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             print("could not start notifire")
         }
         
-    // fetching data base values and checking validation
+        //Mark:- fetching data base values and checking validation
     let fetchedUser = DBManager.shared.fetchUsers(email: self.textFieldEmail.text!)
         
         

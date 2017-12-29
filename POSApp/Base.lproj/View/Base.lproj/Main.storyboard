@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHQ-Bt-gUg" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="331.5" y="574" width="361" height="81"/>
+                                <rect key="frame" x="332.5" y="574" width="359" height="81"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="Sbe-sZ-K58"/>
@@ -58,11 +58,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Ho-s5-MAc" secondAttribute="bottom" id="90I-tN-mxM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fHQ-Bt-gUg" secondAttribute="bottom" constant="113" id="aN8-nG-VgR"/>
                             <constraint firstAttribute="trailing" secondItem="1Ho-s5-MAc" secondAttribute="trailing" id="dh8-CW-Qla"/>
-                            <constraint firstAttribute="trailing" secondItem="fHQ-Bt-gUg" secondAttribute="trailing" constant="331.5" id="hXY-XF-ekz"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fHQ-Bt-gUg" secondAttribute="trailing" id="hXY-XF-ekz"/>
                             <constraint firstItem="1Ho-s5-MAc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iUK-Qd-8la"/>
                             <constraint firstItem="fHQ-Bt-gUg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qyK-vP-LIf"/>
                             <constraint firstItem="1Ho-s5-MAc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vbR-CJ-Ric"/>
-                            <constraint firstItem="fHQ-Bt-gUg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="331.5" id="xxf-Nk-Bpr"/>
+                            <constraint firstItem="fHQ-Bt-gUg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xxf-Nk-Bpr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v0r-dZ-jCB"/>
@@ -2266,7 +2266,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NavVc" id="Sy8-7R-GDB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GaZ-kb-2hI">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2480,9 +2480,26 @@
                                                     <action selector="forgotPasswordAction:" destination="f1c-6U-sWb" eventType="touchUpInside" id="Fvx-8y-Oxa"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbs-pD-kQ0">
+                                                <rect key="frame" x="8" y="550" width="239" height="42"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="GNK-Ii-M80"/>
+                                                    <constraint firstAttribute="width" constant="239" id="o9r-KX-NM7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <state key="normal" title="Login with LinkedIn">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionLinkedInButton:" destination="f1c-6U-sWb" eventType="touchUpInside" id="bSA-Mz-A0y"/>
+                                                    <segue destination="U36-MP-HrL" kind="presentation" identifier="idSegueShowWebVC" id="bpU-Hu-NoX"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="lbs-pD-kQ0" firstAttribute="top" secondItem="S2r-wf-bMp" secondAttribute="bottom" constant="36" id="0yt-95-yM9"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="top" secondItem="cOq-6b-hsY" secondAttribute="bottom" constant="19" id="CGk-w7-bUR"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="height" secondItem="cOq-6b-hsY" secondAttribute="height" id="Gxj-1r-dvZ"/>
                                             <constraint firstItem="QfL-KV-feC" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="165" id="MY9-yM-8KU"/>
@@ -2494,6 +2511,7 @@
                                             <constraint firstItem="cOq-6b-hsY" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="165" id="hy4-mt-FqV"/>
                                             <constraint firstItem="S2r-wf-bMp" firstAttribute="top" secondItem="QfL-KV-feC" secondAttribute="bottom" constant="40" id="i2t-dM-ZL3"/>
                                             <constraint firstAttribute="trailing" secondItem="dpe-oA-NUC" secondAttribute="trailing" constant="65" id="nQw-pW-FEP"/>
+                                            <constraint firstItem="lbs-pD-kQ0" firstAttribute="leading" secondItem="wVF-i4-uZu" secondAttribute="leading" constant="8" id="ocA-AS-zUW"/>
                                             <constraint firstAttribute="bottom" secondItem="dpe-oA-NUC" secondAttribute="bottom" constant="75.5" id="vCl-jF-421"/>
                                             <constraint firstAttribute="trailing" secondItem="S2r-wf-bMp" secondAttribute="trailing" constant="162" id="yUb-cD-ghM"/>
                                             <constraint firstItem="S2r-wf-bMp" firstAttribute="centerX" secondItem="wVF-i4-uZu" secondAttribute="centerX" id="zPD-Iy-SQF"/>
@@ -2537,6 +2555,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcZ-C9-75G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197.4609375" y="-166.40625"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="z79-sQ-FyP">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="U36-MP-HrL" customClass="WebViewController" customModule="POSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ooj-dL-F3F"/>
+                        <viewControllerLayoutGuide type="bottom" id="ozM-Vh-Ttr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXa-hI-wJa">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="596"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hV-lC-xwn">
+                                <rect key="frame" x="0.0" y="44" width="1024" height="552"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCc-na-hb0">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Qht-cI-AHo"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="Kg1-O3-ztz">
+                                        <connections>
+                                            <action selector="actionStopButton:" destination="U36-MP-HrL" id="udw-xG-Uib"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0hV-lC-xwn" firstAttribute="leading" secondItem="wXa-hI-wJa" secondAttribute="leading" id="LPQ-E2-DTD"/>
+                            <constraint firstItem="fCc-na-hb0" firstAttribute="leading" secondItem="wXa-hI-wJa" secondAttribute="leading" id="ZzU-Mn-9eK"/>
+                            <constraint firstItem="fCc-na-hb0" firstAttribute="top" secondItem="wXa-hI-wJa" secondAttribute="top" id="bVZ-KA-Iqb"/>
+                            <constraint firstAttribute="trailing" secondItem="fCc-na-hb0" secondAttribute="trailing" id="gCX-AO-sGt"/>
+                            <constraint firstItem="ozM-Vh-Ttr" firstAttribute="top" secondItem="0hV-lC-xwn" secondAttribute="bottom" id="gNp-v8-T1T"/>
+                            <constraint firstAttribute="trailing" secondItem="0hV-lC-xwn" secondAttribute="trailing" id="iye-NL-bCq"/>
+                            <constraint firstItem="0hV-lC-xwn" firstAttribute="top" secondItem="fCc-na-hb0" secondAttribute="bottom" id="l6n-fH-jhX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="0hV-lC-xwn" id="f2a-m3-AIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADf-ge-c3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193.359375" y="447.65625"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="OLy-26-hf0">
@@ -2906,7 +2973,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOf-S0-CBN" customClass="DesignableView" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="150" y="220" width="724" height="128"/>
+                                <rect key="frame" x="150" y="190" width="724" height="128"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEL-xs-Kfe" customClass="DesignableTextField" customModule="POSApp" customModuleProvider="target">
                                         <rect key="frame" x="80" y="0.0" width="644" height="128"/>
@@ -2941,7 +3008,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f1-hm-cge" customClass="DesignButton" customModule="POSApp" customModuleProvider="target">
-                                <rect key="frame" x="213" y="392" width="604" height="80"/>
+                                <rect key="frame" x="213" y="362" width="604" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="604" id="K43-bK-SNp"/>
@@ -2969,7 +3036,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lOf-S0-CBN" firstAttribute="centerY" secondItem="mXM-ni-R6h" secondAttribute="centerY" constant="-100" id="6yw-sY-Oe4"/>
+                            <constraint firstItem="lOf-S0-CBN" firstAttribute="centerY" secondItem="mXM-ni-R6h" secondAttribute="centerY" constant="-130" id="6yw-sY-Oe4"/>
                             <constraint firstItem="wsO-8R-DMp" firstAttribute="bottom" secondItem="8uj-f9-DGc" secondAttribute="top" id="9U5-PS-yYz"/>
                             <constraint firstItem="1f1-hm-cge" firstAttribute="top" secondItem="lOf-S0-CBN" secondAttribute="bottom" constant="44" id="aLV-oG-v4R"/>
                             <constraint firstAttribute="trailing" secondItem="lOf-S0-CBN" secondAttribute="trailing" constant="150" id="efg-UZ-Tp1"/>

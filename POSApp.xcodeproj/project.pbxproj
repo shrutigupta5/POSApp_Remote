@@ -63,6 +63,7 @@
 		E9666DF61FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9666DF41FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift */; };
 		E9666DF71FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9666DF51FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib */; };
 		E9B733AE1FF4D19D00564D40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */; };
+		E9B733D21FF6521500564D40 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B733D11FF6521500564D40 /* WebViewController.swift */; };
 		E9C281C71FD90366008B8713 /* AddFloorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */; };
 		E9C281CC1FD903CF008B8713 /* AddFloorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */; };
 		E9C281CD1FD903CF008B8713 /* AddTableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */; };
@@ -173,6 +174,7 @@
 		E9666DF41FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		E9666DF51FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmployeeListTableViewCell.xib; sourceTree = "<group>"; };
 		E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9B733D11FF6521500564D40 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFloorTableViewController.swift; sourceTree = "<group>"; };
 		E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFloorCollectionViewCell.xib; sourceTree = "<group>"; };
 		E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				E92676B31FD84A5D0077983F /* InitialViewController.swift */,
 				E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */,
 				E95ECB551FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift */,
+				E9B733D11FF6521500564D40 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-POSApp/Pods-POSApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -709,12 +713,15 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IOSLinkedInAPIFix/IOSLinkedInAPIFix.framework",
+				"${BUILT_PRODUCTS_DIR}/LinkedinSwift/LinkedinSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -725,6 +732,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IOSLinkedInAPIFix.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkedinSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
@@ -810,6 +819,7 @@
 				E92676B91FD84AA50077983F /* POSUser.swift in Sources */,
 				E96027901FD85D7F0099AA85 /* FMDatabasePool.m in Sources */,
 				E9485C251FDFCEDC0020D1FF /* ForgetPasswordViewController.swift in Sources */,
+				E9B733D21FF6521500564D40 /* WebViewController.swift in Sources */,
 				E960278E1FD85D7F0099AA85 /* FMDatabase.m in Sources */,
 				E92676571FD83E4C0077983F /* AppDelegate.swift in Sources */,
 				E96027781FD85CD90099AA85 /* HomeViewController.swift in Sources */,
@@ -931,6 +941,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -981,6 +992,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1014,6 +1026,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "POSApp/Libraries/FMDB/POSApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1036,6 +1049,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.smart.POSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "POSApp/Libraries/FMDB/POSApp-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

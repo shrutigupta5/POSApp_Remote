@@ -12,6 +12,8 @@ import FBSDKLoginKit
 import TwitterKit
 import Google
 import GoogleSignIn
+import LinkedinSwift
+
 
 class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
    //MARK:- Variable declaration
@@ -29,6 +31,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     let reachability = Reachability()!
     var dict : [String : AnyObject]!
     
+    
+   
     //MARK:- View life cycle methods
     override func viewDidLoad() {
         
@@ -44,7 +48,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         facebookLoad()
         twiterLogin()
         gmailLogin()
-       
+        checkForExistingAccessToken()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,6 +58,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         GIDSignIn.sharedInstance().signOut()
     }
    //MARK:- Helper methods
+   
+
     func gmailLogin()
     {
         var error : NSError?
@@ -105,10 +111,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"];
         let newFrame = CGPoint(x: 650, y:550)
-        loginButton.center = newFrame
+       loginButton.center = newFrame
         loginButton.delegate = self
         view.addSubview(loginButton)
-
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        //let leftConstraints = NSLayoutConstraint(item: loginButton, attribute:.leftMargin, relatedBy: .equal, toItem:self.view, attribute:.leftMargin, multiplier: 1, constant:200 )
+       // let rightConstraints = NSLayoutConstraint(item: loginButton, attribute:.rightMargin, relatedBy: .equal, toItem:self.view, attribute:.rightMargin, multiplier: 1, constant: 200)
+        //let topConstraints = NSLayoutConstraint(item: loginButton, attribute:.top, relatedBy:.equal, toItem:topLayoutGuide, attribute:.bottom, multiplier: 1, constant: 500)
+      //  view.addConstraints([leftConstraints,rightConstraints,topConstraints])
+       
+        
     }
     
     func twiterLogin()
@@ -318,8 +331,54 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         
     }
    
-
-
+    @IBAction func actionLinkedInButton(_ sender: Any) {
+        if let accessToken = UserDefaults.standard.object(forKey: "LIAccessToken") {
+            // Specify the URL string that we'll get the profile info from.
+            let targetURLString = "https://api.linkedin.com/v1/people/~:(public-profile-url)?format=json"
+            
+            
+            // Initialize a mutable URL request object.
+            let request = MutableURLRequest(url: NSURL(string: targetURLString)! as URL)
+            
+            // Indicate that this is a GET request.
+            request.httpMethod = "GET"
+            
+            // Add the access token as an HTTP header field.
+            request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            
+            
+            // Initialize a NSURLSession object.
+            let session = URLSession(configuration: URLSessionConfiguration.default)
+            
+            // Make the request.
+            let task: URLSessionDataTask = session.dataTask(with: request as URLRequest as URLRequest) { (data, response, error) -> Void in
+                // Get the HTTP status code of the request.
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                
+                if statusCode == 200 {
+                    // Convert the received JSON data into a dictionary.
+                    do {
+                        let dataDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
+                        
+        
+                        
+                    }
+                    catch {
+                        print("Could not convert JSON data into a dictionary.")
+                    }
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    func checkForExistingAccessToken() {
+        if UserDefaults.standard.object(forKey: "LIAccessToken") != nil {
+           
+        }
+    }
+    
+    
 }
 extension SignInViewController:FBSDKLoginButtonDelegate
 {

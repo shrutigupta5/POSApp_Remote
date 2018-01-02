@@ -26,12 +26,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     @IBOutlet weak var buttonSignIn: UIButton!
     @IBOutlet weak var buttonForgetPassword: UIButton!
     
+    @IBOutlet weak var buttonLinkedIn: DesignButton!
     var appDelegate = AppDelegate()
     var activeField: UITextField!
     let reachability = Reachability()!
     var dict : [String : AnyObject]!
     
-    
+    let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "81wgc9yigszxeo", clientSecret: "8fcAMmANRsNkdYmB", state: "DCEEFWF45453sdffef424", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "https://com.test.LinkedIn/oauth"))
    
     //MARK:- View life cycle methods
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         facebookLoad()
         twiterLogin()
         gmailLogin()
-        checkForExistingAccessToken()
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -80,9 +81,24 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         
         //getting the signin button and adding it to view
         let googleSignInButton = GIDSignInButton()
-        let newFrame = CGPoint(x: 650, y:660)
-        googleSignInButton.center = newFrame
+//        let newFrame = CGPoint(x: 650, y:660)
+//        googleSignInButton.center = newFrame
         view.addSubview(googleSignInButton)
+        let verticalConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 150)
+        
+        let heightConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 54)
+        
+        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        
+        let topRightViewTrailingConstraint = NSLayoutConstraint(item: googleSignInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        
+        googleSignInButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
+        
         
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -110,17 +126,25 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     func facebookLoad() {
         let loginButton = FBSDKLoginButton.init()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"];
-        let newFrame = CGPoint(x: 650, y:550)
-       loginButton.center = newFrame
+//        let newFrame = CGPoint(x: 650, y:550)
+//       loginButton.center = newFrame
         loginButton.delegate = self
         view.addSubview(loginButton)
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
         
-        //let leftConstraints = NSLayoutConstraint(item: loginButton, attribute:.leftMargin, relatedBy: .equal, toItem:self.view, attribute:.leftMargin, multiplier: 1, constant:200 )
-       // let rightConstraints = NSLayoutConstraint(item: loginButton, attribute:.rightMargin, relatedBy: .equal, toItem:self.view, attribute:.rightMargin, multiplier: 1, constant: 200)
-        //let topConstraints = NSLayoutConstraint(item: loginButton, attribute:.top, relatedBy:.equal, toItem:topLayoutGuide, attribute:.bottom, multiplier: 1, constant: 500)
-      //  view.addConstraints([leftConstraints,rightConstraints,topConstraints])
-       
+        let verticalConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 20)
+        
+        let heightConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 54)
+        
+        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        
+        let topRightViewTrailingConstraint = NSLayoutConstraint(item: loginButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        
+         loginButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
         
     }
     
@@ -165,9 +189,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                 print("error: \(String(describing: error?.localizedDescription))")
             }
         })
-        let newFrame = CGPoint(x: 650, y:600)
-        logInButton.center = newFrame
-        self.view.addSubview(logInButton)
+        view.addSubview(logInButton)
+        let verticalConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: buttonLinkedIn, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 90)
+        
+        let heightConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 54)
+        
+        let topLeftViewLeadingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        
+        
+        let topRightViewTrailingConstraint = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal
+            , toItem: buttonLinkedIn, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        
+        
+        logInButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints([ verticalConstraint, heightConstraint,topLeftViewLeadingConstraint,topRightViewTrailingConstraint])
     }
     
     @objc func loginButtonClicked() {
@@ -332,51 +368,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
    
     @IBAction func actionLinkedInButton(_ sender: Any) {
-        if let accessToken = UserDefaults.standard.object(forKey: "LIAccessToken") {
-            // Specify the URL string that we'll get the profile info from.
-            let targetURLString = "https://api.linkedin.com/v1/people/~:(public-profile-url)?format=json"
-            
-            
-            // Initialize a mutable URL request object.
-            let request = MutableURLRequest(url: NSURL(string: targetURLString)! as URL)
-            
-            // Indicate that this is a GET request.
-            request.httpMethod = "GET"
-            
-            // Add the access token as an HTTP header field.
-            request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-            
-            
-            // Initialize a NSURLSession object.
-            let session = URLSession(configuration: URLSessionConfiguration.default)
-            
-            // Make the request.
-            let task: URLSessionDataTask = session.dataTask(with: request as URLRequest as URLRequest) { (data, response, error) -> Void in
-                // Get the HTTP status code of the request.
-                let statusCode = (response as! HTTPURLResponse).statusCode
-                
-                if statusCode == 200 {
-                    // Convert the received JSON data into a dictionary.
-                    do {
-                        let dataDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
-                        
-        
-                        
-                    }
-                    catch {
-                        print("Could not convert JSON data into a dictionary.")
-                    }
-                }
-            }
-            
-            task.resume()
-        }
+//        let url  = NSURL(string: "linkedin://");
+//        UIApplication.shared.openURL(url! as URL)
+        linkedinHelper.authorizeSuccess({ (lsToken) -> Void in
+            //Login success lsToken
+        }, error: { (error) -> Void in
+            //Encounter error: error.localizedDescription
+        }, cancel: { () -> Void in
+            //User Cancelled!
+        })
     }
-    func checkForExistingAccessToken() {
-        if UserDefaults.standard.object(forKey: "LIAccessToken") != nil {
-           
-        }
-    }
+    
     
     
 }

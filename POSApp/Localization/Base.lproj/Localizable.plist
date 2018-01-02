@@ -518,7 +518,7 @@
 	<key>Key_forgetPassword</key>
 	<dict>
 		<key>value</key>
-		<string>Forget Password</string>
+		<string>Forget Password?</string>
 		<key>comment</key>
 		<string></string>
 	</dict>

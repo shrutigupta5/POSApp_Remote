@@ -63,7 +63,6 @@
 		E9666DF61FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9666DF41FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift */; };
 		E9666DF71FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9666DF51FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib */; };
 		E9B733AE1FF4D19D00564D40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */; };
-		E9B733D21FF6521500564D40 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B733D11FF6521500564D40 /* WebViewController.swift */; };
 		E9C281C71FD90366008B8713 /* AddFloorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */; };
 		E9C281CC1FD903CF008B8713 /* AddFloorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */; };
 		E9C281CD1FD903CF008B8713 /* AddTableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */; };
@@ -174,7 +173,6 @@
 		E9666DF41FE2A2A5009D9858 /* AddEmployeeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeListTableViewCell.swift; sourceTree = "<group>"; };
 		E9666DF51FE2A2A5009D9858 /* AddEmployeeListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmployeeListTableViewCell.xib; sourceTree = "<group>"; };
 		E9B733AD1FF4D19C00564D40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E9B733D11FF6521500564D40 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFloorTableViewController.swift; sourceTree = "<group>"; };
 		E9C281C81FD903CE008B8713 /* AddFloorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFloorCollectionViewCell.xib; sourceTree = "<group>"; };
 		E9C281C91FD903CF008B8713 /* AddTableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 				E92676B31FD84A5D0077983F /* InitialViewController.swift */,
 				E9C281C61FD90366008B8713 /* AddFloorTableViewController.swift */,
 				E95ECB551FE93D3A00FA0123 /* AddNewEmployeePopUpViewController.swift */,
-				E9B733D11FF6521500564D40 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -819,7 +816,6 @@
 				E92676B91FD84AA50077983F /* POSUser.swift in Sources */,
 				E96027901FD85D7F0099AA85 /* FMDatabasePool.m in Sources */,
 				E9485C251FDFCEDC0020D1FF /* ForgetPasswordViewController.swift in Sources */,
-				E9B733D21FF6521500564D40 /* WebViewController.swift in Sources */,
 				E960278E1FD85D7F0099AA85 /* FMDatabase.m in Sources */,
 				E92676571FD83E4C0077983F /* AppDelegate.swift in Sources */,
 				E96027781FD85CD90099AA85 /* HomeViewController.swift in Sources */,

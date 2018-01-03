@@ -25,14 +25,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var buttonSignIn: UIButton!
     @IBOutlet weak var buttonForgetPassword: UIButton!
-    
     @IBOutlet weak var buttonLinkedIn: DesignButton!
+    
     var appDelegate = AppDelegate()
     var activeField: UITextField!
     let reachability = Reachability()!
     var dict : [String : AnyObject]!
     
-    let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "81wgc9yigszxeo", clientSecret: "8fcAMmANRsNkdYmB", state: "DCEEFWF45453sdffef424", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "https://com.test.LinkedIn/oauth"))
+    let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "81wgc9yigszxeo", clientSecret: "8fcAMmANRsNkdYmB", state: "DCEEFWF45453sdffef424", permissions: ["r_basicprofile", "r_emailaddress"], redirectUrl: "https://com.POSApp.linkedin.oauth/oauth"))
    
     //MARK:- View life cycle methods
     override func viewDidLoad() {

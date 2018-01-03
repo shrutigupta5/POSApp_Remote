@@ -35,5 +35,179 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "POSApp/Controller/SignInViewController.swift"
+            timestampString = "536677133.068312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
+            landmarkName = "actionLinkedInButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.934724"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "373"
+                  endingLineNumber = "373"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.LSLinkedinToken) -&gt; () in POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.943464"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "375"
+                  endingLineNumber = "375"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "POSApp/Controller/SignInViewController.swift"
+            timestampString = "536677133.068401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
+            landmarkName = "actionLinkedInButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.955101"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "375"
+                  endingLineNumber = "375"
+                  offsetFromSymbolStart = "195">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.LSLinkedinToken) -&gt; () in POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.959341"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "375"
+                  endingLineNumber = "375"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.963598"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "POSApp/Controller/SignInViewController.swift"
+            timestampString = "536677133.068475"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
+            landmarkName = "actionLinkedInButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.974584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.978789"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "377"
+                  endingLineNumber = "377"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in POSApp.SignInViewController.actionLinkedInButton(Any) -&gt; ()"
+                  moduleName = "POSApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/webwerks/Documents/Shruti_Workspace/POSApp_Local/POSApp/POSApp/Controller/SignInViewController.swift"
+                  timestampString = "536664381.984642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "379"
+                  endingLineNumber = "379"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
